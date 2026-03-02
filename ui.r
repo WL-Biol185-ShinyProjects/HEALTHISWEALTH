@@ -2,10 +2,13 @@ library(shiny)
 library(bslib)
 
 ui <- page_fluid(
-  navset_tab( 
-    nav_panel("A", "Page A content"), 
-    nav_panel("B", "Page B content"), 
-    nav_panel("C", "Page C content"), 
+  navset_tab(
+    nav_panel(
+      "PCOS Heatmap",
+      plotOutput("pcosMap", height = "600px")
+    ),
+    nav_panel("B", "Page B content"),
+    nav_panel("C", "Page C content"),
     nav_menu( 
       "Other links", 
       nav_panel("D", "Panel D content"), 
@@ -18,10 +21,7 @@ ui <- page_fluid(
   ), 
   id = "tab" 
 )
-
-server <- function(input, output) {
   
-}
 
-shinyApp(ui = ui, server = server)
+
 
