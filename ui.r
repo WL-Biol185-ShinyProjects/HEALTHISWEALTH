@@ -132,8 +132,17 @@ navbarPage("Health is Wealth",
          
          
 ),
-tabPanel("Summary",
-         verbatimTextOutput("summary")
+navbarMenu("Types of PCOS",
+           tabPanel("Insulin Resistant PCOS",
+),
+            tabPanel("Post-pill PCOS",
+),
+            tabPanel("Adrenal PCOS",
+),
+            tabPanel("Inflammatory PCOS",
 )
 )
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4db8755477bac16c49c8c1062f92e981dc3cf9ec
