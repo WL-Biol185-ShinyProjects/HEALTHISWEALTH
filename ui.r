@@ -142,7 +142,3 @@ navbarMenu("Types of PCOS",
             tabPanel("Inflammatory PCOS",
 )
 )
-<<<<<<< HEAD
-
-=======
->>>>>>> 4db8755477bac16c49c8c1062f92e981dc3cf9ec
