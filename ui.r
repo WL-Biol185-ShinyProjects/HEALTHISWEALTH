@@ -132,12 +132,18 @@ navbarPage("Health is Wealth",
          
          
 ),
-tabPanel("Summary",
-         verbatimTextOutput("summary")
+navbarMenu("Types of PCOS",
+           tabPanel("Insulin Resistant PCOS",
+),
+            tabPanel("Post-pill PCOS",
+),
+            tabPanel("Adrenal PCOS",
+),
+            tabPanel("Inflammatory PCOS",
 )
-)
-
-
+),
+tabPanel("Treatment",
+         verbatimTextOutput("summary"),
 tabPanel("Treatment",
          tags$head(
            tags$style(HTML("
@@ -316,7 +322,7 @@ tabPanel("Treatment",
                            "Treatment ", tags$span("Options")
                        ),
                        p(class = "tx-page-intro",
-                         "PCOS management is highly individual. Treatment goals vary — from regulating cycles and managing symptoms to supporting fertility. Below are three key approaches used by clinicians worldwide."
+                         "PCOS management is highly individual. Treatment goals vary from regulating cycles and managing symptoms to supporting fertility. Below are three key approaches used by clinicians worldwide."
                        ),
                        
                        # ── Card 1: Dietary Therapy ──
@@ -333,7 +339,7 @@ tabPanel("Treatment",
                                    span(class = "tx-badge badge-first-line", "First-line treatment")
                                ),
                                p(class = "tx-desc",
-                                 "Dietary therapy is typically the first recommended approach for managing PCOS, particularly for those with insulin resistance or elevated BMI. A low-glycemic, anti-inflammatory diet can reduce androgen levels, improve menstrual regularity, and support metabolic health — often without medication."
+                                 "Dietary therapy is typically the first recommended approach for managing PCOS, particularly for those with insulin resistance or elevated BMI. A low-glycemic, anti-inflammatory diet can reduce androgen levels, improve menstrual regularity, and support metabolic health — often without medication.Obesity has been reported in 30% of PCOS patients. The symptoms of PCOS are also considered to be recovered by dietary therapies including resistance to insulin, annulations, and irregular menstrual cycle.122 However, dieting habit and exercise does not show long-term results; hence, bariatric surgery has been introduced to get more promising results."
                                ),
                                p(tags$strong("Key dietary approaches:"), style = "font-size:0.92rem; color:#333; margin-bottom:8px;"),
                                div(class = "tx-pills",
@@ -345,7 +351,7 @@ tabPanel("Treatment",
                                    span(class = "tx-pill pill-green", "Caloric balance")
                                ),
                                div(class = "tx-note",
-                                   tags$strong("Important: "), "Even a 5–10% reduction in body weight can restore ovulation and improve hormonal balance in women with PCOS. Diet changes are most effective when combined with regular physical activity."
+                                   tags$strong("Important: "), "A 5–10% reduction in body weight can restore ovulation and improve hormonal balance in women with PCOS. Diet changes are most effective when combined with regular physical activity."
                                )
                            )
                        ),
@@ -364,7 +370,7 @@ tabPanel("Treatment",
                                    span(class = "tx-badge badge-surgical", "Surgical option")
                                ),
                                p(class = "tx-desc",
-                                 "LOD is a minimally invasive surgical procedure performed under general anesthesia. Small holes are made in the ovarian tissue using heat or a laser to destroy androgen-producing tissue. This can trigger ovulation and restore hormonal balance — often used when medication has not been effective."
+                                 "LOD is a minimally invasive surgical procedure performed under general anesthesia. Small holes are made in the ovarian tissue using heat or a laser to destroy androgen-producing tissue. This can trigger ovulation and restore hormonal balance — often used when medication has not been effective. When clomiphene citrate therapy fails to produce ovulation, other methods of ovulation are used. LOD was used for ovulation in 1984 when ovarian wedge resection surgery failed. LOD is successful in 84% of patients and improves ovarian androgen production insulin resistance. and increases the SHBG levels. Lower rates of miscarriages have been reported with LOD.Serum anti-mullerian hormone (AMH) level is used as an assessment tool for women treated with LOD. However, more studies are required to assess further the efficacy of LOD."
                                ),
                                p(tags$strong("Typical candidates & outcomes:"), style = "font-size:0.92rem; color:#333; margin-bottom:8px;"),
                                div(class = "tx-pills",
@@ -375,7 +381,7 @@ tabPanel("Treatment",
                                    span(class = "tx-pill pill-pink", "Laparoscopic access")
                                ),
                                div(class = "tx-note",
-                                   tags$strong("Note: "), "LOD does not treat all PCOS symptoms — it primarily targets ovulation. Effects may be temporary. It is generally considered after first-line drug therapies have failed."
+                                   tags$strong("Note: "), "LOD does not treat all PCOS symptoms, it primarily targets ovulation. Effects may be temporary. It is generally considered after first-line drug therapies have failed."
                                )
                            )
                        ),
@@ -414,7 +420,5 @@ tabPanel("Treatment",
                    ) # end tx-page
          ) # end mainPanel        
          ) # end Treatment tabPanel
-
-tabPanel("Summary",
-         verbatimTextOutput("summary")
+)
 )
