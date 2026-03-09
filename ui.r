@@ -1,7 +1,7 @@
 library(shiny)
 library(bslib)
 
-ui <- page_fluid(
+navbarPage(
   navset_tab(
     nav_panel(
       "PCOS Heatmap",
