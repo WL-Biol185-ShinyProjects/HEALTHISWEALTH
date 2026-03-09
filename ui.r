@@ -1,7 +1,7 @@
 library(shiny)
 library(bslib)
 
-navbarPage(
+navbarPage("Health is Wealth",
   navset_tab(
     nav_panel(
       "PCOS Heatmap",
