@@ -136,7 +136,4 @@ tabPanel("Summary",
          verbatimTextOutput("summary")
 )
 )
-<<<<<<< HEAD
-  
-=======
->>>>>>> 3f182b8ee478021e34dd320ab7bc72cd40343b84
+
