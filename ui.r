@@ -22,6 +22,3 @@ ui <- page_fluid(
   id = "tab" 
 )
   
-
-
-
