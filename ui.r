@@ -323,4 +323,3 @@ navbarPage("Health is Wealth",
                )
            )
   )
-)
