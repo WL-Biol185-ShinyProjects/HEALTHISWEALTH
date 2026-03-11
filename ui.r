@@ -139,7 +139,7 @@ navbarPage("Health is Wealth",
              tabPanel("Insulin Resistant PCOS"),
              tabPanel("Post-pill PCOS"),
              tabPanel("Adrenal PCOS"),
-             tabPanel("Inflammatory PCOS"),
+             tabPanel("Inflammatory PCOS")
   ),
   
   
@@ -323,3 +323,4 @@ navbarPage("Health is Wealth",
                )
            )
   )
+)
