@@ -50,39 +50,8 @@ navbarPage("Health is Wealth",
           text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px;
         }
         @media (max-width: 600px) { .about-card { padding: 32px 24px; } }
-      "))
-           ),
-           div(class = "about-section",
-               div(class = "about-card",
-                   div(class = "about-label", "About This Project"),
-                   div(class = "about-heading",
-                       "Understanding ", tags$span("PCOS"), " Through Data"
-                   ),
-                   p(class = "about-text",
-                     "Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal disorders affecting women of reproductive age (typically 15–49), yet it remains widely underdiagnosed and misunderstood. Despite affecting millions of women worldwide, gaps in research, delayed diagnosis, and disparities in healthcare access continue to affect outcomes — particularly for women from marginalized communities."
-                   ),
-                   p(class = "about-text",
-                     "This project explores the prevalence, risk factors, and health outcomes associated with PCOS — including metabolic complications, mental health impacts, and reproductive challenges. Using publicly available health datasets, we analyze trends by country, race, and age group to better understand disparities in diagnosis, treatment access, and long-term health outcomes."
-                   ),
-                   div(class = "stat-row",
-                       div(class = "stat-pill",
-                           tags$span(class = "stat-number", "1 in 10"),
-                           tags$span(class = "stat-desc", "Women affected globally")
-                       ),
-                       div(class = "stat-pill",
-                           tags$span(class = "stat-number", "70%"),
-                           tags$span(class = "stat-desc", "Cases go undiagnosed")
-                       ),
-                       div(class = "stat-pill",
-                           tags$span(class = "stat-number", "15–49"),
-                           tags$span(class = "stat-desc", "Reproductive age range")
-                       )
-                   )
-               )
-           ),
-           tags$head(
-             tags$style(HTML("
-        .map-page {
+        
+          .map-page {
           max-width: 1100px;
           margin: 30px auto 60px;
           padding: 0 24px;
@@ -119,19 +88,63 @@ navbarPage("Health is Wealth",
           margin-top: 12px; text-align: right;
         }
       "))
+    
            ),
+           div(class = "about-section",
+               div(class = "about-card",
+                   div(class = "about-label", "About This Project"),
+                   div(class = "about-heading",
+                       "Understanding ", tags$span("PCOS"), " Through Data"
+                   ),
+                   p(class = "about-text",
+                     "Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal disorders affecting women of reproductive age (typically 15–49), yet it remains widely underdiagnosed and misunderstood. Despite affecting millions of women worldwide, gaps in research, delayed diagnosis, and disparities in healthcare access continue to affect outcomes — particularly for women from marginalized communities."
+                   ),
+                   p(class = "about-text",
+                     "This project explores the prevalence, risk factors, and health outcomes associated with PCOS — including metabolic complications, mental health impacts, and reproductive challenges. Using publicly available health datasets, we analyze trends by country, race, and age group to better understand disparities in diagnosis, treatment access, and long-term health outcomes."
+                   ),
+                   div(class = "stat-row",
+                       div(class = "stat-pill",
+                           tags$span(class = "stat-number", "1 in 10"),
+                           tags$span(class = "stat-desc", "Women affected globally")
+                       ),
+                       div(class = "stat-pill",
+                           tags$span(class = "stat-number", "70%"),
+                           tags$span(class = "stat-desc", "Cases go undiagnosed")
+                       ),
+                       div(class = "stat-pill",
+                           tags$span(class = "stat-number", "15–49"),
+                           tags$span(class = "stat-desc", "Reproductive age range")
+                       )
+                   )
+               )
+           )
+        ),
+  # ── 4. MAP 1990 ──
+  
+  div(class = "map-page",
+      div(class = "map-label", "Epidemiology"),
+      div(class = "map-heading", "Global PCOS ", tags$span("Incidence (1990)")),
+      p(class = "map-intro",
+        "This map shows country-level PCOS incidence rates per 100,000 women of reproductive age in 1990. Hover over any country to see its specific values."
+      ),
+      div(class = "map-card",
+          leafletOutput("pcosMap1990", height = "520px")   # <-- pcosMap1990
+      ),
+      p(class = "map-source", "Source: PCOS Dataset · Values per 100,000 women aged 15–49")
+  ),
+  # ── 3. MAP 2021 ──
+ 
            div(class = "map-page",
                div(class = "map-label", "Epidemiology"),
                div(class = "map-heading", "Global PCOS ", tags$span("Incidence (2021)")),
                p(class = "map-intro",
-                 "This interactive map shows country-level PCOS incidence rates per 100,000 women of reproductive age in 2021. Hover over any country to see its specific values. Darker shades indicate higher incidence."
+                 "This map shows country-level PCOS incidence rates per 100,000 women of reproductive age in 2021. Hover over any country to see its specific values."
                ),
                div(class = "map-card",
-                   leafletOutput("pcosMap", height = "520px")
+                   leafletOutput("pcosMap", height = "520px")   # <-- pcosMap
                ),
                p(class = "map-source", "Source: PCOS Dataset · Values per 100,000 women aged 15–49")
-           )
-  ),
+           ),
 
   
   # ── 2. TYPES OF PCOS ──────────────────────────────────────────────────────
@@ -177,8 +190,6 @@ navbarPage("Health is Wealth",
              tabPanel("Adrenal PCOS"),
              tabPanel("Inflammatory PCOS")
   ),
-  
-  
   # ── 4. TREATMENT ──────────────────────────────────────────────────────────
   tabPanel("Treatment",
            tags$head(
