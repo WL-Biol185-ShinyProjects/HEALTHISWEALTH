@@ -136,7 +136,43 @@ navbarPage("Health is Wealth",
   
   # ── 2. TYPES OF PCOS ──────────────────────────────────────────────────────
   navbarMenu("Types of PCOS",
-             tabPanel("Insulin Resistant PCOS"),
+             tabPanel("Insulin Resistant PCOS",
+                      fluidPage(
+                        h3("Insulin Resistant PCOS"),
+                        p("The most common type, accounting for ~70% of PCOS cases. Cells fail to
+        respond properly to insulin, causing the body to overproduce it — which
+        stimulates the ovaries to produce excess androgens."),
+                        fluidRow(
+                          column(4, wellPanel(
+                            h4("Key Stats"),
+                            tags$ul(
+                              tags$li("Prevalence: ~70% of PCOS cases"),
+                              tags$li("Key marker: elevated fasting insulin"),
+                              tags$li("Also check: HbA1c, triglycerides, ALT")
+                            )
+                          )),
+                          column(4, wellPanel(
+                            h4("Symptoms"),
+                            tags$ul(
+                              tags$li("Weight gain, especially around the belly"),
+                              tags$li("Irregular or absent periods"),
+                              tags$li("Acne and oily skin"),
+                              tags$li("Hair thinning on scalp"),
+                              tags$li("Brain fog and sugar cravings")
+                            )
+                          )),
+                          column(4, wellPanel(
+                            h4("Management"),
+                            tags$ul(
+                              tags$li("Low-carb, high-protein diet"),
+                              tags$li("Regular exercise"),
+                              tags$li("Prioritise sleep"),
+                              tags$li("Supplements: inositol, berberine, magnesium, chromium")
+                            )
+                          ))
+                        )
+                      )
+             ),  
              tabPanel("Post-pill PCOS"),
              tabPanel("Adrenal PCOS"),
              tabPanel("Inflammatory PCOS")
