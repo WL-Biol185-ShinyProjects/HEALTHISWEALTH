@@ -158,10 +158,7 @@ navbarPage("Health is Wealth",
                                              "Understanding ", tags$span("PCOS"), "Through Data"
                                          ),
                                          p(class = "about-text",
-                                           "Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal disorders affecting women of reproductive age (typically 15–49), yet it remains widely underdiagnosed and misunderstood. Despite affecting millions of women worldwide, gaps in research, delayed diagnosis, and disparities in healthcare access continue to affect outcomes — particularly for women from marginalized communities."
-                                         ),
-                                         p(class = "about-text",
-                                           "This project explores the prevalence, risk factors, and health outcomes associated with PCOS — including metabolic complications, mental health impacts, and reproductive challenges. Using publicly available health datasets, we analyze trends by country, race, and age group to better understand disparities in diagnosis, treatment access, and long-term health outcomes."
+                                           "Polycystic Ovary Syndrome (PCOS) is a hormonal disorder that affects how the ovaries function. It can cause irregular periods, high levels of androgens (male hormones), and cysts on the ovaries. However, PCOS is not the same for everyone, there are different types based on underlying causes."
                                          ),
                                          div(class = "stat-row",
                                              div(class = "stat-pill",
