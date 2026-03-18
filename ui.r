@@ -87,14 +87,13 @@ navbarPage("Health is Wealth",
           font-size: 0.78rem; color: #aaa;
           margin-top: 12px; text-align: right;
         }
-      "))
-    
+      ")), 
            ),
            div(class = "about-section",
                div(class = "about-card",
                    div(class = "about-label", "About This Project"),
                    div(class = "about-heading",
-                       "Understanding ", tags$span("PCOS"), " Through Data"
+                       "Understanding ", tags$span("PCOS"), "Through Data"
                    ),
                    p(class = "about-text",
                      "Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal disorders affecting women of reproductive age (typically 15–49), yet it remains widely underdiagnosed and misunderstood. Despite affecting millions of women worldwide, gaps in research, delayed diagnosis, and disparities in healthcare access continue to affect outcomes — particularly for women from marginalized communities."
@@ -117,8 +116,9 @@ navbarPage("Health is Wealth",
                        )
                    )
                )
-           )
-        ),
+           ),
+          
+    
   # ── 4. MAP 1990 ──
   
   div(class = "map-page",
@@ -144,7 +144,7 @@ navbarPage("Health is Wealth",
                    leafletOutput("pcosMap", height = "520px")   # <-- pcosMap
                ),
                p(class = "map-source", "Source: PCOS Dataset · Values per 100,000 women aged 15–49")
-           ),
+          ) ),
 
   
   # ── 2. TYPES OF PCOS ──────────────────────────────────────────────────────
@@ -190,6 +190,7 @@ navbarPage("Health is Wealth",
              tabPanel("Adrenal PCOS"),
              tabPanel("Inflammatory PCOS")
   ),
+  
   # ── 4. TREATMENT ──────────────────────────────────────────────────────────
   tabPanel("Treatment",
            tags$head(
@@ -371,3 +372,4 @@ navbarPage("Health is Wealth",
            )
   )
 )
+
