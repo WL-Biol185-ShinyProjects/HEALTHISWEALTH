@@ -3,7 +3,7 @@ library(bslib)
 library(leaflet)
 
 navbarPage("Health is Wealth",
-  tabPanel("About",
+            tabPanel("About",
            tags$head(
              tags$style(HTML("
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap');
@@ -89,7 +89,7 @@ navbarPage("Health is Wealth",
         }
       ")), 
            ),
-           div(class = "about-section",
+           div(class = "about-section", 
                div(class = "about-card",
                    div(class = "about-label", "About This Project"),
                    div(class = "about-heading",
@@ -134,7 +134,7 @@ navbarPage("Health is Wealth",
   ),
   # ── 3. MAP 2021 ──
  
-           div(class = "map-page",
+           div(class = "map-page",  
                div(class = "map-label", "Epidemiology"),
                div(class = "map-heading", "Global PCOS ", tags$span("Incidence (2021)")),
                p(class = "map-intro",
@@ -149,6 +149,53 @@ navbarPage("Health is Wealth",
   
   # ── 2. TYPES OF PCOS ──────────────────────────────────────────────────────
   navbarMenu("Types of PCOS",
+             tabPanel("About",
+                      mainPanel( width = "12",
+                                 div(class = "about-section",  style = "max-width: 80%;  margin: 30px auto 60px; padding: 0 24px;",
+                                     div(class = "about-card",
+                                         div(class = "about-label", "About This Project"),
+                                         div(class = "about-heading",
+                                             "Understanding ", tags$span("PCOS"), "Through Data"
+                                         ),
+                                         p(class = "about-text",
+                                           "Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal disorders affecting women of reproductive age (typically 15–49), yet it remains widely underdiagnosed and misunderstood. Despite affecting millions of women worldwide, gaps in research, delayed diagnosis, and disparities in healthcare access continue to affect outcomes — particularly for women from marginalized communities."
+                                         ),
+                                         p(class = "about-text",
+                                           "This project explores the prevalence, risk factors, and health outcomes associated with PCOS — including metabolic complications, mental health impacts, and reproductive challenges. Using publicly available health datasets, we analyze trends by country, race, and age group to better understand disparities in diagnosis, treatment access, and long-term health outcomes."
+                                         ),
+                                         div(class = "stat-row",
+                                             div(class = "stat-pill",
+                                                 tags$span(class = "stat-number", "1 in 10"),
+                                                 tags$span(class = "stat-desc", "Women affected globally")
+                                             ),
+                                             div(class = "stat-pill",
+                                                 tags$span(class = "stat-number", "50%"),
+                                                 tags$span(class = "stat-desc", "Cases go undiagnosed")
+                                             ),
+                                             div(class = "stat-pill",
+                                                 tags$span(class = "stat-number", "15–49"),
+                                                 tags$span(class = "stat-desc", "Reproductive age range")
+                                             )
+                                         )
+                                     )
+                                 ),
+                        div(style = "display: flex; gap: 16px; justify-content: center; align-items: center;",
+                            tags$img(
+                              src = "symptoms.png",
+                              width = "30%",
+                              height = "800px",
+                              style = "border: 1px solid #000000; border-radius: 1px;"
+                            ),
+                            tags$img(
+                              src = "types_of_pcos.png",
+                              width = "48%",
+                              height = "800px",
+                              style = "border: 1px solid #000000; border-radius: 1px;"
+                            )
+                            )
+           )),
+   
+                      
              tabPanel("Insulin Resistant PCOS",
                       fluidPage(
                         h3("Insulin Resistant PCOS"),
@@ -277,6 +324,14 @@ navbarPage("Health is Wealth",
         }
       "))
            ),
+           mainPanel(
+             div(style = "text-align: center;",
+             tags$img(
+               src = "treatment.png",
+               width = "400px",
+               style = "border: 1px solid #e63985; border-radius: 1px;"
+             )
+             ),
            div(class = "tx-page",
                div(class = "tx-page-label", "Managing PCOS"),
                div(class = "tx-page-heading", "Treatment ", tags$span("Options")),
@@ -372,4 +427,4 @@ navbarPage("Health is Wealth",
            )
   )
 )
-
+)
