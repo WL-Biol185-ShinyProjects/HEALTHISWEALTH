@@ -151,7 +151,7 @@ navbarPage("Health is Wealth",
   navbarMenu("Types of PCOS",
              tabPanel("About",
                       mainPanel( width = "12",
-                                 div(class = "about-section",  style = "max-width: 80%;  margin: 30px auto 60px; padding: 0 24px;",
+                                 div(class = "about-section",  style = "max-width: 63%;  margin: 30px auto 60px; padding: 0 24px;",
                                      div(class = "about-card",
                                          div(class = "about-label", "About This Project"),
                                          div(class = "about-heading",
@@ -183,13 +183,13 @@ navbarPage("Health is Wealth",
                             tags$img(
                               src = "symptoms.png",
                               width = "30%",
-                              height = "800px",
+                              height = "600px",
                               style = "border: 1px solid #000000; border-radius: 1px;"
                             ),
                             tags$img(
                               src = "types_of_pcos.png",
-                              width = "48%",
-                              height = "800px",
+                              width = "30%%",
+                              height = "600px",
                               style = "border: 1px solid #000000; border-radius: 1px;"
                             )
                             )
