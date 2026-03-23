@@ -194,7 +194,7 @@ navbarPage("Health is Wealth",
    
                       
              tabPanel("Insulin Resistant PCOS",
-                      mainPanel(width = "12",
+                      mainPanel(width = "15",
                                 div(class = "tx-page",
                                     
                                     div(style = "text-align: center;",
@@ -410,8 +410,8 @@ navbarPage("Health is Wealth",
                                             div(class = "tx-badge-row", span(class = "tx-badge badge-first-line", "Chronic Inflammation")),
                                             p(class = "tx-desc",
                                               "Inflammatory PCOS is driven by the immune system rather than hormonal contraceptives or insulin.
-                   Persistent low-grade inflammation — triggered by gut issues, food sensitivities, or environmental
-                   toxins — stimulates androgen production and impairs ovulation. Testing for inflammatory markers
+                   Persistent low-grade inflammation, triggered by gut issues, food sensitivities, or environmental
+                   toxins, stimulates androgen production and impairs ovulation. Testing for inflammatory markers
                    is key to identifying and managing this type effectively."
                                             ),
                                             p(tags$strong("Key symptoms:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;"),
