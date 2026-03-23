@@ -353,7 +353,68 @@ navbarPage("Health is Wealth",
                                 )
                       )
              ),
-             tabPanel("Inflammatory PCOS")
+             tabPanel("Inflammatory PCOS",
+                      mainPanel(width = "12",
+                                div(class = "tx-page",
+                                    
+                                    div(style = "text-align: center;",
+                                        tags$img(
+                                          src = "inflammatory_pcos.png",
+                                          width = "400px",
+                                          style = "border: 1px solid #e63985; border-radius: 1px;"
+                                        )
+                                    ),
+                                    
+                                    div(class = "tx-page-label", "Types of PCOS"),
+                                    div(class = "tx-page-heading", "Inflammatory ", tags$span("PCOS")),
+                                    p(class = "tx-page-intro",
+                                      "Chronic low-grade inflammation disrupts ovulation and stimulates androgens. Often associated with
+           gut dysbiosis, environmental toxins, and immune system dysregulation."
+                                    ),
+                                    
+                                    div(class = "tx-card",
+                                        div(class = "tx-card-header",
+                                            div(class = "tx-icon tx-icon-green", "🔥"),
+                                            div(
+                                              p(class = "tx-card-subtitle", "Immune-Driven Type"),
+                                              h3(class = "tx-card-title", "Inflammatory PCOS")
+                                            )
+                                        ),
+                                        div(class = "tx-card-body",
+                                            div(class = "tx-badge-row", span(class = "tx-badge badge-first-line", "Chronic Inflammation")),
+                                            p(class = "tx-desc",
+                                              "Inflammatory PCOS is driven by the immune system rather than hormonal contraceptives or insulin.
+                   Persistent low-grade inflammation — triggered by gut issues, food sensitivities, or environmental
+                   toxins — stimulates androgen production and impairs ovulation. Testing for inflammatory markers
+                   is key to identifying and managing this type effectively."
+                                            ),
+                                            p(tags$strong("Key symptoms:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;"),
+                                            div(class = "tx-pills",
+                                                span(class = "tx-pill pill-green", "Fatigue & joint pain"),
+                                                span(class = "tx-pill pill-green", "Headaches"),
+                                                span(class = "tx-pill pill-green", "Digestive problems"),
+                                                span(class = "tx-pill pill-green", "Mood disorders"),
+                                                span(class = "tx-pill pill-green", "Unexplained weight gain")
+                                            ),
+                                            p(tags$strong("Management approaches:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;margin-top:12px;"),
+                                            div(class = "tx-pills",
+                                                span(class = "tx-pill pill-green", "Anti-inflammatory diet"),
+                                                span(class = "tx-pill pill-green", "Omega-3"),
+                                                span(class = "tx-pill pill-green", "Gut health support"),
+                                                span(class = "tx-pill pill-green", "Turmeric"),
+                                                span(class = "tx-pill pill-green", "Zinc"),
+                                                span(class = "tx-pill pill-green", "Vitamin D")
+                                            ),
+                                            div(class = "tx-note",
+                                                tags$strong("Note: "), "Inflammatory markers like CRP, white blood cell count, and homocysteine
+                    should be tested. Also check vitamin D and ferritin. Eliminating inflammatory triggers —
+                    gluten, dairy, or processed foods — may significantly reduce symptoms."
+                                            )
+                                        )
+                                    )
+                                )
+                      )
+             )
   ),
   
   # ── 4. TREATMENT ──────────────────────────────────────────────────────────
