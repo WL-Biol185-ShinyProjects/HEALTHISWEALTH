@@ -194,287 +194,45 @@ navbarPage("Health is Wealth",
    
                       
              tabPanel("Insulin Resistant PCOS",
-                      mainPanel(width = "12",
-                                div(class = "tx-page",
-                                    div(class = "tx-page-label", "Types of PCOS"),
-                                    div(class = "tx-page-heading", "Insulin Resistant ", tags$span("PCOS")),
-                                    p(class = "tx-page-intro",
-                                      "The most common type, accounting for ~70% of PCOS cases. Cells fail to respond properly to insulin,
-           causing the body to overproduce it — which stimulates the ovaries to produce excess androgens."
-                                    ),
-                                    
-                                    div(class = "tx-card",
-                                        div(class = "tx-card-header",
-                                            div(class = "tx-icon tx-icon-green", "\U0001F36C"),
-                                            div(
-                                              p(class = "tx-card-subtitle", "Most Common Type"),
-                                              h3(class = "tx-card-title", "Insulin Resistant PCOS")
-                                            )
-                                        ),
-                                        div(class = "tx-card-body",
-                                            div(class = "tx-badge-row",
-                                                tags$span(class = "tx-badge badge-first-line", "~70% of Cases")
-                                            ),
-                                            p(class = "tx-desc",
-                                              "Insulin resistant PCOS occurs when the body's cells don't respond properly to insulin, leading to
-               elevated insulin levels. High insulin then signals the ovaries to overproduce androgens, disrupting
-               ovulation and causing the hallmark symptoms of PCOS. This type is closely tied to diet, lifestyle,
-               and metabolic health."
-                                            ),
-                                            p(tags$strong("Key Stats, Symptoms & Management:"),
-                                              style = "font-size:0.92rem; color:#333; margin-bottom:8px;"
-                                            ),
-                                            fluidRow(
-                                              column(4, wellPanel(
-                                                h4("Key Stats"),
-                                                tags$ul(
-                                                  tags$li("Prevalence: ~70% of PCOS cases"),
-                                                  tags$li("Key marker: elevated fasting insulin"),
-                                                  tags$li("Also check: HbA1c, triglycerides, ALT")
-                                                )
-                                              )),
-                                              column(4, wellPanel(
-                                                h4("Symptoms"),
-                                                tags$ul(
-                                                  tags$li("Weight gain, especially around the belly"),
-                                                  tags$li("Irregular or absent periods"),
-                                                  tags$li("Acne and oily skin"),
-                                                  tags$li("Hair thinning on scalp"),
-                                                  tags$li("Brain fog and sugar cravings")
-                                                )
-                                              )),
-                                              column(4, wellPanel(
-                                                h4("Management"),
-                                                tags$ul(
-                                                  tags$li("Low-carb, high-protein diet"),
-                                                  tags$li("Regular exercise"),
-                                                  tags$li("Prioritise sleep"),
-                                                  tags$li("Supplements: inositol, berberine, magnesium, chromium")
-                                                )
-                                              ))
-                                            ),
-                                            div(class = "tx-note",
-                                                tags$strong("Key marker: "),
-                                                "Elevated fasting insulin is the hallmark diagnostic indicator. A low-GI diet combined with
-               consistent movement can significantly reverse symptoms in this type."
-                                            )
-                                        )
-                                    )
-                                )
+                      fluidPage(
+                        h3("Insulin Resistant PCOS"),
+                        p("The most common type, accounting for ~70% of PCOS cases. Cells fail to
+        respond properly to insulin, causing the body to overproduce it — which
+        stimulates the ovaries to produce excess androgens."),
+                        fluidRow(
+                          column(4, wellPanel(
+                            h4("Key Stats"),
+                            tags$ul(
+                              tags$li("Prevalence: ~70% of PCOS cases"),
+                              tags$li("Key marker: elevated fasting insulin"),
+                              tags$li("Also check: HbA1c, triglycerides, ALT")
+                            )
+                          )),
+                          column(4, wellPanel(
+                            h4("Symptoms"),
+                            tags$ul(
+                              tags$li("Weight gain, especially around the belly"),
+                              tags$li("Irregular or absent periods"),
+                              tags$li("Acne and oily skin"),
+                              tags$li("Hair thinning on scalp"),
+                              tags$li("Brain fog and sugar cravings")
+                            )
+                          )),
+                          column(4, wellPanel(
+                            h4("Management"),
+                            tags$ul(
+                              tags$li("Low-carb, high-protein diet"),
+                              tags$li("Regular exercise"),
+                              tags$li("Prioritise sleep"),
+                              tags$li("Supplements: inositol, berberine, magnesium, chromium")
+                            )
+                          ))
+                        )
                       )
-             ),
-             tabPanel("Post-pill PCOS",
-                      mainPanel(width = "12",
-                                div(class = "tx-page",
-                                    div(class = "tx-page-label", "Types of PCOS"),
-                                    div(class = "tx-page-heading", "Post-Pill ", tags$span("PCOS")),
-                                    p(class = "tx-page-intro",
-                                      "Develops after stopping hormonal contraceptives. The pill suppresses ovulation; when discontinued,
-           a surge in LH and androgens can temporarily mimic PCOS symptoms. This type typically resolves
-           within 3-6 months."
-                                    ),
-                                    
-                                    div(class = "tx-card",
-                                        div(class = "tx-card-header",
-                                            div(class = "tx-icon tx-icon-purple", "\U0001F48A"),
-                                            div(
-                                              p(class = "tx-card-subtitle", "Temporary Type"),
-                                              h3(class = "tx-card-title", "Post-Pill PCOS")
-                                            )
-                                        ),
-                                        div(class = "tx-card-body",
-                                            div(class = "tx-badge-row",
-                                                tags$span(class = "tx-badge badge-specialized", "Often Reversible")
-                                            ),
-                                            p(class = "tx-desc",
-                                              "Post-pill PCOS develops when the body's hormones take time to rebalance after stopping
-               hormonal contraceptives. The pill artificially suppresses LH and androgens; once discontinued,
-               a temporary rebound surge can create PCOS-like symptoms. This is not permanent PCOS and
-               typically resolves within 3-6 months as the body recalibrates."
-                                            ),
-                                            p(tags$strong("Key Stats, Symptoms & Management:"),
-                                              style = "font-size:0.92rem; color:#333; margin-bottom:8px;"
-                                            ),
-                                            fluidRow(
-                                              column(4, wellPanel(
-                                                h4("Key Stats"),
-                                                tags$ul(
-                                                  tags$li("Usually resolves in 3-6 months"),
-                                                  tags$li("Often misdiagnosed as true PCOS"),
-                                                  tags$li("Also check: LH, FSH, androgens")
-                                                )
-                                              )),
-                                              column(4, wellPanel(
-                                                h4("Symptoms"),
-                                                tags$ul(
-                                                  tags$li("Sudden cycle irregularity"),
-                                                  tags$li("Increased acne post-pill"),
-                                                  tags$li("Elevated testosterone"),
-                                                  tags$li("Mood changes"),
-                                                  tags$li("Temporary hair loss")
-                                                )
-                                              )),
-                                              column(4, wellPanel(
-                                                h4("Management"),
-                                                tags$ul(
-                                                  tags$li("Allow natural hormone reset"),
-                                                  tags$li("Seed cycling support"),
-                                                  tags$li("Vitex (chasteberry)"),
-                                                  tags$li("Liver-supporting foods")
-                                                )
-                                              ))
-                                            ),
-                                            div(class = "tx-note",
-                                                tags$strong("Important: "),
-                                                "This is not permanent PCOS. Many women are incorrectly diagnosed after stopping the pill —
-               reassessment after 6 months is recommended before confirming a PCOS diagnosis."
-                                            )
-                                        )
-                                    )
-                                )
-                      )
-             ),
-             tabPanel("Adrenal PCOS",
-                      mainPanel(width = "12",
-                                div(class = "tx-page",
-                                    div(class = "tx-page-label", "Types of PCOS"),
-                                    div(class = "tx-page-heading", "Adrenal ", tags$span("PCOS")),
-                                    p(class = "tx-page-intro",
-                                      "Driven by an overactive stress response rather than insulin. The adrenal glands overproduce DHEA-S
-           in response to chronic stress, causing PCOS symptoms without involving insulin resistance."
-                                    ),
-                                    
-                                    div(class = "tx-card",
-                                        div(class = "tx-card-header",
-                                            div(class = "tx-icon tx-icon-pink", "\u26A1"),
-                                            div(
-                                              p(class = "tx-card-subtitle", "Stress-Driven Type"),
-                                              h3(class = "tx-card-title", "Adrenal PCOS")
-                                            )
-                                        ),
-                                        div(class = "tx-card-body",
-                                            div(class = "tx-badge-row",
-                                                tags$span(class = "tx-badge badge-surgical", "Adrenal Androgen Excess")
-                                            ),
-                                            p(class = "tx-desc",
-                                              "Adrenal PCOS is rooted in a dysregulated stress response. When the body is under chronic stress,
-               the adrenal glands produce excess DHEA-S — an androgen that disrupts the hormonal balance needed
-               for regular ovulation. Unlike insulin-resistant PCOS, blood sugar and insulin levels are typically
-               normal in this type, making accurate diagnosis especially important."
-                                            ),
-                                            p(tags$strong("Key Stats, Symptoms & Management:"),
-                                              style = "font-size:0.92rem; color:#333; margin-bottom:8px;"
-                                            ),
-                                            fluidRow(
-                                              column(4, wellPanel(
-                                                h4("Key Stats"),
-                                                tags$ul(
-                                                  tags$li("Elevated DHEA-S is diagnostic"),
-                                                  tags$li("Normal or low LH levels"),
-                                                  tags$li("Also check: cortisol levels")
-                                                )
-                                              )),
-                                              column(4, wellPanel(
-                                                h4("Symptoms"),
-                                                tags$ul(
-                                                  tags$li("Anxiety and chronic fatigue"),
-                                                  tags$li("Irregular periods under stress"),
-                                                  tags$li("Acne and facial hair"),
-                                                  tags$li("Poor stress tolerance"),
-                                                  tags$li("Sleep disturbances")
-                                                )
-                                              )),
-                                              column(4, wellPanel(
-                                                h4("Management"),
-                                                tags$ul(
-                                                  tags$li("Stress reduction techniques"),
-                                                  tags$li("Adaptogenic herbs (ashwagandha)"),
-                                                  tags$li("Adequate sleep & rest"),
-                                                  tags$li("Supplements: magnesium, vitamin C, B5")
-                                                )
-                                              ))
-                                            ),
-                                            div(class = "tx-note",
-                                                tags$strong("Key marker: "),
-                                                "Elevated DHEA-S with normal insulin levels points to adrenal PCOS. Addressing the root cause —
-               chronic stress and HPA axis dysregulation — is central to recovery."
-                                            )
-                                        )
-                                    )
-                                )
-                      )
-),
-             tabPanel("Inflammatory PCOS",
-                      mainPanel(width = "12",
-                                div(class = "tx-page",
-                                    div(class = "tx-page-label", "Types of PCOS"),
-                                    div(class = "tx-page-heading", "Inflammatory ", tags$span("PCOS")),
-                                    p(class = "tx-page-intro",
-                                      "Chronic low-grade inflammation disrupts ovulation and stimulates androgens. Often associated with
-           gut dysbiosis, environmental toxins, and immune system dysregulation."
-                                    ),
-                                    
-                                    div(class = "tx-card",
-                                        div(class = "tx-card-header",
-                                            div(class = "tx-icon tx-icon-green", "\U0001F525"),
-                                            div(
-                                              p(class = "tx-card-subtitle", "Immune-Driven Type"),
-                                              h3(class = "tx-card-title", "Inflammatory PCOS")
-                                            )
-                                        ),
-                                        div(class = "tx-card-body",
-                                            div(class = "tx-badge-row",
-                                                tags$span(class = "tx-badge badge-first-line", "Chronic Inflammation")
-                                            ),
-                                            p(class = "tx-desc",
-                                              "Inflammatory PCOS is driven by the immune system rather than hormonal contraceptives or insulin.
-               Persistent low-grade inflammation — triggered by gut issues, food sensitivities, or environmental
-               toxins — stimulates androgen production and impairs ovulation. Testing for inflammatory markers
-               is key to identifying and managing this type effectively."
-                                            ),
-                                            p(tags$strong("Key Stats, Symptoms & Management:"),
-                                              style = "font-size:0.92rem; color:#333; margin-bottom:8px;"
-                                            ),
-                                            fluidRow(
-                                              column(4, wellPanel(
-                                                h4("Key Stats"),
-                                                tags$ul(
-                                                  tags$li("Elevated CRP or white blood cells"),
-                                                  tags$li("May include autoimmune markers"),
-                                                  tags$li("Also check: vitamin D, ferritin, CRP")
-                                                )
-                                              )),
-                                              column(4, wellPanel(
-                                                h4("Symptoms"),
-                                                tags$ul(
-                                                  tags$li("Fatigue and joint pain"),
-                                                  tags$li("Headaches and skin issues"),
-                                                  tags$li("Digestive problems"),
-                                                  tags$li("Mood disorders"),
-                                                  tags$li("Unexplained weight gain")
-                                                )
-                                              )),
-                                              column(4, wellPanel(
-                                                h4("Management"),
-                                                tags$ul(
-                                                  tags$li("Anti-inflammatory diet"),
-                                                  tags$li("Omega-3 supplementation"),
-                                                  tags$li("Gut health support"),
-                                                  tags$li("Supplements: turmeric, zinc, vitamin D")
-                                                )
-                                              ))
-                                            ),
-                                            div(class = "tx-note",
-                                                tags$strong("Note: "),
-                                                "Inflammatory markers like CRP, white blood cell count, and homocysteine should be tested.
-               Eliminating inflammatory triggers — gluten, dairy, or processed foods — may significantly
-               reduce symptoms."
-                                            )
-                                        )
-                                    )
-                                )
-                      )
-             )
+             ),  
+             tabPanel("Post-pill PCOS"),
+             tabPanel("Adrenal PCOS"),
+             tabPanel("Inflammatory PCOS")
   ),
   
   # ── 4. TREATMENT ──────────────────────────────────────────────────────────
@@ -707,7 +465,7 @@ tabPanel("Data Check Out",
          tags$head(
            tags$style(HTML("
       .dc-page {
-        max-width: 1000px;
+        max-width: 1500px;
         margin: 36px auto 72px;
         padding: 0 24px;
         font-family: 'Source Sans 3', sans-serif;
@@ -725,7 +483,7 @@ tabPanel("Data Check Out",
       .dc-page-heading span { color: #e63985; }
       .dc-page-intro {
         font-size: 1.05rem; color: #555; line-height: 1.8;
-        margin-bottom: 40px; max-width: 720px;
+        margin-bottom: 40px; max-width: 2000px;
       }
       .dc-layout {
         display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap;
