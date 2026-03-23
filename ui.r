@@ -421,9 +421,37 @@ navbarPage("Health is Wealth",
                        )
                    )
                )
+           ),
+  
+           # Card 4: OCPs
+           div(class = "tx-card",
+               div(class = "tx-card-header",
+                   div(class = "tx-icon tx-icon-pink", "💊"),
+                   div(
+                     p(class = "tx-card-subtitle", "Hormonal Treatment"),
+                     h3(class = "tx-card-title", "Combined Oral Contraceptive Pills (OCPs)")
+                   )
+               ),
+               div(class = "tx-card-body",
+                   div(class = "tx-badge-row", span(class = "tx-badge badge-first-line", "First-choice treatment")),
+                   p(class = "tx-desc",
+                     "Combined oral contraceptive pills (OCPs) are considered the first-choice treatment for PCOS. They work by suppressing LH and FSH, reducing ovarian androgen production, and regulating the menstrual cycle. OCPs also increase sex hormone-binding globulin (SHBG), which further lowers free androgen levels — helping to manage symptoms like acne, hirsutism, and irregular periods."
+                   ),
+                   p(tags$strong("Key benefits:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;"),
+                   div(class = "tx-pills",
+                       span(class = "tx-pill pill-pink", "Regulates periods"),
+                       span(class = "tx-pill pill-pink", "Reduces androgens"),
+                       span(class = "tx-pill pill-pink", "Improves acne"),
+                       span(class = "tx-pill pill-pink", "Reduces hirsutism"),
+                       span(class = "tx-pill pill-pink", "Increases SHBG"),
+                       span(class = "tx-pill pill-pink", "Protects endometrium")
+                   ),
+                   div(class = "tx-note",
+                       tags$strong("Note: "), "OCPs do not treat the underlying metabolic causes of PCOS such as insulin resistance. They are most effective for symptom management and cycle regulation, and are often used alongside lifestyle interventions."
+                   )
+               )
            )
-  )
-),
+  ),
 tabPanel("Data Check Out",
          tags$head(
            tags$style(HTML("
