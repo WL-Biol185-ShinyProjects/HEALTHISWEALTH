@@ -194,110 +194,77 @@ navbarPage("Health is Wealth",
    
                       
              tabPanel("Insulin Resistant PCOS",
-                      fluidPage(
-                        h3("Insulin Resistant PCOS"),
-                        p("The most common type, accounting for ~70% of PCOS cases. Cells fail to
-        respond properly to insulin, causing the body to overproduce it — which
-        stimulates the ovaries to produce excess androgens."),
-                        fluidRow(
-                          column(4, wellPanel(
-                            h4("Key Stats"),
-                            tags$ul(
-                              tags$li("Prevalence: ~70% of PCOS cases"),
-                              tags$li("Key marker: elevated fasting insulin"),
-                              tags$li("Also check: HbA1c, triglycerides, ALT")
-                            )
-                          )),
-                          column(4, wellPanel(
-                            h4("Symptoms"),
-                            tags$ul(
-                              tags$li("Weight gain, especially around the belly"),
-                              tags$li("Irregular or absent periods"),
-                              tags$li("Acne and oily skin"),
-                              tags$li("Hair thinning on scalp"),
-                              tags$li("Brain fog and sugar cravings")
-                            )
-                          )),
-                          column(4, wellPanel(
-                            h4("Management"),
-                            tags$ul(
-                              tags$li("Low-carb, high-protein diet"),
-                              tags$li("Regular exercise"),
-                              tags$li("Prioritise sleep"),
-                              tags$li("Supplements: inositol, berberine, magnesium, chromium")
-                            )
-                          ))
-                        )
-                      )
-             ),  
-             tabPanel("Post-pill PCOS",
-                      fluidPage(
-                        div(class = "pcos-page",
-                            div(class = "pcos-page-label", "Understanding PCOS"),
-                            div(class = "pcos-page-heading", "Post-Pill ", tags$span("PCOS")),
-                            p(class = "pcos-page-intro",
-                              "Develops after stopping hormonal contraceptives. The pill suppresses ovulation; when discontinued,
+                      mainPanel(width = "12",
+                                div(class = "tx-page",
+                                    div(class = "tx-page-label", "Types of PCOS"),
+                                    div(class = "tx-page-heading", "Post-Pill ", tags$span("PCOS")),
+                                    p(class = "tx-page-intro",
+                                      "Develops after stopping hormonal contraceptives. The pill suppresses ovulation; when discontinued,
            a surge in LH and androgens can temporarily mimic PCOS symptoms. This type typically resolves
            within 3-6 months."
-                            ),
-                            div(class = "pcos-card",
-                                div(class = "pcos-card-header",
-                                    div(class = "pcos-icon pcos-icon-violet", "\U0001F48A"),
-                                    div(
-                                      p(class = "pcos-card-subtitle", "Temporary · Hormone-Triggered"),
-                                      h3(class = "pcos-card-title", "Post-Pill PCOS")
-                                    )
-                                ),
-                                div(class = "pcos-card-body",
-                                    div(class = "pcos-badge-row",
-                                        tags$span(class = "pcos-badge badge-postpill", "Often Reversible")
                                     ),
-                                    fluidRow(
-                                      column(4,
-                                             div(class = "pcos-well",
-                                                 h4("Key Stats"),
-                                                 tags$ul(
-                                                   tags$li("Usually resolves in 3-6 months"),
-                                                   tags$li("Often misdiagnosed as true PCOS"),
-                                                   tags$li("Also check: LH, FSH, androgens")
-                                                 )
-                                             )
-                                      ),
-                                      column(4,
-                                             div(class = "pcos-well",
-                                                 h4("Symptoms"),
-                                                 tags$ul(
-                                                   tags$li("Sudden cycle irregularity"),
-                                                   tags$li("Increased acne post-pill"),
-                                                   tags$li("Elevated testosterone"),
-                                                   tags$li("Mood changes"),
-                                                   tags$li("Temporary hair loss")
-                                                 )
-                                             )
-                                      ),
-                                      column(4,
-                                             div(class = "pcos-well",
-                                                 h4("Management"),
-                                                 tags$ul(
-                                                   tags$li("Allow natural hormone reset"),
-                                                   tags$li("Seed cycling support"),
-                                                   tags$li("Vitex (chasteberry)"),
-                                                   tags$li("Liver-supporting foods")
-                                                 )
-                                             )
-                                      )
-                                    ),
-                                    br(),
-                                    div(class = "pcos-note",
-                                        tags$strong("Important: "),
-                                        "This is not permanent PCOS. Many women are incorrectly diagnosed after stopping the pill hence
+                                    
+                                    div(class = "tx-card",
+                                        div(class = "tx-card-header",
+                                            div(class = "tx-icon tx-icon-purple", "\U0001F48A"),
+                                            div(
+                                              p(class = "tx-card-subtitle", "Temporary Type"),
+                                              h3(class = "tx-card-title", "Post-Pill PCOS")
+                                            )
+                                        ),
+                                        div(class = "tx-card-body",
+                                            div(class = "tx-badge-row",
+                                                tags$span(class = "tx-badge badge-specialized", "Often Reversible")
+                                            ),
+                                            p(class = "tx-desc",
+                                              "Post-pill PCOS develops when the body's hormones take time to rebalance after stopping
+               hormonal contraceptives. The pill artificially suppresses LH and androgens; once discontinued,
+               a temporary rebound surge can create PCOS-like symptoms. This is not permanent PCOS and
+               typically resolves within 3-6 months as the body recalibrates."
+                                            ),
+                                            p(tags$strong("Key Stats, Symptoms & Management:"),
+                                              style = "font-size:0.92rem; color:#333; margin-bottom:8px;"
+                                            ),
+                                            fluidRow(
+                                              column(4, wellPanel(
+                                                h4("Key Stats"),
+                                                tags$ul(
+                                                  tags$li("Usually resolves in 3-6 months"),
+                                                  tags$li("Often misdiagnosed as true PCOS"),
+                                                  tags$li("Also check: LH, FSH, androgens")
+                                                )
+                                              )),
+                                              column(4, wellPanel(
+                                                h4("Symptoms"),
+                                                tags$ul(
+                                                  tags$li("Sudden cycle irregularity"),
+                                                  tags$li("Increased acne post-pill"),
+                                                  tags$li("Elevated testosterone"),
+                                                  tags$li("Mood changes"),
+                                                  tags$li("Temporary hair loss")
+                                                )
+                                              )),
+                                              column(4, wellPanel(
+                                                h4("Management"),
+                                                tags$ul(
+                                                  tags$li("Allow natural hormone reset"),
+                                                  tags$li("Seed cycling support"),
+                                                  tags$li("Vitex (chasteberry)"),
+                                                  tags$li("Liver-supporting foods")
+                                                )
+                                              ))
+                                            ),
+                                            div(class = "tx-note",
+                                                tags$strong("Important: "),
+                                                "This is not permanent PCOS. Many women are incorrectly diagnosed after stopping the pill —
                reassessment after 6 months is recommended before confirming a PCOS diagnosis."
+                                            )
+                                        )
                                     )
                                 )
-                            )
-                        )
                       )
              ),
+           
              tabPanel("Adrenal PCOS",
                       mainPanel(width = "12",
                                 div(class = "tx-page",
