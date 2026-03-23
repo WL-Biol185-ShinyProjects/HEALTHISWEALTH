@@ -290,7 +290,7 @@ navbarPage("Health is Wealth",
                                     br(),
                                     div(class = "pcos-note",
                                         tags$strong("Important: "),
-                                        "This is not permanent PCOS. Many women are incorrectly diagnosed after stopping the pill —
+                                        "This is not permanent PCOS. Many women are incorrectly diagnosed after stopping the pill hence
                reassessment after 6 months is recommended before confirming a PCOS diagnosis."
                                     )
                                 )
