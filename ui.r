@@ -194,42 +194,75 @@ navbarPage("Health is Wealth",
    
                       
              tabPanel("Insulin Resistant PCOS",
-                      fluidPage(
-                        h3("Insulin Resistant PCOS"),
-                        p("The most common type, accounting for ~70% of PCOS cases. Cells fail to
-        respond properly to insulin, causing the body to overproduce it — which
-        stimulates the ovaries to produce excess androgens."),
-                        fluidRow(
-                          column(4, wellPanel(
-                            h4("Key Stats"),
-                            tags$ul(
-                              tags$li("Prevalence: ~70% of PCOS cases"),
-                              tags$li("Key marker: elevated fasting insulin"),
-                              tags$li("Also check: HbA1c, triglycerides, ALT")
-                            )
-                          )),
-                          column(4, wellPanel(
-                            h4("Symptoms"),
-                            tags$ul(
-                              tags$li("Weight gain, especially around the belly"),
-                              tags$li("Irregular or absent periods"),
-                              tags$li("Acne and oily skin"),
-                              tags$li("Hair thinning on scalp"),
-                              tags$li("Brain fog and sugar cravings")
-                            )
-                          )),
-                          column(4, wellPanel(
-                            h4("Management"),
-                            tags$ul(
-                              tags$li("Low-carb, high-protein diet"),
-                              tags$li("Regular exercise"),
-                              tags$li("Prioritise sleep"),
-                              tags$li("Supplements: inositol, berberine, magnesium, chromium")
-                            )
-                          ))
-                        )
+                      mainPanel(width = "12",
+                                div(class = "tx-page",
+                                    div(class = "tx-page-label", "Types of PCOS"),
+                                    div(class = "tx-page-heading", "Insulin Resistant ", tags$span("PCOS")),
+                                    p(class = "tx-page-intro",
+                                      "The most common type, accounting for ~70% of PCOS cases. Cells fail to respond properly to insulin,
+           causing the body to overproduce it — which stimulates the ovaries to produce excess androgens."
+                                    ),
+                                    
+                                    div(class = "tx-card",
+                                        div(class = "tx-card-header",
+                                            div(class = "tx-icon tx-icon-green", "\U0001F36C"),
+                                            div(
+                                              p(class = "tx-card-subtitle", "Most Common Type"),
+                                              h3(class = "tx-card-title", "Insulin Resistant PCOS")
+                                            )
+                                        ),
+                                        div(class = "tx-card-body",
+                                            div(class = "tx-badge-row",
+                                                tags$span(class = "tx-badge badge-first-line", "~70% of Cases")
+                                            ),
+                                            p(class = "tx-desc",
+                                              "Insulin resistant PCOS occurs when the body's cells don't respond properly to insulin, leading to
+               elevated insulin levels. High insulin then signals the ovaries to overproduce androgens, disrupting
+               ovulation and causing the hallmark symptoms of PCOS. This type is closely tied to diet, lifestyle,
+               and metabolic health."
+                                            ),
+                                            p(tags$strong("Key Stats, Symptoms & Management:"),
+                                              style = "font-size:0.92rem; color:#333; margin-bottom:8px;"
+                                            ),
+                                            fluidRow(
+                                              column(4, wellPanel(
+                                                h4("Key Stats"),
+                                                tags$ul(
+                                                  tags$li("Prevalence: ~70% of PCOS cases"),
+                                                  tags$li("Key marker: elevated fasting insulin"),
+                                                  tags$li("Also check: HbA1c, triglycerides, ALT")
+                                                )
+                                              )),
+                                              column(4, wellPanel(
+                                                h4("Symptoms"),
+                                                tags$ul(
+                                                  tags$li("Weight gain, especially around the belly"),
+                                                  tags$li("Irregular or absent periods"),
+                                                  tags$li("Acne and oily skin"),
+                                                  tags$li("Hair thinning on scalp"),
+                                                  tags$li("Brain fog and sugar cravings")
+                                                )
+                                              )),
+                                              column(4, wellPanel(
+                                                h4("Management"),
+                                                tags$ul(
+                                                  tags$li("Low-carb, high-protein diet"),
+                                                  tags$li("Regular exercise"),
+                                                  tags$li("Prioritise sleep"),
+                                                  tags$li("Supplements: inositol, berberine, magnesium, chromium")
+                                                )
+                                              ))
+                                            ),
+                                            div(class = "tx-note",
+                                                tags$strong("Key marker: "),
+                                                "Elevated fasting insulin is the hallmark diagnostic indicator. A low-GI diet combined with
+               consistent movement can significantly reverse symptoms in this type."
+                                            )
+                                        )
+                                    )
+                                )
                       )
-             ),  
+             ),
              tabPanel("Post-pill PCOS",
                       mainPanel(width = "12",
                                 div(class = "tx-page",
