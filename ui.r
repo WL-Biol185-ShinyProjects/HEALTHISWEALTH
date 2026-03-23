@@ -451,6 +451,7 @@ navbarPage("Health is Wealth",
                    )
                )
            )
+       )
   ),
 tabPanel("Data Check Out",
          tags$head(
