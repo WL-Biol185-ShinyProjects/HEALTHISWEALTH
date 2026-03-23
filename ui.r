@@ -299,73 +299,75 @@ navbarPage("Health is Wealth",
                       )
              ),
              tabPanel("Adrenal PCOS",
-                      fluidPage(
-                        div(class = "pcos-page",
-                            div(class = "pcos-page-label", "Understanding PCOS"),
-                            div(class = "pcos-page-heading", "Adrenal ", tags$span("PCOS")),
-                            p(class = "pcos-page-intro",
-                              "Driven by an overactive stress response rather than insulin. The adrenal glands overproduce DHEA-S
-           (an androgen) in response to chronic stress, causing PCOS symptoms without necessarily involving
-           insulin resistance."
-                            ),
-                            div(class = "pcos-card",
-                                div(class = "pcos-card-header",
-                                    div(class = "pcos-icon pcos-icon-teal", "\u26A1"),
-                                    div(
-                                      p(class = "pcos-card-subtitle", "Stress-Driven · Adrenal Androgen Excess"),
-                                      h3(class = "pcos-card-title", "Adrenal PCOS")
-                                    )
-                                ),
-                                div(class = "pcos-card-body",
-                                    div(class = "pcos-badge-row",
-                                        tags$span(class = "pcos-badge badge-adrenal", "Stress Related")
+                      mainPanel(width = "12",
+                                div(class = "tx-page",
+                                    div(class = "tx-page-label", "Types of PCOS"),
+                                    div(class = "tx-page-heading", "Adrenal ", tags$span("PCOS")),
+                                    p(class = "tx-page-intro",
+                                      "Driven by an overactive stress response rather than insulin. The adrenal glands overproduce DHEA-S
+           in response to chronic stress, causing PCOS symptoms without involving insulin resistance."
                                     ),
-                                    fluidRow(
-                                      column(4,
-                                             div(class = "pcos-well",
-                                                 h4("Key Stats"),
-                                                 tags$ul(
-                                                   tags$li("Elevated DHEA-S is diagnostic"),
-                                                   tags$li("Normal or low LH levels"),
-                                                   tags$li("Also check: cortisol levels")
-                                                 )
-                                             )
-                                      ),
-                                      column(4,
-                                             div(class = "pcos-well",
-                                                 h4("Symptoms"),
-                                                 tags$ul(
-                                                   tags$li("Anxiety and chronic fatigue"),
-                                                   tags$li("Irregular periods under stress"),
-                                                   tags$li("Acne and facial hair"),
-                                                   tags$li("Poor stress tolerance"),
-                                                   tags$li("Sleep disturbances")
-                                                 )
-                                             )
-                                      ),
-                                      column(4,
-                                             div(class = "pcos-well",
-                                                 h4("Management"),
-                                                 tags$ul(
-                                                   tags$li("Stress reduction techniques"),
-                                                   tags$li("Adaptogenic herbs (ashwagandha)"),
-                                                   tags$li("Adequate sleep & rest"),
-                                                   tags$li("Supplements: magnesium, vitamin C, B5")
-                                                 )
-                                             )
-                                      )
-                                    ),
-                                    br(),
-                                    div(class = "pcos-note",
-                                        tags$strong("Key marker: "),
-                                        "Elevated DHEA-S with normal insulin levels points to adrenal PCOS. Addressing the root cause, 
-               chronic stress and HPA axis dysregulation = is central to recovery."
+                                    
+                                    div(class = "tx-card",
+                                        div(class = "tx-card-header",
+                                            div(class = "tx-icon tx-icon-pink", "\u26A1"),
+                                            div(
+                                              p(class = "tx-card-subtitle", "Stress-Driven Type"),
+                                              h3(class = "tx-card-title", "Adrenal PCOS")
+                                            )
+                                        ),
+                                        div(class = "tx-card-body",
+                                            div(class = "tx-badge-row",
+                                                tags$span(class = "tx-badge badge-surgical", "Adrenal Androgen Excess")
+                                            ),
+                                            p(class = "tx-desc",
+                                              "Adrenal PCOS is rooted in a dysregulated stress response. When the body is under chronic stress,
+               the adrenal glands produce excess DHEA-S — an androgen that disrupts the hormonal balance needed
+               for regular ovulation. Unlike insulin-resistant PCOS, blood sugar and insulin levels are typically
+               normal in this type, making accurate diagnosis especially important."
+                                            ),
+                                            p(tags$strong("Key Stats, Symptoms & Management:"),
+                                              style = "font-size:0.92rem; color:#333; margin-bottom:8px;"
+                                            ),
+                                            fluidRow(
+                                              column(4, wellPanel(
+                                                h4("Key Stats"),
+                                                tags$ul(
+                                                  tags$li("Elevated DHEA-S is diagnostic"),
+                                                  tags$li("Normal or low LH levels"),
+                                                  tags$li("Also check: cortisol levels")
+                                                )
+                                              )),
+                                              column(4, wellPanel(
+                                                h4("Symptoms"),
+                                                tags$ul(
+                                                  tags$li("Anxiety and chronic fatigue"),
+                                                  tags$li("Irregular periods under stress"),
+                                                  tags$li("Acne and facial hair"),
+                                                  tags$li("Poor stress tolerance"),
+                                                  tags$li("Sleep disturbances")
+                                                )
+                                              )),
+                                              column(4, wellPanel(
+                                                h4("Management"),
+                                                tags$ul(
+                                                  tags$li("Stress reduction techniques"),
+                                                  tags$li("Adaptogenic herbs (ashwagandha)"),
+                                                  tags$li("Adequate sleep & rest"),
+                                                  tags$li("Supplements: magnesium, vitamin C, B5")
+                                                )
+                                              ))
+                                            ),
+                                            div(class = "tx-note",
+                                                tags$strong("Key marker: "),
+                                                "Elevated DHEA-S with normal insulin levels points to adrenal PCOS. Addressing the root cause —
+               chronic stress and HPA axis dysregulation — is central to recovery."
+                                            )
+                                        )
                                     )
                                 )
-                            )
-                        )
                       )
-             ),
+),
              tabPanel("Inflammatory PCOS",
                       mainPanel(width = "12",
                                 div(class = "tx-page",
