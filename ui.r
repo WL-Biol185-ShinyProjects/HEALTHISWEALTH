@@ -194,97 +194,62 @@ navbarPage("Health is Wealth",
    
                       
              tabPanel("Insulin Resistant PCOS",
-                      fluidPage(
-                        h3("Insulin Resistant PCOS"),
-                        p("The most common type, accounting for ~70% of PCOS cases. Cells fail to
-        respond properly to insulin, causing the body to overproduce it — which
-        stimulates the ovaries to produce excess androgens."),
-                        fluidRow(
-                          column(4, wellPanel(
-                            h4("Key Stats"),
-                            tags$ul(
-                              tags$li("Prevalence: ~70% of PCOS cases"),
-                              tags$li("Key marker: elevated fasting insulin"),
-                              tags$li("Also check: HbA1c, triglycerides, ALT")
-                            )
-                          )),
-                          column(4, wellPanel(
-                            h4("Symptoms"),
-                            tags$ul(
-                              tags$li("Weight gain, especially around the belly"),
-                              tags$li("Irregular or absent periods"),
-                              tags$li("Acne and oily skin"),
-                              tags$li("Hair thinning on scalp"),
-                              tags$li("Brain fog and sugar cravings")
-                            )
-                          )),
-                          column(4, wellPanel(
-                            h4("Management"),
-                            tags$ul(
-                              tags$li("Low-carb, high-protein diet"),
-                              tags$li("Regular exercise"),
-                              tags$li("Prioritise sleep"),
-                              tags$li("Supplements: inositol, berberine, magnesium, chromium")
-                            )
-                          ))
-                        )
-                      )
-             ),  
-             tabPanel("Post-pill PCOS",
                       mainPanel(width = "12",
                                 div(class = "tx-page",
                                     
                                     div(style = "text-align: center;",
                                         tags$img(
-                                          src = "postpill_pcos.png",
+                                          src = "insulin_pcos.png",
                                           width = "400px",
                                           style = "border: 1px solid #e63985; border-radius: 1px;"
                                         )
                                     ),
                                     
                                     div(class = "tx-page-label", "Types of PCOS"),
-                                    div(class = "tx-page-heading", "Post-Pill ", tags$span("PCOS")),
+                                    div(class = "tx-page-heading", "Insulin Resistant ", tags$span("PCOS")),
                                     p(class = "tx-page-intro",
-                                      "Develops after stopping hormonal contraceptives. The pill suppresses ovulation; when discontinued,
-           a surge in LH and androgens can temporarily mimic PCOS symptoms. This type typically resolves
-           within 3-6 months."
+                                      "The most common type, accounting for ~70% of PCOS cases. Cells fail to respond properly to insulin,
+           causing the body to overproduce it — which stimulates the ovaries to produce excess androgens."
                                     ),
                                     
                                     div(class = "tx-card",
                                         div(class = "tx-card-header",
-                                            div(class = "tx-icon tx-icon-purple", "💊"),
+                                            div(class = "tx-icon tx-icon-green", "🍬"),
                                             div(
-                                              p(class = "tx-card-subtitle", "Temporary Type"),
-                                              h3(class = "tx-card-title", "Post-Pill PCOS")
+                                              p(class = "tx-card-subtitle", "Most Common Type"),
+                                              h3(class = "tx-card-title", "Insulin Resistant PCOS")
                                             )
                                         ),
                                         div(class = "tx-card-body",
-                                            div(class = "tx-badge-row", span(class = "tx-badge badge-specialized", "Often Reversible")),
+                                            div(class = "tx-badge-row", span(class = "tx-badge badge-first-line", "~70% of Cases")),
                                             p(class = "tx-desc",
-                                              "Post-pill PCOS develops when the body's hormones take time to rebalance after stopping
-                   hormonal contraceptives. The pill artificially suppresses LH and androgens; once discontinued,
-                   a temporary rebound surge can create PCOS-like symptoms. This is not permanent PCOS and
-                   typically resolves within 3-6 months as the body recalibrates."
+                                              "Insulin resistant PCOS occurs when the body's cells don't respond properly to insulin, leading
+                   to elevated insulin levels. High insulin then signals the ovaries to overproduce androgens,
+                   disrupting ovulation and causing the hallmark symptoms of PCOS. This type is closely tied to
+                   diet, lifestyle, and metabolic health."
                                             ),
                                             p(tags$strong("Key symptoms:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;"),
                                             div(class = "tx-pills",
-                                                span(class = "tx-pill pill-purple", "Cycle irregularity"),
-                                                span(class = "tx-pill pill-purple", "Increased acne"),
-                                                span(class = "tx-pill pill-purple", "Elevated testosterone"),
-                                                span(class = "tx-pill pill-purple", "Mood changes"),
-                                                span(class = "tx-pill pill-purple", "Temporary hair loss")
+                                                span(class = "tx-pill pill-green", "Belly weight gain"),
+                                                span(class = "tx-pill pill-green", "Irregular periods"),
+                                                span(class = "tx-pill pill-green", "Acne & oily skin"),
+                                                span(class = "tx-pill pill-green", "Hair thinning"),
+                                                span(class = "tx-pill pill-green", "Brain fog"),
+                                                span(class = "tx-pill pill-green", "Sugar cravings")
                                             ),
                                             p(tags$strong("Management approaches:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;margin-top:12px;"),
                                             div(class = "tx-pills",
-                                                span(class = "tx-pill pill-purple", "Natural hormone reset"),
-                                                span(class = "tx-pill pill-purple", "Seed cycling"),
-                                                span(class = "tx-pill pill-purple", "Vitex (chasteberry)"),
-                                                span(class = "tx-pill pill-purple", "Liver-supporting foods")
+                                                span(class = "tx-pill pill-green", "Low-carb diet"),
+                                                span(class = "tx-pill pill-green", "Regular exercise"),
+                                                span(class = "tx-pill pill-green", "Prioritise sleep"),
+                                                span(class = "tx-pill pill-green", "Inositol"),
+                                                span(class = "tx-pill pill-green", "Berberine"),
+                                                span(class = "tx-pill pill-green", "Magnesium")
                                             ),
                                             div(class = "tx-note",
-                                                tags$strong("Important: "), "This is not permanent PCOS. Many women are incorrectly diagnosed
-                    after stopping the pill, reassessment after 6 months is recommended before confirming a
-                    PCOS diagnosis. Also check: LH, FSH, and androgens."
+                                                tags$strong("Key marker: "), "Elevated fasting insulin is the hallmark diagnostic indicator.
+                    Also check HbA1c, triglycerides, and ALT. A low-GI diet combined with consistent movement
+                    can significantly reverse symptoms in this type."
                                             )
                                         )
                                     )
