@@ -253,7 +253,7 @@ navbarPage("Health is Wealth",
         .tx-page-heading {
           font-family: 'Playfair Display', serif;
           font-size: 2rem; font-weight: 700;
-          color: #1a1a2e; margin-bottom: 12px; line-height: 1.25;
+          color: #1a1a2e; margin-bottom: 15px; line-height: 1.25;
         }
         .tx-page-heading span { color: #e63985; }
         .tx-page-intro {
