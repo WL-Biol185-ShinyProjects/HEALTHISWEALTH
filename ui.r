@@ -423,5 +423,207 @@ navbarPage("Health is Wealth",
                )
            )
   )
+),
+tabPanel("Data Check Out",
+         tags$head(
+           tags$style(HTML("
+      .dc-page {
+        max-width: 1000px;
+        margin: 36px auto 72px;
+        padding: 0 24px;
+        font-family: 'Source Sans 3', sans-serif;
+      }
+      .dc-page-label {
+        font-size: 0.75rem; font-weight: 700;
+        letter-spacing: 0.15em; text-transform: uppercase;
+        color: #e63985; margin-bottom: 10px;
+      }
+      .dc-page-heading {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem; font-weight: 700;
+        color: #1a1a2e; margin-bottom: 12px; line-height: 1.25;
+      }
+      .dc-page-heading span { color: #e63985; }
+      .dc-page-intro {
+        font-size: 1.05rem; color: #555; line-height: 1.8;
+        margin-bottom: 40px; max-width: 720px;
+      }
+      .dc-layout {
+        display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap;
+      }
+      .dc-sidebar { flex: 0 0 300px; min-width: 260px; }
+      .dc-main    { flex: 1; min-width: 280px; }
+
+      /* form card */
+      .dc-form-card {
+        background: #ffffff; border-radius: 20px;
+        box-shadow: 0 12px 40px rgba(230,57,133,0.10), 0 2px 10px rgba(0,0,0,0.05);
+        border-top: 5px solid #e63985;
+        padding: 28px 28px 32px;
+      }
+      .dc-section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.05rem; font-weight: 700; color: #1a1a2e;
+        margin: 0 0 16px; padding-bottom: 10px;
+        border-bottom: 1px solid #fce8f1;
+      }
+      .dc-form-card label {
+        font-size: 0.88rem; font-weight: 600; color: #444;
+        margin-bottom: 4px; display: block;
+      }
+      .dc-form-card input[type='number'],
+      .dc-form-card select {
+        border: 1.5px solid #f0c0d8 !important;
+        border-radius: 10px !important;
+        font-size: 0.92rem !important;
+        padding: 8px 12px !important;
+        color: #333;
+        width: 100%;
+        margin-bottom: 14px;
+        transition: border-color 0.2s;
+      }
+      .dc-form-card input[type='number']:focus,
+      .dc-form-card select:focus {
+        border-color: #e63985 !important; outline: none;
+        box-shadow: 0 0 0 3px rgba(230,57,133,0.12) !important;
+      }
+      .dc-divider {
+        border: none; border-top: 1px solid #fce8f1; margin: 18px 0;
+      }
+      .dc-submit-btn {
+        width: 100%; padding: 12px;
+        background: linear-gradient(135deg, #e63985, #f0699e) !important;
+        color: #fff !important; font-weight: 700; font-size: 0.95rem;
+        border: none !important; border-radius: 12px !important; cursor: pointer;
+        letter-spacing: 0.04em; text-transform: uppercase;
+        transition: opacity 0.2s, transform 0.15s;
+        margin-top: 6px;
+      }
+      .dc-submit-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+      /* result cards */
+      .dc-result-card {
+        background: #ffffff; border-radius: 20px;
+        box-shadow: 0 12px 40px rgba(230,57,133,0.10), 0 2px 10px rgba(0,0,0,0.05);
+        margin-bottom: 24px; overflow: hidden;
+        border-top: 5px solid #e63985;
+        padding: 26px 30px;
+      }
+      .dc-result-label {
+        font-size: 0.75rem; font-weight: 700;
+        letter-spacing: 0.15em; text-transform: uppercase;
+        color: #e63985; margin-bottom: 6px;
+      }
+      .dc-result-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.3rem; font-weight: 700; color: #1a1a2e;
+        margin-bottom: 14px;
+      }
+
+      /* BMI display */
+      .dc-bmi-row { display: flex; align-items: baseline; gap: 14px; }
+      .dc-bmi-value {
+        font-family: 'Playfair Display', serif;
+        font-size: 3.2rem; font-weight: 900; color: #e63985; line-height: 1;
+      }
+      .dc-bmi-category {
+        font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
+        letter-spacing: 0.1em; color: #888;
+      }
+      .dc-placeholder {
+        text-align: center; padding: 32px 24px;
+        color: #ccc; font-size: 0.95rem;
+      }
+
+      /* health summary table */
+      .dc-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; color: #444; }
+      .dc-table th {
+        text-align: left; padding: 10px 12px;
+        background: linear-gradient(135deg, #fff0f7, #fff8f0);
+        font-size: 0.78rem; font-weight: 700;
+        letter-spacing: 0.07em; text-transform: uppercase; color: #e63985;
+        border-bottom: 2px solid #fce8f1;
+      }
+      .dc-table td { padding: 10px 12px; border-bottom: 1px solid #fce8f1; }
+      .dc-table tr:last-child td { border-bottom: none; }
+
+      /* conclusions */
+      .dc-note {
+        background: linear-gradient(135deg, #fff8fb, #fff4f0);
+        border-left: 4px solid #e63985; border-radius: 10px;
+        padding: 14px 18px; font-size: 0.95rem;
+        color: #555; line-height: 1.75;
+      }
+      .dc-note strong { color: #e63985; }
+      .dc-warning {
+        background: linear-gradient(135deg, #fffbf0, #fff8e8);
+        border-left: 4px solid #f5a623; border-radius: 10px;
+        padding: 14px 18px; font-size: 0.92rem;
+        color: #555; line-height: 1.75; margin-top: 16px;
+      }
+      .dc-warning strong { color: #c47d0e; }
+      .dc-conclusions-list {
+        line-height: 2; padding-left: 18px; margin-bottom: 0;
+      }
+      .dc-conclusions-list li { margin-bottom: 6px; }
+      .dc-conclusions-list li b { color: #1a1a2e; }
+      .dc-conclusions-list li a { color: #e63985; }
+    "))
+         ),
+         div(class = "dc-page",
+             div(class = "dc-page-label", "Personal Assessment"),
+             div(class = "dc-page-heading", "Data ", tags$span("Check Out")),
+             p(class = "dc-page-intro",
+               "Enter your health information below to get a personalised snapshot based on what the data and research tell us about PCOS risk factors."
+             ),
+             
+             div(class = "dc-layout",
+                 
+                 # ── Sidebar / Form ──────────────────────────────────────────
+                 div(class = "dc-sidebar",
+                     div(class = "dc-form-card",
+                         div(class = "dc-section-title", "Step 1: Calculate BMI"),
+                         numericInput("weight", "Weight (kg):",  value = NULL, min = 1),
+                         numericInput("height", "Height (cm):",  value = NULL, min = 1),
+                         tags$hr(class = "dc-divider"),
+                         div(class = "dc-section-title", "Step 2: Health Information"),
+                         numericInput("age", "Age (years):", value = NULL, min = 1, max = 120),
+                         selectInput("menstrual", "Menstrual Regularity:",
+                                     choices = c("Select..." = "", "Regular", "Irregular")),
+                         selectInput("acne", "Acne Severity:",
+                                     choices = c("Select..." = "", "None", "Mild", "Moderate", "Severe")),
+                         selectInput("stress", "Stress Level:",
+                                     choices = c("Select..." = "", "Low", "Medium", "High")),
+                         selectInput("fertility", "Fertility Concern:",
+                                     choices = c("Select..." = "", "Yes", "No")),
+                         selectInput("insulin", "Insulin Resistance:",
+                                     choices = c("Select..." = "", "Yes", "No")),
+                         actionButton("calculate", "Submit", class = "dc-submit-btn btn")
+                     )
+                 ),
+                 
+                 # ── Main / Results ──────────────────────────────────────────
+                 div(class = "dc-main",
+                     
+                     div(class = "dc-result-card",
+                         div(class = "dc-result-label", "BMI Result"),
+                         div(class = "dc-result-title", "Body Mass Index"),
+                         uiOutput("bmi_display")
+                     ),
+                     
+                     div(class = "dc-result-card",
+                         div(class = "dc-result-label", "Health Summary"),
+                         div(class = "dc-result-title", "Your Inputs at a Glance"),
+                         uiOutput("health_summary_styled")
+                     ),
+                     
+                     div(class = "dc-result-card",
+                         div(class = "dc-result-label", "Insights"),
+                         div(class = "dc-result-title", "What the Data Says About Your Case"),
+                         uiOutput("data_conclusions")
+                     )
+                 )
+             )
+         )
 )
 )
