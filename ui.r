@@ -198,18 +198,16 @@ navbarPage("Health is Wealth",
                                 div(class = "tx-page",
                                     
                                     div(style = "text-align: center;",
-                                        tags$img(
                                           src = "insulin_pcos.png",
                                           width = "400px",
                                           style = "border: 1px solid #e63985; border-radius: 1px;"
-                                        )
                                     ),
                                     
                                     div(class = "tx-page-label", "Types of PCOS"),
                                     div(class = "tx-page-heading", "Insulin Resistant ", tags$span("PCOS")),
                                     p(class = "tx-page-intro",
                                       "The most common type, accounting for ~70% of PCOS cases. Cells fail to respond properly to insulin,
-           causing the body to overproduce it — which stimulates the ovaries to produce excess androgens."
+           causing the body to overproduce it which stimulates the ovaries to produce excess androgens."
                                     ),
                                     
                                     div(class = "tx-card",
