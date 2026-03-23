@@ -322,7 +322,6 @@ navbarPage("Health is Wealth",
                                           src = "adrenal_pcos.png",
                                           width = "400px",
                                           style = "border: 1px solid #e63985; border-radius: 1px;"
-                                        )
                                     ),
                                     
                                     div(class = "tx-page-label", "Types of PCOS"),
@@ -383,7 +382,6 @@ navbarPage("Health is Wealth",
                                           src = "inflammatory_pcos.png",
                                           width = "400px",
                                           style = "border: 1px solid #e63985; border-radius: 1px;"
-                                        )
                                     ),
                                     
                                     div(class = "tx-page-label", "Types of PCOS"),
