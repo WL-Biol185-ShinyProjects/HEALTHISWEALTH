@@ -450,7 +450,9 @@ navbarPage("Health is Wealth",
                        tags$strong("Note: "), "OCPs do not treat the underlying metabolic causes of PCOS such as insulin resistance. They are most effective for symptom management and cycle regulation, and are often used alongside lifestyle interventions."
                    )
                )
-           ),
+           )
+       )
+  ),
 tabPanel("Data Check Out",
          tags$head(
            tags$style(HTML("
