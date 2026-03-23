@@ -230,7 +230,67 @@ navbarPage("Health is Wealth",
                         )
                       )
              ),  
-             tabPanel("Post-pill PCOS"),
+             tabPanel("Post-pill PCOS",
+                      mainPanel(width = "12",
+                                div(class = "tx-page",
+                                    
+                                    div(style = "text-align: center;",
+                                        tags$img(
+                                          src = "postpill_pcos.png",
+                                          width = "400px",
+                                          style = "border: 1px solid #e63985; border-radius: 1px;"
+                                        )
+                                    ),
+                                    
+                                    div(class = "tx-page-label", "Types of PCOS"),
+                                    div(class = "tx-page-heading", "Post-Pill ", tags$span("PCOS")),
+                                    p(class = "tx-page-intro",
+                                      "Develops after stopping hormonal contraceptives. The pill suppresses ovulation; when discontinued,
+           a surge in LH and androgens can temporarily mimic PCOS symptoms. This type typically resolves
+           within 3-6 months."
+                                    ),
+                                    
+                                    div(class = "tx-card",
+                                        div(class = "tx-card-header",
+                                            div(class = "tx-icon tx-icon-purple", "💊"),
+                                            div(
+                                              p(class = "tx-card-subtitle", "Temporary Type"),
+                                              h3(class = "tx-card-title", "Post-Pill PCOS")
+                                            )
+                                        ),
+                                        div(class = "tx-card-body",
+                                            div(class = "tx-badge-row", span(class = "tx-badge badge-specialized", "Often Reversible")),
+                                            p(class = "tx-desc",
+                                              "Post-pill PCOS develops when the body's hormones take time to rebalance after stopping
+                   hormonal contraceptives. The pill artificially suppresses LH and androgens; once discontinued,
+                   a temporary rebound surge can create PCOS-like symptoms. This is not permanent PCOS and
+                   typically resolves within 3-6 months as the body recalibrates."
+                                            ),
+                                            p(tags$strong("Key symptoms:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;"),
+                                            div(class = "tx-pills",
+                                                span(class = "tx-pill pill-purple", "Cycle irregularity"),
+                                                span(class = "tx-pill pill-purple", "Increased acne"),
+                                                span(class = "tx-pill pill-purple", "Elevated testosterone"),
+                                                span(class = "tx-pill pill-purple", "Mood changes"),
+                                                span(class = "tx-pill pill-purple", "Temporary hair loss")
+                                            ),
+                                            p(tags$strong("Management approaches:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;margin-top:12px;"),
+                                            div(class = "tx-pills",
+                                                span(class = "tx-pill pill-purple", "Natural hormone reset"),
+                                                span(class = "tx-pill pill-purple", "Seed cycling"),
+                                                span(class = "tx-pill pill-purple", "Vitex (chasteberry)"),
+                                                span(class = "tx-pill pill-purple", "Liver-supporting foods")
+                                            ),
+                                            div(class = "tx-note",
+                                                tags$strong("Important: "), "This is not permanent PCOS. Many women are incorrectly diagnosed
+                    after stopping the pill — reassessment after 6 months is recommended before confirming a
+                    PCOS diagnosis. Also check: LH, FSH, and androgens."
+                                            )
+                                        )
+                                    )
+                                )
+                      )
+             ),
              tabPanel("Adrenal PCOS"),
              tabPanel("Inflammatory PCOS")
   ),
