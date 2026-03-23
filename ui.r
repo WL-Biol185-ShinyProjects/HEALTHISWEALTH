@@ -421,7 +421,7 @@ navbarPage("Health is Wealth",
                        )
                    )
                )
-           )
+           ),
   
   #Card 4: OCPs
   div(class = "tx-card",
