@@ -283,7 +283,7 @@ navbarPage("Health is Wealth",
                                             ),
                                             div(class = "tx-note",
                                                 tags$strong("Important: "), "This is not permanent PCOS. Many women are incorrectly diagnosed
-                    after stopping the pill — reassessment after 6 months is recommended before confirming a
+                    after stopping the pill, reassessment after 6 months is recommended before confirming a
                     PCOS diagnosis. Also check: LH, FSH, and androgens."
                                             )
                                         )
@@ -291,7 +291,68 @@ navbarPage("Health is Wealth",
                                 )
                       )
              ),
-             tabPanel("Adrenal PCOS"),
+             tabPanel("Adrenal PCOS",
+                      mainPanel(width = "12",
+                                div(class = "tx-page",
+                                    
+                                    div(style = "text-align: center;",
+                                        tags$img(
+                                          src = "adrenal_pcos.png",
+                                          width = "400px",
+                                          style = "border: 1px solid #e63985; border-radius: 1px;"
+                                        )
+                                    ),
+                                    
+                                    div(class = "tx-page-label", "Types of PCOS"),
+                                    div(class = "tx-page-heading", "Adrenal ", tags$span("PCOS")),
+                                    p(class = "tx-page-intro",
+                                      "Driven by an overactive stress response rather than insulin. The adrenal glands overproduce DHEA-S
+           in response to chronic stress, causing PCOS symptoms without involving insulin resistance."
+                                    ),
+                                    
+                                    div(class = "tx-card",
+                                        div(class = "tx-card-header",
+                                            div(class = "tx-icon tx-icon-pink", "⚡"),
+                                            div(
+                                              p(class = "tx-card-subtitle", "Stress-Driven Type"),
+                                              h3(class = "tx-card-title", "Adrenal PCOS")
+                                            )
+                                        ),
+                                        div(class = "tx-card-body",
+                                            div(class = "tx-badge-row", span(class = "tx-badge badge-surgical", "Adrenal Androgen Excess")),
+                                            p(class = "tx-desc",
+                                              "Adrenal PCOS is rooted in a dysregulated stress response. When the body is under chronic stress,
+                   the adrenal glands produce excess DHEA-S — an androgen that disrupts the hormonal balance needed
+                   for regular ovulation. Unlike insulin-resistant PCOS, blood sugar and insulin levels are typically
+                   normal in this type, making accurate diagnosis especially important."
+                                            ),
+                                            p(tags$strong("Key symptoms:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;"),
+                                            div(class = "tx-pills",
+                                                span(class = "tx-pill pill-pink", "Anxiety & fatigue"),
+                                                span(class = "tx-pill pill-pink", "Irregular periods"),
+                                                span(class = "tx-pill pill-pink", "Acne & facial hair"),
+                                                span(class = "tx-pill pill-pink", "Poor stress tolerance"),
+                                                span(class = "tx-pill pill-pink", "Sleep disturbances")
+                                            ),
+                                            p(tags$strong("Management approaches:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;margin-top:12px;"),
+                                            div(class = "tx-pills",
+                                                span(class = "tx-pill pill-pink", "Stress reduction"),
+                                                span(class = "tx-pill pill-pink", "Ashwagandha"),
+                                                span(class = "tx-pill pill-pink", "Adequate sleep"),
+                                                span(class = "tx-pill pill-pink", "Magnesium"),
+                                                span(class = "tx-pill pill-pink", "Vitamin C"),
+                                                span(class = "tx-pill pill-pink", "Vitamin B5")
+                                            ),
+                                            div(class = "tx-note",
+                                                tags$strong("Key marker: "), "Elevated DHEA-S with normal insulin levels points to adrenal PCOS.
+                    Also check cortisol levels. Addressing the root cause — chronic stress and HPA axis
+                    dysregulation — is central to recovery."
+                                            )
+                                        )
+                                    )
+                                )
+                      )
+             ),
              tabPanel("Inflammatory PCOS")
   ),
   
