@@ -367,74 +367,80 @@ navbarPage("Health is Wealth",
                       )
              ),
              tabPanel("Inflammatory PCOS",
-                      fluidPage(
-                        div(class = "pcos-page",
-                            div(class = "pcos-page-label", "Understanding PCOS"),
-                            div(class = "pcos-page-heading", "Inflammatory ", tags$span("PCOS")),
-                            p(class = "pcos-page-intro",
-                              "Chronic low-grade inflammation disrupts ovulation and stimulates the adrenal glands to produce
-           androgens. This type is often associated with gut dysbiosis, environmental toxins, and immune
-           system dysregulation."
-                            ),
-                            div(class = "pcos-card",
-                                div(class = "pcos-card-header",
-                                    div(class = "pcos-icon pcos-icon-peach", "\U0001F525"),
-                                    div(
-                                      p(class = "pcos-card-subtitle", "Immune-Driven · Chronic Inflammation"),
-                                      h3(class = "pcos-card-title", "Inflammatory PCOS")
-                                    )
-                                ),
-                                div(class = "pcos-card-body",
-                                    div(class = "pcos-badge-row",
-                                        tags$span(class = "pcos-badge badge-inflam", "Inflammation Driven")
-                                    ),
-                                    fluidRow(
-                                      column(4,
-                                             div(class = "pcos-well",
-                                                 h4("Key Stats"),
-                                                 tags$ul(
-                                                   tags$li("Elevated CRP or white blood cells"),
-                                                   tags$li("May include autoimmune markers"),
-                                                   tags$li("Also check: vitamin D, ferritin, CRP")
-                                                 )
-                                             )
-                                      ),
-                                      column(4,
-                                             div(class = "pcos-well",
-                                                 h4("Symptoms"),
-                                                 tags$ul(
-                                                   tags$li("Fatigue and joint pain"),
-                                                   tags$li("Headaches and skin issues"),
-                                                   tags$li("Digestive problems"),
-                                                   tags$li("Mood disorders"),
-                                                   tags$li("Unexplained weight gain")
-                                                 )
-                                             )
-                                      ),
-                                      column(4,
-                                             div(class = "pcos-well",
-                                                 h4("Management"),
-                                                 tags$ul(
-                                                   tags$li("Anti-inflammatory diet"),
-                                                   tags$li("Omega-3 supplementation"),
-                                                   tags$li("Gut health support"),
-                                                   tags$li("Supplements: turmeric, zinc, vitamin D")
-                                                 )
-                                             )
-                                      )
-                                    ),
-                                    br(),
-                                    div(class = "pcos-note",
-                                        tags$strong("Note: "),
-                                        "Inflammatory markers like CRP, white blood cell count, and homocysteine should be tested.
-               Eliminating inflammatory triggers — gluten, dairy, or processed foods — may significantly
-               reduce symptoms."
-                                    )
-                                )
-                            )
-                        )
+                      tabPanel("Inflammatory PCOS",
+                               fluidPage(
+                                 div(class = "pcos-page",
+                                     div(class = "pcos-page-label", "Understanding PCOS"),
+                                     div(class = "pcos-page-heading", "Inflammatory ", tags$span("PCOS")),
+                                     p(class = "pcos-page-intro",
+                                       "Chronic low-grade inflammation disrupts ovulation and stimulates androgens. Often associated with
+           gut dysbiosis, environmental toxins, and immune system dysregulation."
+                                     ),
+                                     
+                                     div(class = "pcos-card-header",
+                                         div(class = "pcos-icon pcos-icon-peach", "\U0001F525"),
+                                         div(
+                                           p(class = "pcos-card-subtitle", "Immune-Driven · Chronic Inflammation"),
+                                           h3(class = "pcos-card-title", "Inflammatory PCOS")
+                                         )
+                                     ),
+                                     
+                                     div(class = "pcos-card-body",
+                                         div(class = "pcos-badge-row",
+                                             tags$span(class = "pcos-badge badge-inflam", "Inflammation Driven")
+                                         ),
+                                         p(class = "pcos-desc",
+                                           "Inflammatory PCOS is driven by the immune system rather than hormonal contraceptives or insulin.
+             Persistent low-grade inflammation — triggered by gut issues, food sensitivities, or environmental
+             toxins — stimulates androgen production and impairs ovulation. Testing for inflammatory markers
+             is key to identifying and managing this type effectively."
+                                         ),
+                                         p(class = "pcos-col-section-label", "Key Stats, Symptoms & Management:"),
+                                         fluidRow(
+                                           column(4,
+                                                  div(class = "pcos-well",
+                                                      h4("Key Stats"),
+                                                      tags$ul(
+                                                        tags$li("Elevated CRP or white blood cells"),
+                                                        tags$li("May include autoimmune markers"),
+                                                        tags$li("Also check: vitamin D, ferritin, CRP")
+                                                      )
+                                                  )
+                                           ),
+                                           column(4,
+                                                  div(class = "pcos-well",
+                                                      h4("Symptoms"),
+                                                      tags$ul(
+                                                        tags$li("Fatigue and joint pain"),
+                                                        tags$li("Headaches and skin issues"),
+                                                        tags$li("Digestive problems"),
+                                                        tags$li("Mood disorders"),
+                                                        tags$li("Unexplained weight gain")
+                                                      )
+                                                  )
+                                           ),
+                                           column(4,
+                                                  div(class = "pcos-well",
+                                                      h4("Management"),
+                                                      tags$ul(
+                                                        tags$li("Anti-inflammatory diet"),
+                                                        tags$li("Omega-3 supplementation"),
+                                                        tags$li("Gut health support"),
+                                                        tags$li("Supplements: turmeric, zinc, vitamin D")
+                                                      )
+                                                  )
+                                           )
+                                         ),
+                                         div(class = "pcos-note",
+                                             tags$strong("Note: "),
+                                             "Inflammatory markers like CRP, white blood cell count, and homocysteine should be tested.
+             Eliminating inflammatory triggers — gluten, dairy, or processed foods — may significantly
+             reduce symptoms."
+                                         )
+                                     )
+                                 )
+                               )
                       )
-             )
   ),
   
   # ── 4. TREATMENT ──────────────────────────────────────────────────────────
