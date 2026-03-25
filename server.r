@@ -278,7 +278,228 @@ output$data_conclusions <- renderUI({
       ),
       tags$ul(class = "dc-conclusions-list", items),
       warning_banner
+      
     )
   })
 })
+
+library(maps) 
+state_data <- read.csv(
+  "Uterine_corpus_statewise.csv",
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+)
+
+colnames(state_data) <- c(
+  "state",
+  "incidence",
+  "mortality_rate",
+  "death_estimates",
+  "new_cases"
+)
+
+state_data$state <- tolower(trimws(state_data$state))
+state_data$incidence <- as.numeric(state_data$incidence)
+state_data$mortality_rate <- as.numeric(state_data$mortality_rate)
+state_data$death_estimates <- as.numeric(state_data$death_estimates)
+state_data$new_cases <- as.numeric(state_data$new_cases)
+
+state_data$mortality_rate[state_data$state == "kentucky"] <- 8.5
+
+# Built-in US states map
+us_states <- st_as_sf(map("state", plot = FALSE, fill = TRUE))
+us_states$state <- tolower(us_states$ID)
+
+# Join map + data
+map_data_state <- merge(us_states, state_data, by = "state", all.x = TRUE)
+
+output$stateMap <- renderLeaflet({
+  
+  pal <- colorNumeric(
+    palette = c("#e3faff", "#528aae", "#2c67f2", "#000439"),
+    domain = map_data_state$incidence,
+    na.color = "white"
+  )
+  
+  labels <- sprintf(
+    "<strong>%s</strong><br/>Incidence: %s per 100,000",
+    tools::toTitleCase(map_data_state$state),
+    ifelse(
+      is.na(map_data_state$incidence),
+      "No data",
+      round(map_data_state$incidence, 1) )
+  )
+  
+  leaflet(
+    map_data_state,
+    options = leafletOptions(
+      zoomControl = FALSE,
+      dragging = FALSE
+    )
+  ) %>%
+    addPolygons(
+      fillColor = ~pal(incidence),
+      fillOpacity = 0.9,
+      color = "white",
+      weight = 1,
+      label = lapply(labels, htmltools::HTML),
+      highlightOptions = highlightOptions(
+        weight = 2,
+        color = "#e63985",
+        fillOpacity = 1,
+        bringToFront = TRUE
+      )
+    ) %>%
+    addLegend(
+      pal = pal,
+      values = ~incidence,
+      title = "Incidence per 100,000",
+      position = "bottomright"
+    ) %>%
+    setView(lng = -96, lat = 37.8, zoom = 4)
+})
+
+state_data <- read.csv(
+  "Uterine_corpus_statewise.csv",
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+)
+
+output$stateMapMortality <- renderLeaflet({
+  pal <- colorNumeric(
+    palette = c("#e3faff", "#528aae", "#2c67f2", "#000439"),
+    domain = map_data_state$mortality_rate,
+    na.color = "white"
+  )
+  
+  labels <- sprintf(
+    "<strong>%s</strong><br/>Incidence: %s per 100,000",
+    tools::toTitleCase(map_data_state$state),
+    ifelse(
+      is.na(map_data_state$mortality_rate),
+      "No data",
+      round(map_data_state$mortality_rate, 1)
+    )
+  )
+  
+  leaflet(
+    map_data_state,
+    options = leafletOptions(
+      zoomControl = FALSE,
+      dragging = FALSE
+    )
+  ) %>%
+    addPolygons(
+      fillColor = ~pal(mortality_rate),
+      fillOpacity = 0.9,
+      color = "white",
+      weight = 1,
+      label = lapply(labels, htmltools::HTML),
+      highlightOptions = highlightOptions(
+        weight = 2,
+        color = "#e63985",
+        fillOpacity = 1,
+        bringToFront = TRUE
+      )
+    ) %>%
+    addLegend(
+      pal = pal,
+      values = ~mortality_rate,
+      title = "Mortality rate per 100,000",
+      position = "bottomright"
+    ) %>%
+    setView(lng = -96, lat = 37.8, zoom = 4)
+})
+
+output$stateMapDeath <- renderLeaflet({
+  
+  pal <- colorNumeric(
+    palette = c("#e3faff", "#528aae", "#2c67f2", "#000439"),
+    domain = map_data_state$death_estimates,
+    na.color = "#e63985"
+  )
+  
+  labels <- sprintf(
+    "<strong>%s</strong><br/>",
+    tools::toTitleCase(map_data_state$state),
+    ifelse(
+      is.na(map_data_state$death_estimates),
+      "No data",
+      round(map_data_state$death_estimates, 1) )
+  )
+  
+  leaflet(
+    map_data_state,
+    options = leafletOptions(
+      zoomControl = FALSE,
+      dragging = FALSE
+    )
+  ) %>%
+    addPolygons(
+      fillColor = ~pal(death_estimates),
+      fillOpacity = 0.9,
+      color = "white",
+      weight = 1,
+      label = lapply(labels, htmltools::HTML),
+      highlightOptions = highlightOptions(
+        weight = 2,
+        color = "#e63985",
+        fillOpacity = 1,
+        bringToFront = TRUE
+      )
+    ) %>%
+    addLegend(
+      pal = pal,
+      values = ~death_estimates,
+      title = "Death Estimates",
+      position = "bottomright"
+    ) %>%
+    setView(lng = -96, lat = 37.8, zoom = 4)
+})
+output$stateMapNew <- renderLeaflet({
+  
+  pal <- colorNumeric(
+    palette = c("#e3faff", "#528aae", "#2c67f2", "#000439"),
+    domain = map_data_state$new_cases,
+    na.color = "#e63985"
+  )
+  
+  labels <- sprintf(
+    "<strong>%s</strong><br/>",
+    tools::toTitleCase(map_data_state$state),
+    ifelse(
+      is.na(map_data_state$new_cases),
+      "No data",
+      round(map_data_state$new_cases, 1) )
+  )
+  
+  leaflet(
+    map_data_state,
+    options = leafletOptions(
+      zoomControl = FALSE,
+      dragging = FALSE
+    )
+  ) %>%
+    addPolygons(
+      fillColor = ~pal(new_cases),
+      fillOpacity = 0.9,
+      color = "white",
+      weight = 1,
+      label = lapply(labels, htmltools::HTML),
+      highlightOptions = highlightOptions(
+        weight = 2,
+        color = "#e63985",
+        fillOpacity = 1,
+        bringToFront = TRUE
+      )
+    ) %>%
+    addLegend(
+      pal = pal,
+      values = ~new_cases,
+      title = "New Cases",
+      position = "bottomright"
+    ) %>%
+    setView(lng = -96, lat = 37.8, zoom = 4)
+})
+
 }
