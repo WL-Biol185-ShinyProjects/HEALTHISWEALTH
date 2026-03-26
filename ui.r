@@ -57,41 +57,46 @@ navbarPage("Health is Wealth",
         @media (max-width: 600px) { .about-card { padding: 32px 24px; } }
         
           .map-page {
-          max-width: 1100px;
-          margin: 30px auto 60px;
-          padding: 0 24px;
-          font-family: 'Source Sans 3', sans-serif;
-        }
+  max-width: 1500px;
+  margin: 30px auto 60px;
+  padding: 0 24px;
+  font-family: 'Source Sans 3', sans-serif;
+}
         .map-label {
-          font-size: 1.5rem; font-weight: 700;
+          font-size:10rem; font-weight: 700;
           letter-spacing: 0.15em; text-transform: uppercase;
           color: #e63985; margin-bottom: 10px;
         }
         .map-heading {
-          font-family: 'Playfair Display', serif;
-          font-size: 3rem; font-weight: 700;
-          color: #1a1a2e; margin-bottom: 10px; line-height: 1.25;
-        }
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;        
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 24px;
+  line-height: 1.25;
+}
         .map-heading span { color: #e63985; }
         .map-intro {
           font-size: 2.0rem; color: #555; line-height: 1.8;
           margin-bottom: 28px; max-width: 780px;
         }
         .map-card {
-          background: #ffffff;
-          border-radius: 20px;
-          box-shadow: 0 12px 40px rgba(230,57,133,0.10), 0 2px 10px rgba(0,0,0,0.05);
-          overflow: hidden;
-          border-top: 5px solid #e63985;
-          padding: 8px;
-        }
-        .map-card .leaflet-container {
-          border-radius: 14px;
-        }
-        .map-source {
-          font-size: 0.78rem; color: #aaa;
-          margin-top: 12px; text-align: right;
-        }
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(230,57,133,0.12), 0 4px 16px rgba(0,0,0,0.06);
+  overflow: hidden;
+  border-top: 6px solid #e63985;
+  padding: 16px;
+}
+       .map-card {
+  margin-top: 20px;
+  padding: 0;
+  width: 100%;
+}
+
+.map-card .leaflet-container {
+  border-radius: 14px;
+}
         
         .hero-section {
   width: 100;
@@ -117,6 +122,23 @@ navbarPage("Health is Wealth",
   color: #333;
   font-weight: 400;
 }
+.hero-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 3.0rem;
+  font-family: 'Playfair Display', serif;
+  color: #e63985;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid #e63985;
+  padding-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.hero-link:hover {
+  color: #c2185b;
+  border-color: #c2185b;
+}
 
       ")), 
            ),
@@ -124,6 +146,13 @@ navbarPage("Health is Wealth",
                div(class = "hero-section",
                    div(class = "hero-title", "PCOS"),
                    div(class = "hero-subtitle", "The risk you don’t see")
+               ),
+               div(style = "text-align: center; margin-top: 10px; margin-bottom: 20px;",
+                   tags$a(
+                     href = "#globalMaps",
+                     "Checkout Global PCOS Data",
+                     class = "hero-link"
+                   )
                ),
                div(class = "about-card",
                    div(class = "about-label", "About This Project"),
@@ -152,16 +181,22 @@ navbarPage("Health is Wealth",
                    )
                ),
                div(style = "height: 60px;"),
-               # ── Word Cloud card ── (placed BEFORE Causes)
-               div(class = "about-card",
+               
+               div(style = "text-align: center;",
+                   
                    div(class = "about-label", "Word Cloud"),
+                   
                    div(class = "about-heading",
                        "PCOS ", tags$span("Key Terms")
                    ),
+                   
                    p(class = "about-text",
                      "A visual snapshot of the most common terms associated with PCOS — from symptoms and hormones to diagnosis and treatment."
                    ),
-                   wordcloud2Output("wordcloud", width = "100%", height = "200px")
+                   
+                   div(style = "margin-top: 20px;",
+                       plotOutput("wordcloud", width = "100%", height = "400px")
+                   )
                ),
                
                div(style = "height: 60px;"),
@@ -212,30 +247,35 @@ navbarPage("Health is Wealth",
     
   # ── 4. MAP 1990 ──
   
-  div(class = "map-page",
+  div( id= "globalMaps", class = "about-section",
+      
       div(class = "map-label", "Epidemiology"),
-      div(class = "map-heading", "Global PCOS ", tags$span("Incidence (1990)")),
-      p(class = "map-intro",
+      div(class = "map-heading", "Global PCOS ", tags$span("Incidence (1990)"),
+          style = "font-size: 3.0rem;"),
+      p(class = "map-intro", 
+        style = "font-size: 1.5rem;",
         "This map shows country-level PCOS incidence rates per 100,000 women of reproductive age in 1990. Hover over any country to see its specific values."
       ),
       div(class = "map-card",
-          leafletOutput("pcosMap1990", height = "520px")   # <-- pcosMap1990
+          leafletOutput("pcosMap1990", height = "650px")   # <-- pcosMap1990
       ),
       p(class = "map-source", "Source: PCOS Dataset · Values per 100,000 women aged 15–49")
   ),
   # ── 3. MAP 2021 ──
- 
-           div(class = "map-page",  
+  div(class = "about-section",
+        
                div(class = "map-label", "Epidemiology"),
-               div(class = "map-heading", "Global PCOS ", tags$span("Incidence (2021)")),
+               div(class = "map-heading", "Global PCOS ", tags$span("Incidence (2021)"),
+                   style = "font-size: 3.0rem;"),
                p(class = "map-intro",
+                 style = "font-size: 1.5rem;",
                  "This map shows country-level PCOS incidence rates per 100,000 women of reproductive age in 2021. Hover over any country to see its specific values."
                ),
                div(class = "map-card",
-                   leafletOutput("pcosMap", height = "520px")   # <-- pcosMap
+                   leafletOutput("pcosMap", height = "650px")   # <-- pcosMap
                ),
                p(class = "map-source", "Source: PCOS Dataset · Values per 100,000 women aged 15–49")
-          ) ),
+         ) ),
 
   
   # ── 2. TYPES OF PCOS ──────────────────────────────────────────────────────

@@ -9,6 +9,8 @@ library(rnaturalearth)
 library(sf)
 library(maps)
 library(shinyjs)
+library(ggplot2)
+library(ggwordcloud)
 
 server <- function(input, output, session) {
   
@@ -51,7 +53,10 @@ server <- function(input, output, session) {
   
   
   # ── WORD CLOUD (premade) ──────────────────────────────────────────────────
-  output$wordcloud <- renderWordcloud2({
+  output$wordcloud <- renderPlot({
+    
+    library(ggplot2)
+    library(ggwordcloud)
     
     df <- data.frame(
       word = c(
@@ -80,18 +85,26 @@ server <- function(input, output, session) {
       )
     )
     
-    df$freq <- log(df$freq)
-    
-    wordcloud2(
-      data            = df,
-      size            = 2.5,
-      minSize         = 10,
-      gridSize        = 5,
-      color           = c("#FF69B4", "#FF1493", "#FFB6C1", "#DB7093", "#C71585"),
-      fontFamily      = "Source Sans 3, sans-serif",
-      rotateRatio     = 0.2,
-      backgroundColor = "white"
-    )
+    ggplot(df, aes(label = word, size = freq, color = freq)) +
+      geom_text_wordcloud_area(
+        rm_outside = TRUE,
+        padding = 1.0,
+        eccentricity = 0.7,
+        max_steps = 10000
+        
+      ) +
+      scale_size_area(max_size = 90) +
+      scale_color_gradientn(colors = c("#FFB6C1", "#FF69B4", "#FF1493", "#DB7093", "#C71585")) +
+      theme_minimal() +
+      theme(
+        plot.background = element_rect(fill = "white", color = NA),
+        panel.background = element_rect(fill = "white", color = NA),
+        panel.grid = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank(),
+        axis.ticks = element_blank(),
+        legend.position = "none"
+      )
   })
   # ── GLOBAL PCOS MAP 2021 ──────────────────────────────────────────────────
   
