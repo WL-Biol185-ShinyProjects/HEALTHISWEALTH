@@ -959,12 +959,12 @@ tabPanel("Data Check Out",
       }
       .dc-page-heading {
         font-family: 'Playfair Display', serif;
-        font-size: 4.0rem; font-weight: 700;
+        font-size: 3.0rem; font-weight: 700;
         color: #1a1a2e; margin-bottom: 12px; line-height: 1.25;
       }
       .dc-page-heading span { color: #e63985; }
       .dc-page-intro {
-        font-size: 1.6rem; color: #555; line-height: 1.8;
+        font-size: 1.5rem; color: #555; line-height: 1.8;
         margin-bottom: 40px; max-width: 2000px;
       }
       .dc-layout {
@@ -973,26 +973,28 @@ tabPanel("Data Check Out",
       .dc-sidebar { flex: 0 0 300px; min-width: 260px; }
       .dc-main    { flex: 1; min-width: 280px; }
 
-      .dc-form-card input[type='number'],
-.dc-form-card select {
-  padding: 12px 14px !important;
-  font-size: 1.3rem !important;
-}
+      /* form card */
+      .dc-form-card {
+        background: #ffffff; border-radius: 20px;
+        box-shadow: 0 12px 40px rgba(230,57,133,0.10), 0 2px 10px rgba(0,0,0,0.05);
+        border-top: 5px solid #e63985;
+        padding: 28px 28px 32px;
+      }
       .dc-section-title {
         font-family: 'Playfair Display', serif;
-        font-size: 3.0rem; font-weight: 700; color: #1a1a2e;
+        font-size: 1.05rem; font-weight: 700; color: #1a1a2e;
         margin: 0 0 16px; padding-bottom: 10px;
         border-bottom: 1px solid #fce8f1;
       }
       .dc-form-card label {
-        font-size: 1.5rem; font-weight: 600; color: #444;
+        font-size: 0.88rem; font-weight: 600; color: #444;
         margin-bottom: 4px; display: block;
       }
       .dc-form-card input[type='number'],
       .dc-form-card select {
         border: 1.5px solid #f0c0d8 !important;
         border-radius: 10px !important;
-        font-size: 1.3rem !important;
+        font-size: 0.92rem !important;
         padding: 8px 12px !important;
         color: #333;
         width: 100%;
@@ -1010,7 +1012,7 @@ tabPanel("Data Check Out",
       .dc-submit-btn {
         width: 100%; padding: 12px;
         background: linear-gradient(135deg, #e63985, #f0699e) !important;
-        color: #fff !important; font-weight: 700; font-size: 1.3rem;
+        color: #fff !important; font-weight: 700; font-size: 0.95rem;
         border: none !important; border-radius: 12px !important; cursor: pointer;
         letter-spacing: 0.04em; text-transform: uppercase;
         transition: opacity 0.2s, transform 0.15s;
@@ -1027,13 +1029,13 @@ tabPanel("Data Check Out",
         padding: 26px 30px;
       }
       .dc-result-label {
-        font-size: 2.0rem; font-weight: 700;
+        font-size: 0.75rem; font-weight: 700;
         letter-spacing: 0.15em; text-transform: uppercase;
         color: #e63985; margin-bottom: 6px;
       }
       .dc-result-title {
         font-family: 'Playfair Display', serif;
-        font-size: 2.0rem; font-weight: 700; color: #1a1a2e;
+        font-size: 1.3rem; font-weight: 700; color: #1a1a2e;
         margin-bottom: 14px;
       }
 
@@ -1044,7 +1046,7 @@ tabPanel("Data Check Out",
         font-size: 3.2rem; font-weight: 900; color: #e63985; line-height: 1;
       }
       .dc-bmi-category {
-        font-size: 1.5rem; font-weight: 700; text-transform: uppercase;
+        font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
         letter-spacing: 0.1em; color: #888;
       }
       .dc-placeholder {
@@ -1053,11 +1055,11 @@ tabPanel("Data Check Out",
       }
 
       /* health summary table */
-      .dc-table { width: 100%; border-collapse: collapse; font-size: 2.0rem; color: #444; }
+      .dc-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; color: #444; }
       .dc-table th {
         text-align: left; padding: 10px 12px;
         background: linear-gradient(135deg, #fff0f7, #fff8f0);
-        font-size: 2.0rem; font-weight: 700;
+        font-size: 0.78rem; font-weight: 700;
         letter-spacing: 0.07em; text-transform: uppercase; color: #e63985;
         border-bottom: 2px solid #fce8f1;
       }
@@ -1068,29 +1070,20 @@ tabPanel("Data Check Out",
       .dc-note {
         background: linear-gradient(135deg, #fff8fb, #fff4f0);
         border-left: 4px solid #e63985; border-radius: 10px;
-        padding: 14px 18px; font-size:2.0rem;
+        padding: 14px 18px; font-size: 0.95rem;
         color: #555; line-height: 1.75;
       }
       .dc-note strong { color: #e63985; }
       .dc-warning {
         background: linear-gradient(135deg, #fffbf0, #fff8e8);
         border-left: 4px solid #f5a623; border-radius: 10px;
-        padding: 14px 18px; font-size:2.0rem;
+        padding: 14px 18px; font-size: 0.92rem;
         color: #555; line-height: 1.75; margin-top: 16px;
       }
       .dc-warning strong { color: #c47d0e; }
       .dc-conclusions-list {
         line-height: 2; padding-left: 18px; margin-bottom: 0;
       }
-      .dc-conclusions-list li {
-  font-size: 2.0rem;
-  line-height: 2;
-}
-
-.dc-conclusions-list li b {
-  font-size: 2.1rem;
-  font-weight: 700;
-}
       .dc-conclusions-list li { margin-bottom: 6px; }
       .dc-conclusions-list li b { color: #1a1a2e; }
       .dc-conclusions-list li a { color: #e63985; }
@@ -1478,140 +1471,279 @@ tabPanel("About Us",
 )
 # ── REFERENCES ──────────────────────────────────────────────────────────────
 tabPanel("References",
-         mainPanel(width = 12,
-                   div(class = "tx-page",
-                       div(class = "tx-page-label", "Sources & Citations"),
-                       div(class = "tx-page-heading", "References"),
-                       p(class = "tx-page-intro",
-                         "The following sources were used in the development of this application, including clinical literature, public health resources, and data repositories."
-                       ),
-                       
-                       # Card 1: Peer-Reviewed
-                       div(class = "tx-card",
-                           div(class = "tx-card-header",
-                               div(class = "tx-toggle-left",
-                                   div(class = "tx-icon tx-icon-purple", "📚"),
-                                   div(
-                                     p(class = "tx-card-subtitle", "Academic & Clinical Sources"),
-                                     h3(class = "tx-card-title", "Peer-Reviewed Literature")
-                                   )
-                               )
-                           ),
-                           div(class = "tx-card-body",
-                               tags$ol(
-                                 tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                         "Genetic Basis of Polycystic Ovary Syndrome (PCOS): Current Perspectives.",
-                                         tags$em(" PubMed Central, U.S. National Library of Medicine. "),
-                                         tags$a(href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7959048/", target="_blank",
-                                                "View article", style="color:#e63985;")
-                                 ),
-                                 tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                         "Article. PubMed Central, U.S. National Library of Medicine. ",
-                                         tags$a(href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12221545/", target="_blank",
-                                                "View article", style="color:#e63985;")
-                                 ),
-                                 tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                         "Genetics and Genomics of Endometriosis.",
-                                         tags$em(" PubMed Central, U.S. National Library of Medicine.")
-                                 ),
-                                 tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                         "Mitochondrial Dysfunction in PCOS: Insights into Reproductive Organ Pathophysiology.",
-                                         tags$em(" PubMed Central, U.S. National Library of Medicine.")
-                                 ),
-                                 tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                         "Polycystic Ovary Syndrome, Metabolic Syndrome, and Inflammation in the Hispanic Community Health Study/Study of Latinos.",
-                                         tags$em(" PubMed Central, U.S. National Library of Medicine.")
-                                 ),
-                                 tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                         "Risk for Premenstrual Dysphoric Disorder is Associated with Genetic Variation in ESR1, the Estrogen Receptor Alpha Gene.",
-                                         tags$em(" PubMed Central, U.S. National Library of Medicine.")
+  mainPanel(width = 12,
+    div(class = "tx-page",
+      div(class = "tx-page-label", "Sources & Citations"),
+      div(class = "tx-page-heading", "References"),
+      p(class = "tx-page-intro",
+        "The following sources were used in the development of this application, including clinical literature, public health resources, and data repositories."
+      ),
+
+      # Card 1: Peer-Reviewed
+      div(class = "tx-card",
+          div(class = "tx-card-header",
+              div(class = "tx-toggle-left",
+                  div(class = "tx-icon tx-icon-purple", "📚"),
+                  div(
+                    p(class = "tx-card-subtitle", "Academic & Clinical Sources"),
+                    h3(class = "tx-card-title", "Peer-Reviewed Literature")
+                  )
+              )
+          ),
+          div(class = "tx-card-body",
+              tags$ol(
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "Genetic Basis of Polycystic Ovary Syndrome (PCOS): Current Perspectives.",
+                  tags$em(" PubMed Central, U.S. National Library of Medicine. "),
+                  tags$a(href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7959048/", target="_blank",
+                         "View article", style="color:#e63985;")
+                ),
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "Article. PubMed Central, U.S. National Library of Medicine. ",
+                  tags$a(href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12221545/", target="_blank",
+                         "View article", style="color:#e63985;")
+                ),
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "Genetics and Genomics of Endometriosis.",
+                  tags$em(" PubMed Central, U.S. National Library of Medicine.")
+                ),
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "Mitochondrial Dysfunction in PCOS: Insights into Reproductive Organ Pathophysiology.",
+                  tags$em(" PubMed Central, U.S. National Library of Medicine.")
+                ),
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "Polycystic Ovary Syndrome, Metabolic Syndrome, and Inflammation in the Hispanic Community Health Study/Study of Latinos.",
+                  tags$em(" PubMed Central, U.S. National Library of Medicine.")
+                ),
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "Risk for Premenstrual Dysphoric Disorder is Associated with Genetic Variation in ESR1, the Estrogen Receptor Alpha Gene.",
+                  tags$em(" PubMed Central, U.S. National Library of Medicine.")
+                )
+              )
+          )
+      ),
+
+      # Card 2: Medical & Public Health
+      div(class = "tx-card",
+          div(class = "tx-card-header",
+              div(class = "tx-toggle-left",
+                  div(class = "tx-icon tx-icon-pink", "🏥"),
+                  div(
+                    p(class = "tx-card-subtitle", "Health Organisations & Clinics"),
+                    h3(class = "tx-card-title", "Medical & Public Health Sources")
+                  )
+              )
+          ),
+          div(class = "tx-card-body",
+              tags$ol(start = "7",
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "Fact Sheets. Office on Women's Health, U.S. Department of Health & Human Services. ",
+                  tags$a(href="https://womenshealth.gov/patient-materials/resource/fact-sheets", target="_blank",
+                         "View source", style="color:#e63985;")
+                ),
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "What Is PCOS? WebMD. ",
+                  tags$a(href="https://www.webmd.com/women/what-is-pcos", target="_blank",
+                         "View source", style="color:#e63985;")
+                ),
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "What Is PCOS and Can It Be Cured? OSF HealthCare. ",
+                  tags$a(href="https://www.osfhealthcare.org/blog/what-is-pcos-and-can-it-be-cured", target="_blank",
+                         "View source", style="color:#e63985;")
+                ),
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "Premenstrual Dysphoric Disorder (PMDD). Mayo Clinic. ",
+                  tags$a(href="https://www.mayoclinic.org/diseases-conditions/premenstrual-syndrome/expert-answers/pmdd/faq-20058315", target="_blank",
+                         "View source", style="color:#e63985;")
+                ),
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "PCOS: What Is It and Can It Affect Fertility? MyOvary. ",
+                  tags$a(href="https://www.myovry.ca/blogs/health-science/pcos-what-is-it-and-can-it-affect-fertility", target="_blank",
+                         "View source", style="color:#e63985;")
+                )
+              )
+          )
+      ),
+
+      # Card 3: Additional Resources
+      div(class = "tx-card",
+          div(class = "tx-card-header",
+              div(class = "tx-toggle-left",
+                  div(class = "tx-icon tx-icon-green", "🔗"),
+                  div(
+                    p(class = "tx-card-subtitle", "Nutrition, PCOS Types & Data"),
+                    h3(class = "tx-card-title", "Additional Resources")
+                  )
+              )
+          ),
+          div(class = "tx-card-body",
+              tags$ol(start = "12",
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "30 Interesting Facts About PCOS. Nutrition Care of Rochester. ",
+                  tags$a(href="https://www.nutritioncareofrochester.com/articles/30-interesting-facts-about-pcos", target="_blank",
+                         "View source", style="color:#e63985;")
+                ),
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "4 Types of PCOS and How to Know Which One You Have. Emily Jensen Nutrition. ",
+                  tags$a(href="https://www.emilyjensennutrition.com/blog/4-types-of-pcos-and-how-to-know-which-one-you-have", target="_blank",
+                         "View source", style="color:#e63985;")
+                ),
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "The Four Types of PCOS and Their Symptoms. Rosa Gynecology. ",
+                  tags$a(href="https://rosagynecology.com/the-four-types-of-pcos-and-their-symptoms/", target="_blank",
+                         "View source", style="color:#e63985;")
+                ),
+                tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                  "PCOS Prediction Dataset (Top 75 Countries). Kaggle. ",
+                  tags$a(href="https://www.kaggle.com/datasets/ankushpanday1/pcos-prediction-datasettop-75-countries", target="_blank",
+                         "View source", style="color:#e63985;")
+                )
+              ),
+              div(class = "tx-note",
+                  tags$strong("Note: "),
+                  "All references were accessed during the development of this application. URLs were correct at time of access. Some links may require institutional access."
+              )
+          )
+      )
+    )
+  )
+  # ── REFERENCES ──────────────────────────────────────────────────────────────
+  tabPanel("References",
+           mainPanel(width = 12,
+                     div(class = "tx-page",
+                         div(class = "tx-page-label", "Sources & Citations"),
+                         div(class = "tx-page-heading", "References"),
+                         p(class = "tx-page-intro",
+                           "The following sources were used in the development of this application, including clinical literature, public health resources, and data repositories."
+                         ),
+                         
+                         # Card 1: Peer-Reviewed
+                         div(class = "tx-card",
+                             div(class = "tx-card-header",
+                                 div(class = "tx-toggle-left",
+                                     div(class = "tx-icon tx-icon-purple", "📚"),
+                                     div(
+                                       p(class = "tx-card-subtitle", "Academic & Clinical Sources"),
+                                       h3(class = "tx-card-title", "Peer-Reviewed Literature")
+                                     )
                                  )
-                               )
-                           )
-                       ),
-                       
-                       # Card 2: Medical & Public Health
-                       div(class = "tx-card",
-                           div(class = "tx-card-header",
-                               div(class = "tx-toggle-left",
-                                   div(class = "tx-icon tx-icon-pink", "🏥"),
-                                   div(
-                                     p(class = "tx-card-subtitle", "Health Organisations & Clinics"),
-                                     h3(class = "tx-card-title", "Medical & Public Health Sources")
+                             ),
+                             div(class = "tx-card-body",
+                                 tags$ol(
+                                   tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                           "Genetic Basis of Polycystic Ovary Syndrome (PCOS): Current Perspectives.",
+                                           tags$em(" PubMed Central, U.S. National Library of Medicine. "),
+                                           tags$a(href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7959048/", target="_blank",
+                                                  "View article", style="color:#e63985;")
+                                   ),
+                                   tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                           "Article. PubMed Central, U.S. National Library of Medicine. ",
+                                           tags$a(href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12221545/", target="_blank",
+                                                  "View article", style="color:#e63985;")
+                                   ),
+                                   tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                           "Genetics and Genomics of Endometriosis.",
+                                           tags$em(" PubMed Central, U.S. National Library of Medicine.")
+                                   ),
+                                   tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                           "Mitochondrial Dysfunction in PCOS: Insights into Reproductive Organ Pathophysiology.",
+                                           tags$em(" PubMed Central, U.S. National Library of Medicine.")
+                                   ),
+                                   tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                           "Polycystic Ovary Syndrome, Metabolic Syndrome, and Inflammation in the Hispanic Community Health Study/Study of Latinos.",
+                                           tags$em(" PubMed Central, U.S. National Library of Medicine.")
+                                   ),
+                                   tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                           "Risk for Premenstrual Dysphoric Disorder is Associated with Genetic Variation in ESR1, the Estrogen Receptor Alpha Gene.",
+                                           tags$em(" PubMed Central, U.S. National Library of Medicine.")
                                    )
-                               )
-                           ),
-                           div(class = "tx-card-body",
-                               tags$ol(start = "7",
-                                       tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                               "Fact Sheets. Office on Women's Health, U.S. Department of Health & Human Services. ",
-                                               tags$a(href="https://womenshealth.gov/patient-materials/resource/fact-sheets", target="_blank",
-                                                      "View source", style="color:#e63985;")
-                                       ),
-                                       tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                               "What Is PCOS? WebMD. ",
-                                               tags$a(href="https://www.webmd.com/women/what-is-pcos", target="_blank",
-                                                      "View source", style="color:#e63985;")
-                                       ),
-                                       tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                               "What Is PCOS and Can It Be Cured? OSF HealthCare. ",
-                                               tags$a(href="https://www.osfhealthcare.org/blog/what-is-pcos-and-can-it-be-cured", target="_blank",
-                                                      "View source", style="color:#e63985;")
-                                       ),
-                                       tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                               "Premenstrual Dysphoric Disorder (PMDD). Mayo Clinic. ",
-                                               tags$a(href="https://www.mayoclinic.org/diseases-conditions/premenstrual-syndrome/expert-answers/pmdd/faq-20058315", target="_blank",
-                                                      "View source", style="color:#e63985;")
-                                       ),
-                                       tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                               "PCOS: What Is It and Can It Affect Fertility? MyOvary. ",
-                                               tags$a(href="https://www.myovry.ca/blogs/health-science/pcos-what-is-it-and-can-it-affect-fertility", target="_blank",
-                                                      "View source", style="color:#e63985;")
-                                       )
-                               )
-                           )
-                       ),
-                       
-                       # Card 3: Additional Resources
-                       div(class = "tx-card",
-                           div(class = "tx-card-header",
-                               div(class = "tx-toggle-left",
-                                   div(class = "tx-icon tx-icon-green", "🔗"),
-                                   div(
-                                     p(class = "tx-card-subtitle", "Nutrition, PCOS Types & Data"),
-                                     h3(class = "tx-card-title", "Additional Resources")
-                                   )
-                               )
-                           ),
-                           div(class = "tx-card-body",
-                               tags$ol(start = "12",
-                                       tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                               "30 Interesting Facts About PCOS. Nutrition Care of Rochester. ",
-                                               tags$a(href="https://www.nutritioncareofrochester.com/articles/30-interesting-facts-about-pcos", target="_blank",
-                                                      "View source", style="color:#e63985;")
-                                       ),
-                                       tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                               "4 Types of PCOS and How to Know Which One You Have. Emily Jensen Nutrition. ",
-                                               tags$a(href="https://www.emilyjensennutrition.com/blog/4-types-of-pcos-and-how-to-know-which-one-you-have", target="_blank",
-                                                      "View source", style="color:#e63985;")
-                                       ),
-                                       tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                               "The Four Types of PCOS and Their Symptoms. Rosa Gynecology. ",
-                                               tags$a(href="https://rosagynecology.com/the-four-types-of-pcos-and-their-symptoms/", target="_blank",
-                                                      "View source", style="color:#e63985;")
-                                       ),
-                                       tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                               "PCOS Prediction Dataset (Top 75 Countries). Kaggle. ",
-                                               tags$a(href="https://www.kaggle.com/datasets/ankushpanday1/pcos-prediction-datasettop-75-countries", target="_blank",
-                                                      "View source", style="color:#e63985;")
-                                       )
-                               ),
-                               div(class = "tx-note",
-                                   tags$strong("Note: "),
-                                   "All references were accessed during the development of this application. URLs were correct at time of access. Some links may require institutional access."
-                               )
-                           )
-                       )
-                   )
-         )
+                                 )
+                             )
+                         ),
+                         
+                         # Card 2: Medical & Public Health
+                         div(class = "tx-card",
+                             div(class = "tx-card-header",
+                                 div(class = "tx-toggle-left",
+                                     div(class = "tx-icon tx-icon-pink", "🏥"),
+                                     div(
+                                       p(class = "tx-card-subtitle", "Health Organisations & Clinics"),
+                                       h3(class = "tx-card-title", "Medical & Public Health Sources")
+                                     )
+                                 )
+                             ),
+                             div(class = "tx-card-body",
+                                 tags$ol(start = "7",
+                                         tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                 "Fact Sheets. Office on Women's Health, U.S. Department of Health & Human Services. ",
+                                                 tags$a(href="https://womenshealth.gov/patient-materials/resource/fact-sheets", target="_blank",
+                                                        "View source", style="color:#e63985;")
+                                         ),
+                                         tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                 "What Is PCOS? WebMD. ",
+                                                 tags$a(href="https://www.webmd.com/women/what-is-pcos", target="_blank",
+                                                        "View source", style="color:#e63985;")
+                                         ),
+                                         tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                 "What Is PCOS and Can It Be Cured? OSF HealthCare. ",
+                                                 tags$a(href="https://www.osfhealthcare.org/blog/what-is-pcos-and-can-it-be-cured", target="_blank",
+                                                        "View source", style="color:#e63985;")
+                                         ),
+                                         tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                 "Premenstrual Dysphoric Disorder (PMDD). Mayo Clinic. ",
+                                                 tags$a(href="https://www.mayoclinic.org/diseases-conditions/premenstrual-syndrome/expert-answers/pmdd/faq-20058315", target="_blank",
+                                                        "View source", style="color:#e63985;")
+                                         ),
+                                         tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                 "PCOS: What Is It and Can It Affect Fertility? MyOvary. ",
+                                                 tags$a(href="https://www.myovry.ca/blogs/health-science/pcos-what-is-it-and-can-it-affect-fertility", target="_blank",
+                                                        "View source", style="color:#e63985;")
+                                         )
+                                 )
+                             )
+                         ),
+                         
+                         # Card 3: Additional Resources
+                         div(class = "tx-card",
+                             div(class = "tx-card-header",
+                                 div(class = "tx-toggle-left",
+                                     div(class = "tx-icon tx-icon-green", "🔗"),
+                                     div(
+                                       p(class = "tx-card-subtitle", "Nutrition, PCOS Types & Data"),
+                                       h3(class = "tx-card-title", "Additional Resources")
+                                     )
+                                 )
+                             ),
+                             div(class = "tx-card-body",
+                                 tags$ol(start = "12",
+                                         tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                 "30 Interesting Facts About PCOS. Nutrition Care of Rochester. ",
+                                                 tags$a(href="https://www.nutritioncareofrochester.com/articles/30-interesting-facts-about-pcos", target="_blank",
+                                                        "View source", style="color:#e63985;")
+                                         ),
+                                         tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                 "4 Types of PCOS and How to Know Which One You Have. Emily Jensen Nutrition. ",
+                                                 tags$a(href="https://www.emilyjensennutrition.com/blog/4-types-of-pcos-and-how-to-know-which-one-you-have", target="_blank",
+                                                        "View source", style="color:#e63985;")
+                                         ),
+                                         tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                 "The Four Types of PCOS and Their Symptoms. Rosa Gynecology. ",
+                                                 tags$a(href="https://rosagynecology.com/the-four-types-of-pcos-and-their-symptoms/", target="_blank",
+                                                        "View source", style="color:#e63985;")
+                                         ),
+                                         tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                 "PCOS Prediction Dataset (Top 75 Countries). Kaggle. ",
+                                                 tags$a(href="https://www.kaggle.com/datasets/ankushpanday1/pcos-prediction-datasettop-75-countries", target="_blank",
+                                                        "View source", style="color:#e63985;")
+                                         )
+                                 ),
+                                 div(class = "tx-note",
+                                     tags$strong("Note: "),
+                                     "All references were accessed during the development of this application. URLs were correct at time of access. Some links may require institutional access."
+                                 )
+                             )
+                         )
+                     )
+           )
+  )
 )
