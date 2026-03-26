@@ -1,6 +1,7 @@
 library(shiny)
 library(bslib)
 library(leaflet)
+library(shinyjs)
 
 navbarPage("Health is Wealth",
             tabPanel("About",
@@ -11,7 +12,7 @@ navbarPage("Health is Wealth",
         body { font-family: 'Source Sans 3', sans-serif; }
 
         .about-section {
-          max-width: 1100px;
+          max-width: 1500px;
           margin: 30px auto 60px;
           padding: 0 24px;
         }
@@ -23,17 +24,17 @@ navbarPage("Health is Wealth",
           border-top: 6px solid #e63985;
         }
         .about-label {
-          font-size: 0.75rem; font-weight: 700;
+          font-size: 1.5rem; font-weight: 700;
           letter-spacing: 0.15em; text-transform: uppercase;
           color: #e63985; margin-bottom: 12px;
         }
         .about-heading {
           font-family: 'Playfair Display', serif;
-          font-size: 2rem; font-weight: 700;
+          font-size: 3rem; font-weight: 700;
           color: #1a1a2e; margin-bottom: 24px; line-height: 1.25;
         }
         .about-heading span { color: #e63985; }
-        .about-text { font-size: 1.05rem; line-height: 1.85; color: #444; margin-bottom: 18px; }
+        .about-text { font-size: 2.0rem; line-height: 1.85; color: #444; margin-bottom: 18px; }
         .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 32px; }
         .stat-pill {
           flex: 1; min-width: 150px;
@@ -58,18 +59,18 @@ navbarPage("Health is Wealth",
           font-family: 'Source Sans 3', sans-serif;
         }
         .map-label {
-          font-size: 0.75rem; font-weight: 700;
+          font-size: 1.5rem; font-weight: 700;
           letter-spacing: 0.15em; text-transform: uppercase;
           color: #e63985; margin-bottom: 10px;
         }
         .map-heading {
           font-family: 'Playfair Display', serif;
-          font-size: 2rem; font-weight: 700;
+          font-size: 3rem; font-weight: 700;
           color: #1a1a2e; margin-bottom: 10px; line-height: 1.25;
         }
         .map-heading span { color: #e63985; }
         .map-intro {
-          font-size: 1rem; color: #555; line-height: 1.8;
+          font-size: 2.0rem; color: #555; line-height: 1.8;
           margin-bottom: 28px; max-width: 780px;
         }
         .map-card {
@@ -594,28 +595,29 @@ navbarPage("Health is Wealth",
   
   # ── 4. TREATMENT ──────────────────────────────────────────────────────────
   tabPanel("Treatment",
+           useShinyjs(),
            tags$head(
              tags$style(HTML("
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap');
 
         .tx-page {
-          max-width: 900px; margin: 36px auto 72px;
-          padding: 0 24px; font-family: 'Source Sans 3', sans-serif;
+          max-width: 1100px; margin: 36px auto 72px;
+          padding: 0 32px; font-family: 'Source Sans 3', sans-serif;
         }
         .tx-page-label {
-          font-size: 0.75rem; font-weight: 700;
+          font-size: 1.0rem; font-weight: 700;
           letter-spacing: 0.15em; text-transform: uppercase;
           color: #e63985; margin-bottom: 10px;
         }
         .tx-page-heading {
           font-family: 'Playfair Display', serif;
-          font-size: 2rem; font-weight: 700;
+          font-size: 3.0rem; font-weight: 700;
           color: #1a1a2e; margin-bottom: 15px; line-height: 1.25;
         }
         .tx-page-heading span { color: #e63985; }
         .tx-page-intro {
-          font-size: 1.05rem; color: #555; line-height: 1.8;
-          margin-bottom: 40px; max-width: 720px;
+          font-size: 2.0rem; color: #555; line-height: 1.8;
+          margin-bottom: 40px; max-width: 860px;
         }
         .tx-card {
           background: #ffffff; border-radius: 20px;
@@ -628,86 +630,141 @@ navbarPage("Health is Wealth",
           box-shadow: 0 20px 56px rgba(230,57,133,0.15), 0 4px 14px rgba(0,0,0,0.07);
         }
         .tx-card-header {
-          display: flex; align-items: center; gap: 18px;
-          padding: 28px 32px 22px; border-bottom: 1px solid #fce8f1;
+          padding: 0;
+          border-bottom: 1px solid #fce8f1;
+        }
+        .tx-toggle-btn {
+          width: 100%;
+          background: none;
+          border: none;
+          padding: 28px 32px 22px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 18px;
+          text-align: left;
+        }
+        .tx-toggle-left {
+          display: flex;
+          align-items: center;
+          gap: 18px;
         }
         .tx-icon {
-          width: 52px; height: 52px; border-radius: 14px;
+          width: 60px; height: 60px; border-radius: 14px;
           display: flex; align-items: center; justify-content: center;
-          font-size: 1.6rem; flex-shrink: 0;
+          font-size: 3.0rem; flex-shrink: 0;
         }
         .tx-icon-green  { background: linear-gradient(135deg, #e8f8f0, #d0f0e0); }
         .tx-icon-pink   { background: linear-gradient(135deg, #fff0f7, #fcd8eb); }
         .tx-icon-purple { background: linear-gradient(135deg, #f3f0ff, #e2d9fb); }
         .tx-card-title {
           font-family: 'Playfair Display', serif;
-          font-size: 1.35rem; font-weight: 700; color: #1a1a2e; margin: 0 0 4px;
+          font-size: 3.0rem; font-weight: 700; color: #1a1a2e; margin: 0 0 4px;
         }
         .tx-card-subtitle {
-          font-size: 0.82rem; font-weight: 600;
+          font-size: 1.88rem; font-weight: 600;
           letter-spacing: 0.08em; text-transform: uppercase;
           color: #e63985; margin: 0;
         }
         .tx-card-body { padding: 24px 32px 28px; }
-        .tx-desc { font-size: 1rem; color: #444; line-height: 1.8; margin-bottom: 20px; }
+        .tx-desc { font-size: 1.88rem; color: #444; line-height: 1.85; margin-bottom: 20px; }
         .tx-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
         .tx-pill {
-          font-size: 0.82rem; font-weight: 600;
-          padding: 5px 14px; border-radius: 999px; border: 1.5px solid;
+          font-size: 1.33rem; font-weight: 600;
+          padding: 6px 16px; border-radius: 999px; border: 1.5px solid;
         }
-        .pill-green  { color: #1a7a4a; border-color: #7ecfa0; background: #edfbf2; }
-        .pill-pink   { color: #c0185f; border-color: #f0a0c8; background: #fff0f7; }
-        .pill-purple { color: #5b3bbf; border-color: #b8a8f0; background: #f3f0ff; }
+        .tx-pill {
+          font-size: 1.33rem;
+          font-weight: 600;
+          padding: 6px 16px;
+          border-radius: 999px;
+          border: 1.5px solid #f0a0c8;
+          background: #fff0f7;
+          color: #c0185f;
+        }
         .tx-note {
-          background: linear-gradient(135deg, #fff8fb, #fff4f0);
-          border-left: 4px solid #e63985; border-radius: 10px;
-          padding: 14px 18px; font-size: 0.92rem; color: #555; line-height: 1.7;
-        }
-        .tx-note strong { color: #e63985; }
-        .tx-badge-row { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  background: linear-gradient(135deg, #fff8fb, #fff4f0);
+  border-left: 4px solid #e63985;
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 1.88rem;
+  color: #555;
+  line-height: 1.75;
+  margin-top: 10px;
+}
+
+.tx-note strong {
+  color: #e63985;
+}
+
         .tx-badge {
-          font-size: 0.78rem; font-weight: 700; padding: 4px 12px;
-          border-radius: 999px; text-transform: uppercase; letter-spacing: 0.06em;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  background: linear-gradient(135deg, #fff0f7, #ffe3ef);
+  color: #e63985;
+  border: 1.5px solid #f0a0c8;
+}
+
+        .tx-chevron {
+          font-size: 1.4rem;
+          color: #e63985;
+          transition: transform 0.3s ease;
+          display: inline-block;
+          flex-shrink: 0;
         }
-        .badge-first-line  { background: #e8f8f0; color: #1a7a4a; }
-        .badge-surgical    { background: #fce8f1; color: #b01e5c; }
-        .badge-specialized { background: #ede8ff; color: #4b2eb5; }
+        .tx-chevron.open {
+          transform: rotate(180deg);
+        }
+
         @media (max-width: 600px) {
-          .tx-card-header { padding: 20px 20px 16px; flex-direction: column; align-items: flex-start; }
+          .tx-toggle-btn { padding: 20px 20px 16px; align-items: flex-start; }
+          .tx-toggle-left { flex-direction: column; align-items: flex-start; }
           .tx-card-body   { padding: 16px 20px 22px; }
         }
       "))
            ),
+           
            mainPanel(
-             div(style = "text-align: center;",
-             tags$img(
-               src = "treatment.png",
-               width = "400px",
-               style = "border: 1px solid #e63985; border-radius: 1px;"
-             )
-             ),
-           div(class = "tx-page",
-               div(class = "tx-page-label", "Managing PCOS"),
-               div(class = "tx-page-heading", "Treatment ", tags$span("Options")),
-               p(class = "tx-page-intro",
-                 "PCOS management is highly individual. Treatment goals vary from regulating cycles and managing symptoms to supporting fertility. Below are three key approaches used by clinicians worldwide."
-               ),
-               
-               # Card 1: Dietary Therapy
-               div(class = "tx-card",
-                   div(class = "tx-card-header",
-                       div(class = "tx-icon tx-icon-green", "🥗"),
-                       div(
-                         p(class = "tx-card-subtitle", "Lifestyle Intervention"),
-                         h3(class = "tx-card-title", "Dietary Therapy")
-                       )
-                   ),
-                   div(class = "tx-card-body",
+             width = 12,
+             
+             div(class = "tx-page",
+                 div(class = "tx-page-label", "Managing PCOS"),
+                 div(class = "tx-page-heading", "Treatment ", tags$span("Options")),
+                 p(class = "tx-page-intro",
+                   "PCOS management is highly individual. Treatment goals vary from regulating cycles and managing symptoms to supporting fertility. Below are key approaches used by clinicians worldwide."
+                 ),
+                 
+                 div(class = "tx-card",
+                     div(class = "tx-card-header",
+                         actionButton(
+                           "toggle_diet",
+                           label = tagList(
+                             div(class = "tx-toggle-left",
+                                 div(class = "tx-icon tx-icon-pink", "🥗"),
+                                 div(
+                                   p(class = "tx-card-subtitle", "Lifestyle Intervention"),
+                                   h3(class = "tx-card-title", "Dietary Therapy")
+                                 )
+                             ),
+                             span(id = "chev_diet", class = "tx-chevron", "▼")
+                           ),
+                           class = "tx-toggle-btn"
+                         )
+                     ),
+                     div(
+                       id = "body_diet",
+                       class = "tx-card-body",
+                       style = "display: none;",
                        div(class = "tx-badge-row", span(class = "tx-badge badge-first-line", "First-line treatment")),
                        p(class = "tx-desc",
                          "Dietary therapy is typically the first recommended approach for managing PCOS, particularly for those with insulin resistance or elevated BMI. A low-glycemic, anti-inflammatory diet can reduce androgen levels, improve menstrual regularity, and support metabolic health — often without medication. Obesity has been reported in 30% of PCOS patients. However, dieting and exercise alone does not always show long-term results; bariatric surgery has been introduced in cases where conservative approaches fall short."
                        ),
-                       p(tags$strong("Key dietary approaches:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;"),
+                       p(tags$strong("Key dietary approaches:"), style = "font-size:1.05rem;color:#333;margin-bottom:8px;"),
                        div(class = "tx-pills",
                            span(class = "tx-pill pill-green", "Low-GI diet"),
                            span(class = "tx-pill pill-green", "Anti-inflammatory foods"),
@@ -717,26 +774,38 @@ navbarPage("Health is Wealth",
                            span(class = "tx-pill pill-green", "Caloric balance")
                        ),
                        div(class = "tx-note",
-                           tags$strong("Important: "), "A 5–10% reduction in body weight can restore ovulation and improve hormonal balance in women with PCOS. Diet changes are most effective when combined with regular physical activity."
+                           tags$strong("Important: "),
+                           "A 5–10% reduction in body weight can restore ovulation and improve hormonal balance in women with PCOS. Diet changes are most effective when combined with regular physical activity."
                        )
-                   )
-               ),
-               
-               # Card 2: LOD
-               div(class = "tx-card",
-                   div(class = "tx-card-header",
-                       div(class = "tx-icon tx-icon-pink", "🔬"),
-                       div(
-                         p(class = "tx-card-subtitle", "Surgical Procedure"),
-                         h3(class = "tx-card-title", "Laparoscopic Ovarian Drilling (LOD)")
-                       )
-                   ),
-                   div(class = "tx-card-body",
+                     )
+                 ),
+                 
+                 div(class = "tx-card",
+                     div(class = "tx-card-header",
+                         actionButton(
+                           "toggle_lod",
+                           label = tagList(
+                             div(class = "tx-toggle-left",
+                                 div(class = "tx-icon tx-icon-pink", "🔬"),
+                                 div(
+                                   p(class = "tx-card-subtitle", "Surgical Procedure"),
+                                   h3(class = "tx-card-title", "Laparoscopic Ovarian Drilling (LOD)")
+                                 )
+                             ),
+                             span(id = "chev_lod", class = "tx-chevron", "▼")
+                           ),
+                           class = "tx-toggle-btn"
+                         )
+                     ),
+                     div(
+                       id = "body_lod",
+                       class = "tx-card-body",
+                       style = "display: none;",
                        div(class = "tx-badge-row", span(class = "tx-badge badge-surgical", "Surgical option")),
                        p(class = "tx-desc",
                          "LOD is a minimally invasive surgical procedure performed under general anesthesia. Small holes are made in the ovarian tissue using heat or a laser to destroy androgen-producing tissue. LOD was introduced in 1984 and is successful in approximately 84% of patients, improving insulin resistance and increasing SHBG levels. Lower miscarriage rates have also been reported with LOD."
                        ),
-                       p(tags$strong("Typical candidates & outcomes:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;"),
+                       p(tags$strong("Typical candidates & outcomes:"), style = "font-size:1.05rem;color:#333;margin-bottom:8px;"),
                        div(class = "tx-pills",
                            span(class = "tx-pill pill-pink", "Clomiphene-resistant PCOS"),
                            span(class = "tx-pill pill-pink", "Anovulatory infertility"),
@@ -745,26 +814,38 @@ navbarPage("Health is Wealth",
                            span(class = "tx-pill pill-pink", "Laparoscopic access")
                        ),
                        div(class = "tx-note",
-                           tags$strong("Note: "), "LOD does not treat all PCOS symptoms — it primarily targets ovulation. Effects may be temporary. It is generally considered after first-line drug therapies have failed."
+                           tags$strong("Note: "),
+                           "LOD does not treat all PCOS symptoms — it primarily targets ovulation. Effects may be temporary. It is generally considered after first-line drug therapies have failed."
                        )
-                   )
-               ),
-               
-               # Card 3: ART
-               div(class = "tx-card",
-                   div(class = "tx-card-header",
-                       div(class = "tx-icon tx-icon-purple", "🧬"),
-                       div(
-                         p(class = "tx-card-subtitle", "Fertility Treatment"),
-                         h3(class = "tx-card-title", "Assisted Reproductive Technology (ART)")
-                       )
-                   ),
-                   div(class = "tx-card-body",
+                     )
+                 ),
+                 
+                 div(class = "tx-card",
+                     div(class = "tx-card-header",
+                         actionButton(
+                           "toggle_art",
+                           label = tagList(
+                             div(class = "tx-toggle-left",
+                                 div(class = "tx-icon tx-icon-pink", "🧬"),
+                                 div(
+                                   p(class = "tx-card-subtitle", "Fertility Treatment"),
+                                   h3(class = "tx-card-title", "Assisted Reproductive Technology (ART)")
+                                 )
+                             ),
+                             span(id = "chev_art", class = "tx-chevron", "▼")
+                           ),
+                           class = "tx-toggle-btn"
+                         )
+                     ),
+                     div(
+                       id = "body_art",
+                       class = "tx-card-body",
+                       style = "display: none;",
                        div(class = "tx-badge-row", span(class = "tx-badge badge-specialized", "Specialized care")),
                        p(class = "tx-desc",
                          "ART encompasses a range of fertility treatments that handle eggs, sperm, or embryos outside the body. For women with PCOS struggling to conceive, IVF is the most common ART option. PCOS patients often respond strongly to ovarian stimulation, requiring careful monitoring to prevent ovarian hyperstimulation syndrome (OHSS)."
                        ),
-                       p(tags$strong("Common ART approaches for PCOS:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;"),
+                       p(tags$strong("Common ART approaches for PCOS:"), style = "font-size:1.05rem;color:#333;margin-bottom:8px;"),
                        div(class = "tx-pills",
                            span(class = "tx-pill pill-purple", "IVF"),
                            span(class = "tx-pill pill-purple", "Ovulation induction"),
@@ -774,42 +855,64 @@ navbarPage("Health is Wealth",
                            span(class = "tx-pill pill-purple", "Frozen embryo transfer")
                        ),
                        div(class = "tx-note",
-                           tags$strong("OHSS Risk: "), "Women with PCOS are at higher risk for ovarian hyperstimulation during ART. Clinicians use low-dose stimulation protocols and close monitoring to minimize this risk."
+                           tags$strong("OHSS Risk: "),
+                           "Women with PCOS are at higher risk for ovarian hyperstimulation during ART. Clinicians use low-dose stimulation protocols and close monitoring to minimize this risk."
                        )
-                   )
-               )
-           ),
-  
-           # Card 4: OCPs
-           div(class = "tx-card",
-               div(class = "tx-card-header",
-                   div(class = "tx-icon tx-icon-pink", "💊"),
-                   div(
-                     p(class = "tx-card-subtitle", "Hormonal Treatment"),
-                     h3(class = "tx-card-title", "Combined Oral Contraceptive Pills (OCPs)")
-                   )
-               ),
-               div(class = "tx-card-body",
-                   div(class = "tx-badge-row", span(class = "tx-badge badge-first-line", "First-choice treatment")),
-                   p(class = "tx-desc",
-                     "Combined oral contraceptive pills (OCPs) are considered the first-choice treatment for PCOS. They work by suppressing LH and FSH, reducing ovarian androgen production, and regulating the menstrual cycle. OCPs also increase sex hormone-binding globulin (SHBG), which further lowers free androgen levels — helping to manage symptoms like acne, hirsutism, and irregular periods."
-                   ),
-                   p(tags$strong("Key benefits:"), style = "font-size:0.92rem;color:#333;margin-bottom:8px;"),
-                   div(class = "tx-pills",
-                       span(class = "tx-pill pill-pink", "Regulates periods"),
-                       span(class = "tx-pill pill-pink", "Reduces androgens"),
-                       span(class = "tx-pill pill-pink", "Improves acne"),
-                       span(class = "tx-pill pill-pink", "Reduces hirsutism"),
-                       span(class = "tx-pill pill-pink", "Increases SHBG"),
-                       span(class = "tx-pill pill-pink", "Protects endometrium")
-                   ),
-                   div(class = "tx-note",
-                       tags$strong("Note: "), "OCPs do not treat the underlying metabolic causes of PCOS such as insulin resistance. They are most effective for symptom management and cycle regulation, and are often used alongside lifestyle interventions."
-                   )
-               )
+                     )
+                 ),
+                 
+                 div(class = "tx-card",
+                     div(class = "tx-card-header",
+                         actionButton(
+                           "toggle_ocp",
+                           label = tagList(
+                             div(class = "tx-toggle-left",
+                                 div(class = "tx-icon tx-icon-pink", "💊"),
+                                 div(
+                                   p(class = "tx-card-subtitle", "Hormonal Treatment"),
+                                   h3(class = "tx-card-title", "Combined Oral Contraceptive Pills (OCPs)")
+                                 )
+                             ),
+                             span(id = "chev_ocp", class = "tx-chevron", "▼")
+                           ),
+                           class = "tx-toggle-btn"
+                         )
+                     ),
+                     div(
+                       id = "body_ocp",
+                       class = "tx-card-body",
+                       style = "display: none;",
+                       div(class = "tx-badge-row", span(class = "tx-badge badge-first-line", "First-choice treatment")),
+                       p(class = "tx-desc",
+                         "Combined oral contraceptive pills (OCPs) are considered the first-choice treatment for PCOS. They work by suppressing LH and FSH, reducing ovarian androgen production, and regulating the menstrual cycle. OCPs also increase sex hormone-binding globulin (SHBG), which further lowers free androgen levels — helping to manage symptoms like acne, hirsutism, and irregular periods."
+                       ),
+                       p(tags$strong("Key benefits:"), style = "font-size:1.05rem;color:#333;margin-bottom:8px;"),
+                       div(class = "tx-pills",
+                           span(class = "tx-pill pill-pink", "Regulates periods"),
+                           span(class = "tx-pill pill-pink", "Reduces androgens"),
+                           span(class = "tx-pill pill-pink", "Improves acne"),
+                           span(class = "tx-pill pill-pink", "Reduces hirsutism"),
+                           span(class = "tx-pill pill-pink", "Increases SHBG"),
+                           span(class = "tx-pill pill-pink", "Protects endometrium")
+                       ),
+                       div(class = "tx-note",
+                           tags$strong("Note: "),
+                           "OCPs do not treat the underlying metabolic causes of PCOS such as insulin resistance. They are most effective for symptom management and cycle regulation, and are often used alongside lifestyle interventions."
+                       )
+                     )
+                 ),
+                 
+                 div(style = "text-align: center; margin-top: 16px;",
+                     tags$img(
+                       src = "treatment.png",
+                       width = "400px",
+                       style = "border: 1px solid #e63985; border-radius: 1px;"
+                     )
+                 )
+             )
            )
-        )
-    ),
+  ),
+  
 
 tabPanel("Data Check Out",
          tags$head(
@@ -817,22 +920,22 @@ tabPanel("Data Check Out",
       .dc-page {
         max-width: 1500px;
         margin: 36px auto 72px;
-        padding: 0 24px;
+        padding: 0 24px,
         font-family: 'Source Sans 3', sans-serif;
       }
       .dc-page-label {
-        font-size: 0.75rem; font-weight: 700;
+        font-size: 1.0rem; font-weight: 700;
         letter-spacing: 0.15em; text-transform: uppercase;
         color: #e63985; margin-bottom: 10px;
       }
       .dc-page-heading {
         font-family: 'Playfair Display', serif;
-        font-size: 2rem; font-weight: 700;
+        font-size: 3.0rem; font-weight: 700;
         color: #1a1a2e; margin-bottom: 12px; line-height: 1.25;
       }
       .dc-page-heading span { color: #e63985; }
       .dc-page-intro {
-        font-size: 1.05rem; color: #555; line-height: 1.8;
+        font-size: 1.5rem; color: #555; line-height: 1.8;
         margin-bottom: 40px; max-width: 2000px;
       }
       .dc-layout {
@@ -1013,4 +1116,3 @@ tabPanel("Data Check Out",
              )
          )
 ))
-

@@ -1,10 +1,11 @@
-server <- function(input, output) {
+server <- function(input, output, session) {
   
   library(tidyverse)
   library(leaflet)
   library(sf)
   library(rnaturalearth)
   library(countrycode)
+  library(shinyjs)
   
   pcos <- read.csv("pcos.csv", stringsAsFactors = FALSE, check.names = FALSE)
   
@@ -501,5 +502,15 @@ output$stateMapNew <- renderLeaflet({
     ) %>%
     setView(lng = -96, lat = 37.8, zoom = 4)
 })
+toggle_card <- function(body_id, chev_id) {
+  shinyjs::toggle(body_id, anim = TRUE, animType = "slide", time = 0.3)
+  shinyjs::toggleClass(chev_id, "open")
+}
+
+observeEvent(input$toggle_diet, { toggle_card("body_diet", "chev_diet") })   
+observeEvent(input$toggle_lod,  { toggle_card("body_lod",  "chev_lod")  })
+observeEvent(input$toggle_art,  { toggle_card("body_art",  "chev_art")  }) 
+observeEvent(input$toggle_ocp,  { toggle_card("body_ocp",  "chev_ocp")  })  
 
 }
+
