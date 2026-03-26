@@ -2,6 +2,9 @@ library(shiny)
 library(bslib)
 library(leaflet)
 library(shinyjs)
+library(wordcloud2)
+library(tm)
+library(RColorBrewer)
 
 navbarPage("Health is Wealth",
             tabPanel("About",
@@ -149,9 +152,25 @@ navbarPage("Health is Wealth",
                    )
                ),
                div(style = "height: 60px;"),
+               # ── Word Cloud card ── (placed BEFORE Causes)
+               div(class = "about-card",
+                   div(class = "about-label", "Word Cloud"),
+                   div(class = "about-heading",
+                       "PCOS ", tags$span("Key Terms")
+                   ),
+                   p(class = "about-text",
+                     "A visual snapshot of the most common terms associated with PCOS — from symptoms and hormones to diagnosis and treatment."
+                   ),
+                   wordcloud2Output("wordcloud", width = "100%", height = "200px")
+               ),
+               
+               div(style = "height: 60px;"),
+               
+               div(style = "height: 60px;"),
                div(class = "about-card",
                        div(class = "about-label", "Causes"),
-                       
+
+                   
                        div(class = "about-heading",
                            "What causes ", tags$span("PCOS"), "?"
                        ),
@@ -263,164 +282,6 @@ navbarPage("Health is Wealth",
                             )
                             )
            )),
-           tabPanel("Endometrial Cancer",
-                      tags$head(
-                        tags$style(HTML("
-      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap');
-      
-      body {
-        font-family: 'Source Sans 3', sans-serif;
-        background: #fff;
-      }
-
-      .map-page {
-        max-width: 1100px;
-        margin: 30px auto 60px;
-        padding: 0 24px;
-      }
-
-      .map-label {
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: #e63985;
-        margin-bottom: 10px;
-      }
-
-      .map-heading {
-        font-family: 'Playfair Display', serif;
-        font-size: 2rem;
-        font-weight: 700;
-        color: #1a1a2e;
-        margin-bottom: 10px;
-        line-height: 1.25;
-      }
-
-      .map-heading span {
-        color: #e63985;
-      }
-
-      .map-intro {
-        font-size: 1rem;
-        color: #555;
-        line-height: 1.8;
-        margin-bottom: 28px;
-        max-width: 780px;
-      }
-
-      .map-card {
-        background: #ffffff;
-        border-radius: 20px;
-        box-shadow: 0 12px 40px rgba(230,57,133,0.10),
-                    0 2px 10px rgba(0,0,0,0.05);
-        overflow: hidden;
-        border-top: 5px solid #e63985;
-        padding: 8px;
-      }
-
-      .map-source {
-        font-size: 0.78rem;
-        color: #aaa;
-        margin-top: 12px;
-        text-align: right;
-      }
-
-      .leaflet-container {
-        background: white !important;
-      }
-    "))
-                      ),
-                      
-                      div(class = "map-page",
-                          
-                          div(class = "map-label", "Epidemiology"),
-                          
-                          div(class = "map-heading",
-                              "US Uterine Corpus Cancer ", 
-                              tags$span("Incidence by State")
-                          ),
-                          
-                          p(class = "map-intro",
-                            "This map shows state-level uterine corpus cancer incidence rates per 100,000 women. Hover over any state to view its incidence rate."
-                          ),
-                          
-                          div(class = "map-card",
-                              leafletOutput("stateMap", height = "320px")
-                          ),
-                          
-                          p(class = "map-source",
-                            "Source: Uterine Corpus Dataset · Incidence per 100,000 women"
-                          )
-                      ), 
-                    
-                    div(class = "map-page",
-                        
-                        div(class = "map-label", "Epidemiology"),
-                        
-                        div(class = "map-heading",
-                            "US Uterine Corpus Cancer ", 
-                            tags$span("Mortality Rate by State")
-                        ),
-                        
-                        p(class = "map-intro",
-                          "This map shows state-level uterine corpus cancer mprtality rates per 100,000 women. Hover over any state to view its incidence rate."
-                        ),
-                        
-                        div(class = "map-card",
-                            leafletOutput("stateMapMortality", height = "320px")
-                        ),
-                        
-                        p(class = "map-source",
-                          "Source: Uterine Corpus Dataset· Mortality Rate per 100,000 women"
-                        )
-                    ),
-                    div(class = "map-page",
-                        
-                        div(class = "map-label", "Epidemiology"),
-                        
-                        div(class = "map-heading",
-                            "US Uterine Corpus Cancer ", 
-                            tags$span("Death Estimates by State")
-                        ),
-                        
-                        p(class = "map-intro",
-                          "This map shows state-level uterine corpus cancer mprtality rates per 100,000 women. Hover over any state to view its incidence rate."
-                        ),
-                        
-                        div(class = "map-card",
-                            leafletOutput("stateMapDeath", height = "320px")
-                        ),
-                        
-                        p(class = "map-source",
-                          "Source: Uterine Corpus Dataset· Mortality Rate per 100,000 women"
-                        )
-                    ),
-                    
-                    div(class = "map-page",
-                        
-                        div(class = "map-label", "Epidemiology"),
-                        
-                        div(class = "map-heading",
-                            "US Uterine Corpus Cancer ", 
-                            tags$span("New Cases by State")
-                        ),
-                        
-                        p(class = "map-intro",
-                          "This map shows state-level uterine corpus cancer new cases per 100,000 women. Hover over any state to view its incidence rate."
-                        ),
-                        
-                        div(class = "map-card",
-                            leafletOutput("stateMapNew", height = "320px")
-                        ),
-                        
-                        p(class = "map-source",
-                          "Source: Uterine Corpus Dataset· New cases per 100,000 women"
-                        )
-                    )
-                    ),
-   
-                      
              tabPanel("Insulin Resistant PCOS",
                       mainPanel(width = "15",
                                 div(class = "tx-page",
@@ -1344,6 +1205,6 @@ navbarMenu("Risks and Comorbidities",
                       )
                   )
          ),
-tabPanel("Abous us")
-)
+),
+tabPanel("About us")
 )
