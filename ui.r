@@ -139,6 +139,46 @@ navbarPage("Health is Wealth",
   color: #c2185b;
   border-color: #c2185b;
 }
+.types-hero {
+  text-align: center;
+  background: ##FFFFFF;
+  padding: 60px 20px 30px 20px;
+}
+
+.types-hero-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 5.0rem;
+  font-weight: 700;
+  color: #e63985;   
+  margin-bottom: 10px;
+}
+
+.types-hero-label {
+  font-size: 2.0rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #e63985;
+  margin-bottom: 10px;
+}
+
+.types-hero-subtext {
+  font-size: 2.0rem;
+  color: #555;
+  max-width: 650px;
+  margin: 0 auto;
+}
+.nav-tabs > li > a {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+.nav-tabs > li.active > a {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+
 
       ")), 
            ),
@@ -279,50 +319,69 @@ navbarPage("Health is Wealth",
 
   
   # ── 2. TYPES OF PCOS ──────────────────────────────────────────────────────
-  navbarMenu("Types of PCOS",
-             tabPanel("About",
-                      mainPanel( width = "12",
-                                 div(class = "about-section",  style = "max-width: 63%;  margin: 30px auto 60px; padding: 0 24px;",
-                                     div(class = "about-card",
-                                         div(class = "about-label", "About This Project"),
-                                         div(class = "about-heading",
-                                             "Understanding ", tags$span("PCOS"), "Through Data"
-                                         ),
-                                         p(class = "about-text",
-                                           "Polycystic Ovary Syndrome (PCOS) is a hormonal disorder that affects how the ovaries function. It can cause irregular periods, high levels of androgens (male hormones), and cysts on the ovaries. However, PCOS is not the same for everyone, there are different types based on underlying causes."
-                                         ),
-                                         div(class = "stat-row",
-                                             div(class = "stat-pill",
-                                                 tags$span(class = "stat-number", "1 in 10"),
-                                                 tags$span(class = "stat-desc", "Women affected globally")
-                                             ),
-                                             div(class = "stat-pill",
-                                                 tags$span(class = "stat-number", "50%"),
-                                                 tags$span(class = "stat-desc", "Cases go undiagnosed")
-                                             ),
-                                             div(class = "stat-pill",
-                                                 tags$span(class = "stat-number", "15–49"),
-                                                 tags$span(class = "stat-desc", "Reproductive age range")
-                                             )
-                                         )
-                                     )
+  tabPanel("Types of PCOS",
+             div(class = "types-hero",
+                 div(class = "types-hero-label", "PCOS Guide"),
+                 h1(class = "types-hero-heading", "Types of PCOS"),
+                 p(class = "types-hero-subtext",
+                   "Learn about the four main types of PCOS and how each one differs."
+                 )
+             ),
+             div(class = "types-tabs-wrap",
+                 tabsetPanel(
+                   id = "pcos_type_tabs",
+                   
+                   tabPanel(
+                     "Overview",
+                     mainPanel(
+                       width = 12,
+                       div(
+                         class = "about-section",
+                         style = "max-width: 63%; margin: 30px auto 60px; padding: 0 24px;",
+                         
+                         div(class = "about-card",
+                             div(class = "about-label", "About This Project"),
+                             div(class = "about-heading",
+                                 "Understanding ", tags$span("PCOS"), " Through Data"
+                             ),
+                             p(class = "about-text",
+                               "Polycystic Ovary Syndrome (PCOS) is a hormonal disorder that affects how the ovaries function. It can cause irregular periods, high levels of androgens, and cysts on the ovaries. However, PCOS is not the same for everyone, and there are different types based on underlying causes."
+                             ),
+                             div(class = "stat-row",
+                                 div(class = "stat-pill",
+                                     tags$span(class = "stat-number", "1 in 10"),
+                                     tags$span(class = "stat-desc", "Women affected globally")
                                  ),
-                        div(style = "display: flex; gap: 16px; justify-content: center; align-items: center;",
-                            tags$img(
-                              src = "symptoms.png",
-                              width = "30%",
-                              height = "600px",
-                              style = "border: 1px solid #000000; border-radius: 1px;"
-                            ),
-                            tags$img(
-                              src = "types_of_pcos.png",
-                              width = "30%%",
-                              height = "600px",
-                              style = "border: 1px solid #000000; border-radius: 1px;"
-                            )
-                            )
-           )),
-             tabPanel("Insulin Resistant PCOS",
+                                 div(class = "stat-pill",
+                                     tags$span(class = "stat-number", "50%"),
+                                     tags$span(class = "stat-desc", "Cases go undiagnosed")
+                                 ),
+                                 div(class = "stat-pill",
+                                     tags$span(class = "stat-number", "15–49"),
+                                     tags$span(class = "stat-desc", "Reproductive age range")
+                                 )
+                             )
+                         )
+                       ),
+                       
+                       div(
+                         style = "display: flex; gap: 16px; justify-content: center; align-items: center; margin-bottom: 40px;",
+                         tags$img(
+                           src = "symptoms.png",
+                           width = "30%",
+                           height = "600px",
+                           style = "border: 1px solid #000000; border-radius: 8px;"
+                         ),
+                         tags$img(
+                           src = "types_of_pcos.png",
+                           width = "30%",
+                           height = "600px",
+                           style = "border: 1px solid #000000; border-radius: 8px;"
+                         )
+                       )
+                     )
+                   ),
+                  tabPanel("Insulin Resistant PCOS",
                       mainPanel(width = "15",
                                 div(class = "tx-page",
                                     
@@ -332,7 +391,7 @@ navbarPage("Health is Wealth",
                                           style = "border: 1px solid #e63985; border-radius: 1px;"
                                     ),
                                     
-                                    div(class = "tx-page-label", "Types of PCOS"),
+                                   
                                     div(class = "tx-page-heading", "Insulin Resistant ", tags$span("PCOS")),
                                     p(class = "tx-page-intro",
                                       "The most common type, accounting for ~70% of PCOS cases. Cells fail to respond properly to insulin,
@@ -341,10 +400,11 @@ navbarPage("Health is Wealth",
                                     
                                     div(class = "tx-card",
                                         div(class = "tx-card-header",
-                                            div(class = "tx-icon tx-icon-green", "🍬"),
                                             div(
-                                              p(class = "tx-card-subtitle", "Most Common Type"),
-                                              h3(class = "tx-card-title", "Insulin Resistant PCOS")
+                                              p(class = "tx-card-subtitle",
+                                                style = "text-align: center; width: 100%;",
+                                                "Most Common Type"),
+                                              
                                             )
                                         ),
                                         div(class = "tx-card-body",
@@ -394,7 +454,7 @@ navbarPage("Health is Wealth",
                                     
                                 ),
                                 
-                                div(class = "tx-page-label", "Types of PCOS"),
+                               
                                 div(class = "tx-page-heading", "Post-Pill ", tags$span("PCOS")),
                                 p(class = "tx-page-intro",
                                   "Develops after stopping hormonal contraceptives. The pill suppresses ovulation; when discontinued,
@@ -453,7 +513,7 @@ navbarPage("Health is Wealth",
                                           style = "border: 1px solid #e63985; border-radius: 1px;"
                                     ),
                                     
-                                    div(class = "tx-page-label", "Types of PCOS"),
+                                  
                                     div(class = "tx-page-heading", "Adrenal ", tags$span("PCOS")),
                                     p(class = "tx-page-intro",
                                       "Driven by an overactive stress response rather than insulin. The adrenal glands overproduce DHEA-S
@@ -513,7 +573,7 @@ navbarPage("Health is Wealth",
                                           style = "border: 1px solid #e63985; border-radius: 1px;"
                                     ),
                                     
-                                    div(class = "tx-page-label", "Types of PCOS"),
+                                  
                                     div(class = "tx-page-heading", "Inflammatory ", tags$span("PCOS")),
                                     p(class = "tx-page-intro",
                                       "Chronic low-grade inflammation disrupts ovulation and stimulates androgens. Often associated with
@@ -563,7 +623,7 @@ navbarPage("Health is Wealth",
                                 )
                       )
              )
-  ),
+  ))),
   
   # ── 4. TREATMENT ──────────────────────────────────────────────────────────
   tabPanel("Treatment",
