@@ -464,10 +464,10 @@ navbarPage("Health is Wealth",
                                 
                                 div(class = "tx-card",
                                     div(class = "tx-card-header",
-                                        div(class = "tx-icon tx-icon-purple", "💊"),
                                         div(
-                                          p(class = "tx-card-subtitle", "Temporary Type"),
-                                          h3(class = "tx-card-title", "Post-Pill PCOS")
+                                          p(class = "tx-card-subtitle", 
+                                            style = "text-align: center; width: 100%;",
+                                            "Temporary Type"),
                                         )
                                     ),
                                     div(class = "tx-card-body",
@@ -522,10 +522,11 @@ navbarPage("Health is Wealth",
                                     
                                     div(class = "tx-card",
                                         div(class = "tx-card-header",
-                                            div(class = "tx-icon tx-icon-pink", "⚡"),
-                                            div(
-                                              p(class = "tx-card-subtitle", "Stress-Driven Type"),
-                                              h3(class = "tx-card-title", "Adrenal PCOS")
+                                                     div(
+                                              p(class = "tx-card-subtitle", 
+                                                style = "text-align: center; width: 100%;",
+                                                "Stress-Driven Type"),
+                                             
                                             )
                                         ),
                                         div(class = "tx-card-body",
@@ -582,10 +583,11 @@ navbarPage("Health is Wealth",
                                     
                                     div(class = "tx-card",
                                         div(class = "tx-card-header",
-                                            div(class = "tx-icon tx-icon-green", "🔥"),
                                             div(
-                                              p(class = "tx-card-subtitle", "Immune-Driven Type"),
-                                              h3(class = "tx-card-title", "Inflammatory PCOS")
+                                              p(class = "tx-card-subtitle", 
+                                                style = "text-align: center; width: 100%;",
+                                                "Immune-Driven Type"),
+                                             
                                             )
                                         ),
                                         div(class = "tx-card-body",
