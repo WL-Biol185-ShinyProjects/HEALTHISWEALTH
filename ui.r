@@ -394,8 +394,7 @@ navbarPage("Health is Wealth",
                                    
                                     div(class = "tx-page-heading", "Insulin Resistant ", tags$span("PCOS")),
                                     p(class = "tx-page-intro",
-                                      "The most common type, accounting for ~70% of PCOS cases. Cells fail to respond properly to insulin,
-           causing the body to overproduce it which stimulates the ovaries to produce excess androgens."
+                                      "The most common type, accounting for ~70% of PCOS cases."
                                     ),
                                     
                                     div(class = "tx-card",
@@ -457,9 +456,7 @@ navbarPage("Health is Wealth",
                                
                                 div(class = "tx-page-heading", "Post-Pill ", tags$span("PCOS")),
                                 p(class = "tx-page-intro",
-                                  "Develops after stopping hormonal contraceptives. The pill suppresses ovulation; when discontinued,
-           a surge in LH and androgens can temporarily mimic PCOS symptoms. This type typically resolves
-           within 3-6 months."
+                                  "Develops after stopping hormonal contraceptives."
                                 ),
                                 
                                 div(class = "tx-card",
@@ -474,7 +471,7 @@ navbarPage("Health is Wealth",
                                         div(class = "tx-badge-row", span(class = "tx-badge badge-specialized", "Often Reversible")),
                                         p(class = "tx-desc",
                                           "Post-pill PCOS develops when the body's hormones take time to rebalance after stopping
-                   hormonal contraceptives. The pill artificially suppresses LH and androgens; once discontinued,
+                   hormonal contraceptives. The pill suppresses LH and androgens; once discontinued,
                    a temporary rebound surge can create PCOS-like symptoms. This is not permanent PCOS and
                    typically resolves within 3-6 months as the body recalibrates."
                                         ),
@@ -516,8 +513,7 @@ navbarPage("Health is Wealth",
                                   
                                     div(class = "tx-page-heading", "Adrenal ", tags$span("PCOS")),
                                     p(class = "tx-page-intro",
-                                      "Driven by an overactive stress response rather than insulin. The adrenal glands overproduce DHEA-S
-           in response to chronic stress, causing PCOS symptoms without involving insulin resistance."
+                                      "Driven by an overactive stress response rather than insulin."
                                     ),
                                     
                                     div(class = "tx-card",
@@ -577,8 +573,7 @@ navbarPage("Health is Wealth",
                                   
                                     div(class = "tx-page-heading", "Inflammatory ", tags$span("PCOS")),
                                     p(class = "tx-page-intro",
-                                      "Chronic low-grade inflammation disrupts ovulation and stimulates androgens. Often associated with
-           gut dysbiosis, environmental toxins, and immune system dysregulation."
+                                      "Chronic low-grade inflammation disrupts ovulation and stimulates androgens."
                                     ),
                                     
                                     div(class = "tx-card",
