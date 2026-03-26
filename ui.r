@@ -16,6 +16,7 @@ navbarPage("Health is Wealth",
           margin: 30px auto 60px;
           padding: 0 24px;
         }
+        
         .about-card {
           background: #ffffff;
           border-radius: 24px;
@@ -113,6 +114,7 @@ navbarPage("Health is Wealth",
   color: #333;
   font-weight: 400;
 }
+
       ")), 
            ),
            div(class = "about-section",
@@ -145,8 +147,47 @@ navbarPage("Health is Wealth",
                            tags$span(class = "stat-desc", "Reproductive age range")
                        )
                    )
-               )
-           ),
+               ),
+               div(style = "height: 60px;"),
+               div(class = "about-card",
+                       div(class = "about-label", "Causes"),
+                       
+                       div(class = "about-heading",
+                           "What causes ", tags$span("PCOS"), "?"
+                       ),
+                       
+                       div(style = "display: flex; align-items: center; gap: 40px; flex-wrap: wrap;",
+                           
+            
+                           div(style = "flex: 1; min-width: 100px;font-size: 3rem;font-family: 'Times New Roman', serif;",
+                               p(class = "about-text", "The exact cause of PCOS is unknown. It is thought to happen due to a mix of:",
+                                 tags$ol(
+                                   tags$li("Genetic (inherited)"),
+                                   tags$li("Hormonal"),
+                                   tags$li("Lifestyle"),
+                                   tags$li("Environmental factors")
+                              
+                               ),
+                               tags$p(
+                                 tags$strong("Source: "),
+                                 tags$a(
+                                   href = "https://www.healthdirect.gov.au/polycystic-ovarian-syndrome-pcos",
+                                   "Healthdirect Australia",
+                                   target = "_blank",
+                                   style = "color:#e63985; text-decoration: none;"
+                                 ),
+                                 style = "margin-top: 8px; font-size: 1.5rem; color: #666;"
+                               )
+                           )),
+                           
+                           div(style = "flex: 1; min-width: 200px; min-height: 60%; text-align: center;",
+                               tags$img(
+                                 src = "polycystic-ovarian-syndrome-pcos-bae428.png",
+                                 style = "max-width: 80%; height: 50%;"
+                               )
+                           )
+                           
+           ))),
   
            
     
