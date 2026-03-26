@@ -88,9 +88,38 @@ navbarPage("Health is Wealth",
           font-size: 0.78rem; color: #aaa;
           margin-top: 12px; text-align: right;
         }
+        
+        .hero-section {
+  width: 100;
+  margin-bottom: 60px;  
+  padding: 80px 20px 60px;
+  text-align: center;
+  background: #FADADD;
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 7rem;
+  font-weight: 800;
+  color: #e63985;
+  margin-bottom: 18px;
+}
+
+.hero-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  color: #333;
+  font-weight: 400;
+}
       ")), 
            ),
-           div(class = "about-section", 
+           div(class = "about-section",
+               div(class = "hero-section",
+                   div(class = "hero-title", "PCOS"),
+                   div(class = "hero-subtitle", "The risk you don’t see")
+               ),
                div(class = "about-card",
                    div(class = "about-label", "About This Project"),
                    div(class = "about-heading",
@@ -118,7 +147,8 @@ navbarPage("Health is Wealth",
                    )
                )
            ),
-          
+  
+           
     
   # ── 4. MAP 1990 ──
   
