@@ -1055,11 +1055,11 @@ tabPanel("Data Check Out",
       }
 
       /* health summary table */
-      .dc-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; color: #444; }
+      .dc-table { width: 100%; border-collapse: collapse; font-size: 2.0rem; color: #444; }
       .dc-table th {
         text-align: left; padding: 10px 12px;
         background: linear-gradient(135deg, #fff0f7, #fff8f0);
-        font-size: 1.5rem; font-weight: 700;
+        font-size: 2.0rem; font-weight: 700;
         letter-spacing: 0.07em; text-transform: uppercase; color: #e63985;
         border-bottom: 2px solid #fce8f1;
       }
@@ -1070,23 +1070,23 @@ tabPanel("Data Check Out",
       .dc-note {
         background: linear-gradient(135deg, #fff8fb, #fff4f0);
         border-left: 4px solid #e63985; border-radius: 10px;
-        padding: 14px 18px; font-size: 1.5rem;
+        padding: 14px 18px; font-size: 2.5rem;
         color: #555; line-height: 1.75;
       }
       .dc-note strong { color: #e63985; }
       .dc-warning {
         background: linear-gradient(135deg, #fffbf0, #fff8e8);
         border-left: 4px solid #f5a623; border-radius: 10px;
-        padding: 14px 18px; font-size: 1.5rem;
+        padding: 14px 18px; font-size: 2.5rem;
         color: #555; line-height: 1.75; margin-top: 16px;
       }
       .dc-warning strong { color: #c47d0e; }
       .dc-conclusions-list {
         line-height: 2; padding-left: 18px; margin-bottom: 0;
       }
-      .dc-conclusions-list li { margin-bottom: 6px; }
-      .dc-conclusions-list li b { color: #1a1a2e; }
-      .dc-conclusions-list li a { color: #e63985; }
+      .dc-conclusions-list li {font-size: 2.0rem; margin-bottom: 6px; }
+      .dc-conclusions-list li b { font-size: 2.0rem;color: #1a1a2e; }
+      .dc-conclusions-list li a { font-size: 2.0rem;color: #e63985; }
     "))
          ),
          div(class = "dc-page",
