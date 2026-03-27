@@ -110,7 +110,7 @@ navbarPage("Health is Wealth",
 
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: 7rem;
+  font-size: 10rem;
   font-weight: 800;
   color: #e63985;
   margin-bottom: 18px;
@@ -953,18 +953,18 @@ tabPanel("Data Check Out",
         font-family: 'Source Sans 3', sans-serif;
       }
       .dc-page-label {
-        font-size: 1.0rem; font-weight: 700;
+        font-size: 2.0rem; font-weight: 700;
         letter-spacing: 0.15em; text-transform: uppercase;
         color: #e63985; margin-bottom: 10px;
       }
       .dc-page-heading {
         font-family: 'Playfair Display', serif;
-        font-size: 3.0rem; font-weight: 700;
+        font-size: 5.0rem; font-weight: 700;
         color: #1a1a2e; margin-bottom: 12px; line-height: 1.25;
       }
       .dc-page-heading span { color: #e63985; }
       .dc-page-intro {
-        font-size: 1.5rem; color: #555; line-height: 1.8;
+        font-size: 2.0rem; color: #555; line-height: 1.8;
         margin-bottom: 40px; max-width: 2000px;
       }
       .dc-layout {
@@ -982,19 +982,19 @@ tabPanel("Data Check Out",
       }
       .dc-section-title {
         font-family: 'Playfair Display', serif;
-        font-size: 1.05rem; font-weight: 700; color: #1a1a2e;
+        font-size: 2.0rem; font-weight: 700; color: #1a1a2e;
         margin: 0 0 16px; padding-bottom: 10px;
         border-bottom: 1px solid #fce8f1;
       }
       .dc-form-card label {
-        font-size: 0.88rem; font-weight: 600; color: #444;
+        font-size: 1.5rem; font-weight: 600; color: #444;
         margin-bottom: 4px; display: block;
       }
       .dc-form-card input[type='number'],
       .dc-form-card select {
         border: 1.5px solid #f0c0d8 !important;
         border-radius: 10px !important;
-        font-size: 0.92rem !important;
+        font-size: 1.5rem !important;
         padding: 8px 12px !important;
         color: #333;
         width: 100%;
@@ -1012,7 +1012,7 @@ tabPanel("Data Check Out",
       .dc-submit-btn {
         width: 100%; padding: 12px;
         background: linear-gradient(135deg, #e63985, #f0699e) !important;
-        color: #fff !important; font-weight: 700; font-size: 0.95rem;
+        color: #fff !important; font-weight: 700; font-size: 1.5rem;
         border: none !important; border-radius: 12px !important; cursor: pointer;
         letter-spacing: 0.04em; text-transform: uppercase;
         transition: opacity 0.2s, transform 0.15s;
@@ -1029,13 +1029,13 @@ tabPanel("Data Check Out",
         padding: 26px 30px;
       }
       .dc-result-label {
-        font-size: 0.75rem; font-weight: 700;
+        font-size: 2.5rem; font-weight: 700;
         letter-spacing: 0.15em; text-transform: uppercase;
         color: #e63985; margin-bottom: 6px;
       }
       .dc-result-title {
         font-family: 'Playfair Display', serif;
-        font-size: 1.3rem; font-weight: 700; color: #1a1a2e;
+        font-size: 2.5rem; font-weight: 700; color: #1a1a2e;
         margin-bottom: 14px;
       }
 
@@ -1046,7 +1046,7 @@ tabPanel("Data Check Out",
         font-size: 3.2rem; font-weight: 900; color: #e63985; line-height: 1;
       }
       .dc-bmi-category {
-        font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
+        font-size: 1.5rem; font-weight: 700; text-transform: uppercase;
         letter-spacing: 0.1em; color: #888;
       }
       .dc-placeholder {
@@ -1059,7 +1059,7 @@ tabPanel("Data Check Out",
       .dc-table th {
         text-align: left; padding: 10px 12px;
         background: linear-gradient(135deg, #fff0f7, #fff8f0);
-        font-size: 0.78rem; font-weight: 700;
+        font-size: 1.5rem; font-weight: 700;
         letter-spacing: 0.07em; text-transform: uppercase; color: #e63985;
         border-bottom: 2px solid #fce8f1;
       }
@@ -1070,14 +1070,14 @@ tabPanel("Data Check Out",
       .dc-note {
         background: linear-gradient(135deg, #fff8fb, #fff4f0);
         border-left: 4px solid #e63985; border-radius: 10px;
-        padding: 14px 18px; font-size: 0.95rem;
+        padding: 14px 18px; font-size: 1.5rem;
         color: #555; line-height: 1.75;
       }
       .dc-note strong { color: #e63985; }
       .dc-warning {
         background: linear-gradient(135deg, #fffbf0, #fff8e8);
         border-left: 4px solid #f5a623; border-radius: 10px;
-        padding: 14px 18px; font-size: 0.92rem;
+        padding: 14px 18px; font-size: 1.5rem;
         color: #555; line-height: 1.75; margin-top: 16px;
       }
       .dc-warning strong { color: #c47d0e; }
