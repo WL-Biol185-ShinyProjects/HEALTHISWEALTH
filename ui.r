@@ -317,33 +317,46 @@ navbarPage("Health is Wealth",
                p(class = "map-source", "Source: PCOS Dataset · Values per 100,000 women aged 15–49")
          ),
   div(
-    class = "about-section",
-    
-    div(class = "map-label", "Trend Analysis"),
-    div(
-      class = "map-heading",
-      style = "font-size: 3.0rem;",
-      "Baseline Incidence ", tags$span("vs AAPC")
-    ),
-    p(
-      class = "map-intro",
-      style = "font-size: 1.5rem;",
-      "This plot shows how baseline PCOS incidence in 1990 relates to long-term average annual percent change from 1990 to 2021. Countries with lower baseline incidence often show faster growth over time."
-    ),
-    div(
-      class = "map-card",
-  plotlyOutput("scatter_aapc", height = "400px")
-    ),
-    p(
-      class = "map-source",
-      "Source: PCOS Dataset · AAPC = Average Annual Percent Change"
+    style = "text-align: center; margin-top: 20px; margin-bottom: 50px;",
+    tags$a(
+      href = "#",
+      "Explore PCOS Trends Over Time",
+      class = "hero-link",
+      onclick = "document.querySelector('a[data-value=\"Trends\"]').click(); return false;"
     )
   )
-  
-  
+
   ),
   
-
+  tabPanel("Trends",
+           
+           div(class = "about-section",
+               
+               div(class = "map-label", "Trend Analysis"),
+               
+               div(
+                 class = "map-heading",
+                 style = "font-size: 3.0rem;",
+                 "Baseline Incidence ", tags$span("vs AAPC")
+               ),
+               
+               p(
+                 class = "map-intro",
+                 style = "font-size: 1.5rem;",
+                 "This plot shows how baseline PCOS incidence in 1990 relates to long-term average annual percent change from 1990 to 2021. Countries with lower baseline incidence often show faster growth over time."
+               ),
+               
+               div(
+                 class = "map-card",
+                 plotlyOutput("scatter_aapc", height = "500px")
+               ),
+               
+               p(
+                 class = "map-source",
+                 "Source: PCOS Dataset · AAPC = Average Annual Percent Change"
+               )
+           )
+  ),
   
   # ── 2. TYPES OF PCOS ──────────────────────────────────────────────────────
   tabPanel("Types of PCOS",

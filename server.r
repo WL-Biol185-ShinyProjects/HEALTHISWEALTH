@@ -553,6 +553,9 @@ server <- function(input, output, session) {
       ymin = pred[, "lwr"],
       ymax = pred[, "upr"]
     )
+    p <- round(suppressWarnings(
+      cor.test(pcos$incidence_1990, pcos$aapc, method = "spearman")$p.value
+    ), 4)
     
     plot_ly() %>%
       # Confidence band
@@ -580,7 +583,7 @@ server <- function(input, output, session) {
         data       = pcos,
         x          = ~incidence_1990,
         y          = ~aapc,
-        marker     = list(color = "#756bb1", opacity = 0.6, size = 7),
+        marker     = list(color = "#e65389", opacity = 0.6, size = 7),
         text       = ~paste0(
           "<b>", country, "</b><br>",
           "Incidence 1990: ", round(incidence_1990, 2), " per 100,000<br>",
@@ -598,7 +601,7 @@ server <- function(input, output, session) {
         xaxis       = list(title = "Incidence 1990 (per 100,000)"),
         yaxis       = list(title = "AAPC"),
         hoverlabel  = list(bgcolor = "white", font = list(size = 13),
-                           bordercolor = "#756bb1"),
+                           bordercolor = "#e65389"),
         annotations = list(list(
           x         = 0.98, y = 0.98,
           xref      = "paper", yref = "paper",
