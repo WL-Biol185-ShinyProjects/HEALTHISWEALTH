@@ -11,6 +11,7 @@ library(maps)
 library(shinyjs)
 library(ggplot2)
 library(ggwordcloud)
+library(plotly)
 
 server <- function(input, output, session) {
   
@@ -47,7 +48,7 @@ server <- function(input, output, session) {
   
   state_data$mortality_rate[state_data$state == "kentucky"] <- 8.5
   
-  us_states       <- st_as_sf(map("state", plot = FALSE, fill = TRUE))
+  us_states <- st_as_sf(maps::map("state", plot = FALSE, fill = TRUE))
   us_states$state <- tolower(us_states$ID)
   map_data_state  <- merge(us_states, state_data, by = "state", all.x = TRUE)
   
@@ -532,4 +533,80 @@ server <- function(input, output, session) {
   observeEvent(input$toggle_art,  { toggle_card("body_art",  "chev_art")  })
   observeEvent(input$toggle_ocp,  { toggle_card("body_ocp",  "chev_ocp")  })
   
-} # ── end of server ──
+  # --- Scatter: Incidence 1990 vs AAPC ---
+
+  output$scatter_aapc <- renderPlotly({
+    
+    rho <- round(cor(pcos$incidence_1990, pcos$aapc, method = "spearman", use = "complete.obs"), 3)
+    p   <- round(cor.test(pcos$incidence_1990, pcos$aapc, method = "spearman")$p.value, 4)
+    
+    # Build trendline manually
+    fit    <- lm(aapc ~ incidence_1990, data = pcos)
+    x_seq  <- seq(min(pcos$incidence_1990, na.rm = TRUE),
+                  max(pcos$incidence_1990, na.rm = TRUE),
+                  length.out = 100)
+    pred   <- predict(fit, newdata = data.frame(incidence_1990 = x_seq),
+                      interval = "confidence")
+    trend_df <- data.frame(
+      x    = x_seq,
+      y    = pred[, "fit"],
+      ymin = pred[, "lwr"],
+      ymax = pred[, "upr"]
+    )
+    
+    plot_ly() %>%
+      # Confidence band
+      add_ribbons(
+        data       = trend_df,
+        x          = ~x,
+        ymin       = ~ymin,
+        ymax       = ~ymax,
+        fillcolor  = "rgba(215, 25, 28, 0.15)",
+        line       = list(color = "transparent"),
+        showlegend = FALSE,
+        hoverinfo  = "skip"
+      ) %>%
+      # Trendline
+      add_lines(
+        data       = trend_df,
+        x          = ~x,
+        y          = ~y,
+        line       = list(color = "#d7191c", width = 2),
+        showlegend = FALSE,
+        hoverinfo  = "skip"
+      ) %>%
+      # Points with hover
+      add_markers(
+        data       = pcos,
+        x          = ~incidence_1990,
+        y          = ~aapc,
+        marker     = list(color = "#756bb1", opacity = 0.6, size = 7),
+        text       = ~paste0(
+          "<b>", country, "</b><br>",
+          "Incidence 1990: ", round(incidence_1990, 2), " per 100,000<br>",
+          "Incidence 2021: ", round(incidence_2021, 2), " per 100,000<br>",
+          "Cases 1990: ",     formatC(cases_1990, format = "d", big.mark = ","), "<br>",
+          "Cases 2021: ",     formatC(cases_2021, format = "d", big.mark = ","), "<br>",
+          "AAPC: ",           round(aapc, 3)
+        ),
+        hoverinfo  = "text",
+        showlegend = FALSE
+      ) %>%
+      layout(
+        title       = list(text = "Baseline Incidence (1990) vs AAPC 1990–2021",
+                           font = list(size = 15)),
+        xaxis       = list(title = "Incidence 1990 (per 100,000)"),
+        yaxis       = list(title = "AAPC"),
+        hoverlabel  = list(bgcolor = "white", font = list(size = 13),
+                           bordercolor = "#756bb1"),
+        annotations = list(list(
+          x         = 0.98, y = 0.98,
+          xref      = "paper", yref = "paper",
+          text      = paste0("Spearman ρ = ", rho, "<br>p = ", p),
+          showarrow = FALSE,
+          font      = list(size = 12, color = "gray30"),
+          align     = "right"
+        ))
+      )
+  })
+} 
