@@ -5,7 +5,7 @@ library(shinyjs)
 library(wordcloud2)
 library(tm)
 library(RColorBrewer)
-
+library(plotly)
 navbarPage("Health is Wealth",
             tabPanel("About",
             tags$head(
