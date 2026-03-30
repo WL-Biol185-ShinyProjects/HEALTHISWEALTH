@@ -778,7 +778,7 @@ navbarPage("Health is Wealth",
                                             div(class = "tx-badge-row", span(class = "tx-badge badge-surgical", "Adrenal Androgen Excess")),
                                             p(class = "tx-desc",
                                               "Adrenal PCOS is rooted in a dysregulated stress response. When the body is under chronic stress,
-                   the adrenal glands produce excess DHEA-S — an androgen that disrupts the hormonal balance needed
+                   the adrenal glands produce excess DHEA-S, an androgen that disrupts the hormonal balance needed
                    for regular ovulation. Unlike insulin-resistant PCOS, blood sugar and insulin levels are typically
                    normal in this type, making accurate diagnosis especially important."
                                             ),
@@ -801,7 +801,7 @@ navbarPage("Health is Wealth",
                                             ),
                                             div(class = "tx-note",
                                                 tags$strong("Key marker: "), "Elevated DHEA-S with normal insulin levels points to adrenal PCOS.
-                    Also check cortisol levels. Addressing the root cause — chronic stress and HPA axis
+                    Also check cortisol levels. Addressing the root cause chronic stress and HPA axis
                     dysregulation — is central to recovery."
                                             )
                                         )
@@ -861,8 +861,8 @@ navbarPage("Health is Wealth",
                                             ),
                                             div(class = "tx-note",
                                                 tags$strong("Note: "), "Inflammatory markers like CRP, white blood cell count, and homocysteine
-                    should be tested. Also check vitamin D and ferritin. Eliminating inflammatory triggers —
-                    gluten, dairy, or processed foods — may significantly reduce symptoms."
+                    should be tested. Also check vitamin D and ferritin. Eliminating inflammatory triggers:
+                    gluten, dairy, or processed foods, may significantly reduce symptoms."
                                             )
                                         )
                                     )
