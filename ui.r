@@ -589,9 +589,9 @@ navbarPage("Health is Wealth",
                          style = "max-width: 63%; margin: 30px auto 60px; padding: 0 24px;",
                          
                          div(class = "about-card",
-                             div(class = "about-label", "About This Project"),
+                             div(class = "about-label", "About This Section"),
                              div(class = "about-heading",
-                                 "Understanding ", tags$span("PCOS"), " Through Data"
+                                 "PCOS", tags$span("Overview"), 
                              ),
                              p(class = "about-text",
                                "Polycystic Ovary Syndrome (PCOS) is a hormonal disorder that affects how the ovaries function. It can cause irregular periods, high levels of androgens, and cysts on the ovaries. However, PCOS is not the same for everyone, and there are different types based on underlying causes."
@@ -602,7 +602,7 @@ navbarPage("Health is Wealth",
                                      tags$span(class = "stat-desc", "Women affected globally")
                                  ),
                                  div(class = "stat-pill",
-                                     tags$span(class = "stat-number", "50%"),
+                                     tags$span(class = "stat-number", "70%"),
                                      tags$span(class = "stat-desc", "Cases go undiagnosed")
                                  ),
                                  div(class = "stat-pill",
