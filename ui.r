@@ -375,8 +375,8 @@ navbarPage("Health is Wealth",
                                           "Source: PCOS Dataset · AAPC = Average Annual Percent Change"
                                         )
                                     )
-                          )
-                 ),
+                          ),
+                 
                  
                  div(class = "map-card",
                      style = "padding: 32px 36px; margin-top: 20px;",
@@ -478,7 +478,7 @@ navbarPage("Health is Wealth",
           color: #1a1a2e;
           margin-bottom: 10px;
         ",
-                         "📈 Trend and Uncertainty"
+                         "Trend and Uncertainty"
                        ),
                        tags$ul(
                          style = "padding-left: 20px; margin: 0;",
@@ -499,7 +499,7 @@ navbarPage("Health is Wealth",
                          )
                        )
                      )
-                 ),
+                 )),
                  
                  # ── TAB 2: Regional Trend ───────────────────────────────────────
                  tabPanel("Regional Trend",
