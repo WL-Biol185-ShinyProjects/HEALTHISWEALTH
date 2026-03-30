@@ -378,6 +378,129 @@ navbarPage("Health is Wealth",
                           )
                  ),
                  
+                 div(class = "map-card",
+                     style = "padding: 32px 36px; margin-top: 20px;",
+                     
+                     # Card title
+                     div(
+                       style = "
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #e63985;
+        margin-bottom: 8px;
+      ",
+                       "Analysis"
+                     ),
+                     div(
+                       style = "
+        font-family: 'Playfair Display', serif;
+        font-size: 4.0rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid #fce8f1;
+      ",
+                       "Baseline Incidence vs AAPC ",
+                       tags$span("(Spearman p = -0.228, p = 0.001)",
+                                 style = "color: #e63985; font-size: 2.0rem;")
+                     ),
+                     
+                     # Section 1: Correlation interpretation
+                     div(
+                       style = "margin-bottom: 20px;",
+                       div(
+                         style = "
+          font-size: 3.0rem;
+          font-weight: 700;
+          color: #1a1a2e;
+          margin-bottom: 10px;
+        ",
+                         "Correlation Interpretation"
+                       ),
+                       tags$ul(
+                         style = "padding-left: 20px; margin: 0;",
+                         tags$li(
+                           style = "font-size: 2.0rem; color: #444; line-height: 1.85; margin-bottom: 6px;",
+                           "Spearman correlation measures rank-based (monotonic) relationships rather than exact values."
+                         ),
+                         tags$li(
+                           style = "font-size: 2.0rem; color: #444; line-height: 1.85; margin-bottom: 6px;",
+                           "The ", tags$strong("negative correlation (ρ = -0.228)"),
+                           " indicates that as baseline incidence (1990) increases, AAPC tends to decrease slightly."
+                         ),
+                         tags$li(
+                           style = "font-size: 2.0rem; color: #444; line-height: 1.85;",
+                           "The magnitude is ", tags$strong("small to moderate"),
+                           ", meaning the relationship is present but not strong."
+                         )
+                       )
+                     ),
+                     
+                     tags$hr(style = "border: none; border-top: 1px solid #fce8f1; margin: 16px 0;"),
+                     
+                     # Section 2: Statistical significance
+                     div(
+                       style = "margin-bottom: 20px;",
+                       div(
+                         style = "
+          font-size: 3.0rem;
+          font-weight: 700;
+          color: #1a1a2e;
+          margin-bottom: 10px;
+        ",
+                         "Statistical Significance"
+                       ),
+                       tags$ul(
+                         style = "padding-left: 20px; margin: 0;",
+                         tags$li(
+                           style = "font-size: 2.0rem; color: #444; line-height: 1.85; margin-bottom: 6px;",
+                           tags$strong("p = 0.001"), " indicates a 0.1% probability that the relationship is due to chance."
+                         ),
+                         tags$li(
+                           style = "font-size: 2.0rem; color: #444; line-height: 1.85;",
+                           "Since ", tags$strong("p < 0.05"),
+                           ", the result is statistically significant and reliable."
+                         )
+                       )
+                     ),
+                     
+                     tags$hr(style = "border: none; border-top: 1px solid #fce8f1; margin: 16px 0;"),
+                     
+                     # Section 3: Trend and uncertainty
+                     div(
+                       div(
+                         style = "
+          font-size: 3.0rem;
+          font-weight: 700;
+          color: #1a1a2e;
+          margin-bottom: 10px;
+        ",
+                         "📈 Trend and Uncertainty"
+                       ),
+                       tags$ul(
+                         style = "padding-left: 20px; margin: 0;",
+                         tags$li(
+                           style = "font-size: 2.0rem; color: #444; line-height: 1.85; margin-bottom: 6px;",
+                           "The ", tags$strong(style = "color: #d7191c;", "red line"),
+                           " represents the best-fit trend between incidence (1990) and AAPC."
+                         ),
+                         tags$li(
+                           style = "font-size: 2.0rem; color: #444; line-height: 1.85; margin-bottom: 6px;",
+                           "The ", tags$strong("shaded region"),
+                           " is the 95% confidence interval, showing uncertainty around the trend."
+                         ),
+                         tags$li(
+                           style = "font-size: 2.0rem; color: #444; line-height: 1.85;",
+                           "The widening band at higher incidence values reflects ",
+                           tags$strong("greater variability and fewer data points"), "."
+                         )
+                       )
+                     )
+                 ),
+                 
                  # ── TAB 2: Regional Trend ───────────────────────────────────────
                  tabPanel("Regional Trend",
                           mainPanel(width = 12,
