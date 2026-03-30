@@ -617,12 +617,12 @@ server <- function(input, output, session) {
   region_df <- read.csv("Region.csv", check.names = FALSE)
   
   # Long format for grouped bar chart
-  region_long <- region_df %>%
-    pivot_longer(
-      cols = c(`Prev 1990`, `Prev 2021`),
-      names_to = "Year",
-      values_to = "Prevalence"
-    )
+  region_long <- tidyr::pivot_longer(
+    region_df,
+    cols = c(`Prev 1990`, `Prev 2021`),
+    names_to = "Year",
+    values_to = "Prevalence"
+  )
   
   region_long$Year <- ifelse(region_long$Year == "Prev 1990", "1990", "2021")
   
@@ -667,12 +667,12 @@ server <- function(input, output, session) {
   # ── SDI DATA ──
   sdi_df <- read.csv("SDI.csv", check.names = FALSE)
   
-  sdi_long <- sdi_df %>%
-    pivot_longer(
-      cols = c(`Prev 1990`, `Prev 2021`),
-      names_to = "Year",
-      values_to = "Prevalence"
-    )
+  sdi_long <- tidyr::pivot_longer(
+    sdi_df,
+    cols = c(`Prev 1990`, `Prev 2021`),
+    names_to = "Year",
+    values_to = "Prevalence"
+  )
   
   sdi_long$Year <- ifelse(sdi_long$Year == "Prev 1990", "1990", "2021")
   
