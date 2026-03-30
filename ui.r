@@ -340,173 +340,108 @@ navbarPage("Health is Wealth",
   ),
   
   tabPanel("Trends",
-           div(class = "about-section",
-               
-               # ── HERO HEADER ──────────────────────────────────────────────────────
-               div(
-                 style = "
-        background: white;
-        text-align: center;
-        padding: 60px 40px 40px 40px;
-        margin-bottom: 30px;
-      ",
-                 div(
-                   style = "
-          font-size: 0.95rem;
-          font-weight: 600;
-          letter-spacing: 0.15em;
-          text-transform: uppercase;
-          color: #DC5987;
-          margin-bottom: 12px;
-        ",
-                   "Data Analysis"
-                 ),
-                 h1(
-                   style = "
-          font-size: 3.5rem;
-          font-weight: 800;
-          color: #C71585;
-          margin: 0 0 16px 0;
-          line-height: 1.1;
-        ",
-                   "PCOS ", tags$span("Trends", style = "color: #FFB6C1;")
-                 ),
-                 p(
-                   style = "
-          font-size: 1.2rem;
-          color: #888;
-          max-width: 600px;
-          margin: 0 auto;
-        ",
-                   "Explore how PCOS incidence and prevalence have changed globally from 1990 to 2021."
-                 )
-               ),
-               
-               # ── INNER TABS ────────────────────────────────────────────────────────
+           
+           div(class = "types-hero",
+               div(class = "types-hero-label", "Data Analysis"),
+               h1(class = "types-hero-heading", "PCOS Trends"),
+               p(class = "types-hero-subtext",
+                 "Explore how PCOS incidence and prevalence have changed globally from 1990 to 2021."
+               )
+           ),
+           
+           div(class = "types-tabs-wrap",
                tabsetPanel(
-                 type = "tabs",
+                 id = "trends_tabs",
                  
-                 # ── TAB 1: Baseline Incidence vs AAPC ────────────────────────────
+                 # ── TAB 1: Baseline Incidence vs AAPC ──────────────────────────
                  tabPanel("Baseline Incidence vs AAPC",
-                          div(class = "about-section",
-                              
-                              div(class = "map-label", "Trend Analysis"),
-                              
-                              div(
-                                class = "map-heading",
-                                style = "font-size: 3.0rem;",
-                                "Baseline Incidence ", tags$span("vs AAPC")
-                              ),
-                              
-                              p(
-                                class = "map-intro",
-                                style = "font-size: 1.5rem;",
-                                "This plot shows how baseline PCOS incidence in 1990 relates to long-term average annual percent change from 1990 to 2021. Countries with lower baseline incidence often show faster growth over time."
-                              ),
-                              
-                              div(
-                                class = "map-card",
-                                plotlyOutput("scatter_aapc", height = "500px")
-                              ),
-                              
-                              p(
-                                class = "map-source",
-                                "Source: PCOS Dataset · AAPC = Average Annual Percent Change"
-                              )
+                          mainPanel(width = 12,
+                                    div(class = "about-section",
+                                        
+                                        div(class = "map-label", "Trend Analysis"),
+                                        div(class = "map-heading",
+                                            style = "font-size: 3.0rem;",
+                                            "Baseline Incidence ", tags$span("vs AAPC")
+                                        ),
+                                        p(class = "map-intro",
+                                          style = "font-size: 1.5rem;",
+                                          "This plot shows how baseline PCOS incidence in 1990 relates to long-term average annual percent change from 1990 to 2021. Countries with lower baseline incidence often show faster growth over time."
+                                        ),
+                                        div(class = "map-card",
+                                            plotlyOutput("scatter_aapc", height = "500px")
+                                        ),
+                                        p(class = "map-source",
+                                          "Source: PCOS Dataset · AAPC = Average Annual Percent Change"
+                                        )
+                                    )
                           )
                  ),
                  
-                 # ── TAB 2: Regional Trend ─────────────────────────────────────────
+                 # ── TAB 2: Regional Trend ───────────────────────────────────────
                  tabPanel("Regional Trend",
-                          div(class = "about-section",
-                              
-                              div(class = "map-label", "Regional Analysis"),
-                              
-                              div(
-                                class = "map-heading",
-                                style = "font-size: 3.0rem;",
-                                "PCOS Prevalence ", tags$span("by Region")
-                              ),
-                              
-                              p(
-                                class = "map-intro",
-                                style = "font-size: 1.5rem;",
-                                "This bar graph compares PCOS prevalence across regions in 1990 and 2021."
-                              ),
-                              
-                              div(
-                                class = "map-card",
-                                plotOutput("regionBarPlot", height = "500px")
-                              ),
-                              
-                              div(style = "height: 30px;"),
-                              
-                              div(
-                                class = "map-card",
-                                plotOutput("regionDiffPlot", height = "500px")
-                              ),
-                              
-                              div(style = "height: 30px;"),
-                              
-                              div(
-                                class = "map-card",
-                                verbatimTextOutput("regionTTest")
-                              ),
-                              
-                              p(
-                                class = "map-source",
-                                "Source: PCOS Dataset"
-                              )
+                          mainPanel(width = 12,
+                                    div(class = "about-section",
+                                        
+                                        div(class = "map-label", "Regional Analysis"),
+                                        div(class = "map-heading",
+                                            style = "font-size: 3.0rem;",
+                                            "PCOS Prevalence ", tags$span("by Region")
+                                        ),
+                                        p(class = "map-intro",
+                                          style = "font-size: 1.5rem;",
+                                          "This bar graph compares PCOS prevalence across regions in 1990 and 2021."
+                                        ),
+                                        div(class = "map-card",
+                                            plotOutput("regionBarPlot", height = "500px")
+                                        ),
+                                        div(style = "height: 30px;"),
+                                        div(class = "map-card",
+                                            plotOutput("regionDiffPlot", height = "500px")
+                                        ),
+                                        div(style = "height: 30px;"),
+                                        div(class = "map-card",
+                                            verbatimTextOutput("regionTTest")
+                                        ),
+                                        p(class = "map-source", "Source: PCOS Dataset")
+                                    )
                           )
                  ),
                  
-                 # ── TAB 3: SDI Trend ──────────────────────────────────────────────
+                 # ── TAB 3: SDI Trend ────────────────────────────────────────────
                  tabPanel("SDI Trend",
-                          div(class = "about-section",
-                              
-                              div(class = "map-label", "SDI Trends"),
-                              
-                              div(
-                                class = "map-heading",
-                                style = "font-size: 3.0rem;",
-                                "PCOS Prevalence ", tags$span("by SDI Level")
-                              ),
-                              
-                              p(
-                                class = "map-intro",
-                                style = "font-size: 1.5rem;",
-                                "This section compares PCOS prevalence across SDI levels in 1990 and 2021, highlighting how disease burden varies by socioeconomic development."
-                              ),
-                              
-                              div(
-                                class = "map-card",
-                                plotOutput("sdiBarPlot", height = "500px")
-                              ),
-                              
-                              div(style = "height: 30px;"),
-                              
-                              div(
-                                class = "map-card",
-                                plotOutput("sdiDiffPlot", height = "500px")
-                              ),
-                              
-                              div(style = "height: 30px;"),
-                              
-                              div(
-                                class = "map-card",
-                                verbatimTextOutput("sdiTTest")
-                              ),
-                              
-                              p(
-                                class = "map-source",
-                                "Source: PCOS Dataset · SDI = Socio-Demographic Index"
-                              )
+                          mainPanel(width = 12,
+                                    div(class = "about-section",
+                                        
+                                        div(class = "map-label", "SDI Trends"),
+                                        div(class = "map-heading",
+                                            style = "font-size: 3.0rem;",
+                                            "PCOS Prevalence ", tags$span("by SDI Level")
+                                        ),
+                                        p(class = "map-intro",
+                                          style = "font-size: 1.5rem;",
+                                          "This section compares PCOS prevalence across SDI levels in 1990 and 2021, highlighting how disease burden varies by socioeconomic development."
+                                        ),
+                                        div(class = "map-card",
+                                            plotOutput("sdiBarPlot", height = "500px")
+                                        ),
+                                        div(style = "height: 30px;"),
+                                        div(class = "map-card",
+                                            plotOutput("sdiDiffPlot", height = "500px")
+                                        ),
+                                        div(style = "height: 30px;"),
+                                        div(class = "map-card",
+                                            verbatimTextOutput("sdiTTest")
+                                        ),
+                                        p(class = "map-source",
+                                          "Source: PCOS Dataset · SDI = Socio-Demographic Index"
+                                        )
+                                    )
                           )
                  )
                  
                ) # end tabsetPanel
-           )   # end about-section
-  ),     # end tabPanel Trends
+           )   # end types-tabs-wrap
+  ),    # end tabPanel Trends
   
   # ── 2. TYPES OF PCOS ──────────────────────────────────────────────────────
   tabPanel("Types of PCOS",
