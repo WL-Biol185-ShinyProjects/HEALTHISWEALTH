@@ -1168,7 +1168,7 @@ navbarPage("Health is Wealth",
                        div(class = "tx-pills",
                            span(class = "tx-pill pill-pink", "Regulates periods"),
                            span(class = "tx-pill pill-pink", "Reduces androgens"),
-                           span(class = "tx-pill pill-pink", "Improves acne"),
+                           span(class = "tx-pill pill-pink", "Decrease acne"),
                            span(class = "tx-pill pill-pink", "Reduces hirsutism"),
                            span(class = "tx-pill pill-pink", "Increases SHBG"),
                            span(class = "tx-pill pill-pink", "Protects endometrium")
