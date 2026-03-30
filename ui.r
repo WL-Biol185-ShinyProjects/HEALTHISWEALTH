@@ -802,7 +802,7 @@ navbarPage("Health is Wealth",
                                             div(class = "tx-note",
                                                 tags$strong("Key marker: "), "Elevated DHEA-S with normal insulin levels points to adrenal PCOS.
                     Also check cortisol levels. Addressing the root cause chronic stress and HPA axis
-                    dysregulation — is central to recovery."
+                    dysregulation is central to recovery."
                                             )
                                         )
                                     )
