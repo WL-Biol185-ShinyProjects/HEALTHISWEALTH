@@ -186,11 +186,11 @@ navbarPage("Health is Wealth",
 .nav-tabs > li.active > a:hover {
   color: #C71585;
   border-bottom: 3px solid #C71585;
-  font-weight: 700;
+  font-weight: 300;
 }
-
-
-
+.nav-tabs > li > a {
+  font-size: 3.0rem !important;
+}
       ")), 
            ),
            div(class = "about-section",
@@ -350,6 +350,7 @@ navbarPage("Health is Wealth",
            ),
            
            div(class = "types-tabs-wrap",
+               mainPanel(width = 12,
                tabsetPanel(
                  id = "trends_tabs",
                  
@@ -441,7 +442,7 @@ navbarPage("Health is Wealth",
                  
                ) # end tabsetPanel
            )   # end types-tabs-wrap
-  ),    # end tabPanel Trends
+  )),    # end tabPanel Trends
   
   # ── 2. TYPES OF PCOS ──────────────────────────────────────────────────────
   tabPanel("Types of PCOS",
