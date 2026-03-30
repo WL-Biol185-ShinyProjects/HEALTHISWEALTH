@@ -612,4 +612,101 @@ server <- function(input, output, session) {
         ))
       )
   })
+  
+  #Trendline analysis for region
+  
+  region_df <- read.csv("Region.csv", check.names = FALSE)
+  
+  # Long format for grouped bar chart
+  region_long <- region_df %>%
+    pivot_longer(
+      cols = c(`Prev 1990`, `Prev 2021`),
+      names_to = "Year",
+      values_to = "Prevalence"
+    )
+  
+  region_long$Year <- ifelse(region_long$Year == "Prev 1990", "1990", "2021")
+  
+  # Difference column
+  region_df$Difference <- region_df$`Prev 2021` - region_df$`Prev 1990`
+  
+  # Region-wise prevalence bar graph
+  output$regionBarPlot <- renderPlot({
+    ggplot(region_long, aes(x = Region, y = Prevalence, fill = Year)) +
+      geom_bar(stat = "identity", position = "dodge") +
+      labs(
+        title = "PCOS Prevalence by Region (1990 vs 2021)",
+        x = "Region",
+        y = "Prevalence per 100,000"
+      ) +
+      theme_minimal() +
+      theme(axis.text.x = element_text(angle = 30, hjust = 1))
+  })
+  
+  # Increase in prevalence graph
+  output$regionDiffPlot <- renderPlot({
+    ggplot(region_df, aes(x = Region, y = Difference)) +
+      geom_bar(stat = "identity") +
+      labs(
+        title = "Increase in PCOS Prevalence (1990 \u2192 2021)",
+        x = "Region",
+        y = "Change in Prevalence"
+      ) +
+      theme_minimal() +
+      theme(axis.text.x = element_text(angle = 30, hjust = 1))
+  })
+  
+  # Paired t-test result
+  output$regionTTest <- renderPrint({
+    prev_1990 <- region_df$`Prev 1990`
+    prev_2021 <- region_df$`Prev 2021`
+    t.test(prev_1990, prev_2021, paired = TRUE)
+  })
+  
+  # ── SDI DATA ──
+  sdi_df <- read.csv("SDI.csv", check.names = FALSE)
+  
+  sdi_long <- sdi_df %>%
+    pivot_longer(
+      cols = c(`Prev 1990`, `Prev 2021`),
+      names_to = "Year",
+      values_to = "Prevalence"
+    )
+  
+  sdi_long$Year <- ifelse(sdi_long$Year == "Prev 1990", "1990", "2021")
+  
+  sdi_df$Difference <- sdi_df$`Prev 2021` - sdi_df$`Prev 1990`
+  
+  # ── SDI BAR PLOT ──
+  output$sdiBarPlot <- renderPlot({
+    ggplot(sdi_long, aes(x = `SDI Level`, y = Prevalence, fill = Year)) +
+      geom_bar(stat = "identity", position = "dodge") +
+      labs(
+        title = "PCOS Prevalence by SDI Level (1990 vs 2021)",
+        x = "SDI Level",
+        y = "Prevalence per 100,000"
+      ) +
+      theme_minimal()
+  })
+  
+  # ── SDI DIFFERENCE PLOT ──
+  output$sdiDiffPlot <- renderPlot({
+    ggplot(sdi_df, aes(x = `SDI Level`, y = Difference)) +
+      geom_bar(stat = "identity") +
+      labs(
+        title = "Increase in PCOS Prevalence by SDI Level (1990 → 2021)",
+        x = "SDI Level",
+        y = "Change in Prevalence"
+      ) +
+      theme_minimal()
+  })
+  
+  # ── SDI T-TEST ──
+  output$sdiTTest <- renderPrint({
+    prev_1990_sdi <- sdi_df$`Prev 1990`
+    prev_2021_sdi <- sdi_df$`Prev 2021`
+    
+    t.test(prev_1990_sdi, prev_2021_sdi, paired = TRUE)
+  })
+  
 } 

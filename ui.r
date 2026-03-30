@@ -354,8 +354,78 @@ navbarPage("Health is Wealth",
                p(
                  class = "map-source",
                  "Source: PCOS Dataset · AAPC = Average Annual Percent Change"
+               ),
+               div(
+                 class = "map-heading",
+                 style = "font-size: 3.0rem;",
+                 "PCOS Prevalence ", tags$span("by Region")
+               ),
+               
+               p(
+                 class = "map-intro",
+                 style = "font-size: 1.5rem;",
+                 "This bar graph compares PCOS prevalence across regions in 1990 and 2021."
+               ),
+               
+               div(
+                 class = "map-card",
+                 plotOutput("regionBarPlot", height = "500px")
+               ),
+               
+               div(style = "height: 30px;"),
+               
+               div(
+                 class = "map-card",
+                 plotOutput("regionDiffPlot", height = "500px")
+               ),
+               
+               div(style = "height: 30px;"),
+               
+               div(
+                 class = "map-card",
+                 verbatimTextOutput("regionTTest")
+               ),
+               # ── SDI SECTION ──
+               div(class = "map-label", "SDI Trends"),
+               
+               div(
+                 class = "map-heading",
+                 style = "font-size: 3.0rem;",
+                 "PCOS Prevalence ", tags$span("by SDI Level")
+               ),
+               
+               p(
+                 class = "map-intro",
+                 style = "font-size: 1.5rem;",
+                 "This section compares PCOS prevalence across SDI levels in 1990 and 2021, highlighting how disease burden varies by socioeconomic development."
+               ),
+               
+               div(
+                 class = "map-card",
+                 plotOutput("sdiBarPlot", height = "500px")
+               ),
+               
+               div(style = "height: 30px;"),
+               
+               div(
+                 class = "map-card",
+                 plotOutput("sdiDiffPlot", height = "500px")
+               ),
+               
+               div(style = "height: 30px;"),
+               
+               div(
+                 class = "map-card",
+                 verbatimTextOutput("sdiTTest")
+               ),
+               
+               p(
+                 class = "map-source",
+                 "Source: PCOS Dataset · SDI = Socio-Demographic Index"
                )
            )
+           
+           
   ),
   
   # ── 2. TYPES OF PCOS ──────────────────────────────────────────────────────
