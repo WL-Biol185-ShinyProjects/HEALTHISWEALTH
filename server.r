@@ -634,6 +634,7 @@ server <- function(input, output, session) {
   output$regionBarPlot <- renderPlot({
     ggplot(region_long, aes(x = Region, y = Prevalence, fill = Year)) +
       geom_bar(stat = "identity", position = "dodge") +
+      scale_fill_manual(values = c("1990" = "#FFB6C1", "2021" = "#C71585")) +
       labs(
         title = "PCOS Prevalence by Region (1990 vs 2021)",
         x = "Region",
@@ -646,7 +647,7 @@ server <- function(input, output, session) {
   # Increase in prevalence graph
   output$regionDiffPlot <- renderPlot({
     ggplot(region_df, aes(x = Region, y = Difference)) +
-      geom_bar(stat = "identity") +
+      geom_bar(stat = "identity", fill = "#DC5987") +
       labs(
         title = "Increase in PCOS Prevalence (1990 \u2192 2021)",
         x = "Region",
@@ -655,6 +656,7 @@ server <- function(input, output, session) {
       theme_minimal() +
       theme(axis.text.x = element_text(angle = 30, hjust = 1))
   })
+  
   
   # Paired t-test result
   output$regionTTest <- renderPrint({
@@ -681,6 +683,7 @@ server <- function(input, output, session) {
   output$sdiBarPlot <- renderPlot({
     ggplot(sdi_long, aes(x = `SDI Level`, y = Prevalence, fill = Year)) +
       geom_bar(stat = "identity", position = "dodge") +
+      scale_fill_manual(values = c("1990" = "#FFB6C1", "2021" = "#C71585")) +
       labs(
         title = "PCOS Prevalence by SDI Level (1990 vs 2021)",
         x = "SDI Level",
@@ -692,7 +695,7 @@ server <- function(input, output, session) {
   # ── SDI DIFFERENCE PLOT ──
   output$sdiDiffPlot <- renderPlot({
     ggplot(sdi_df, aes(x = `SDI Level`, y = Difference)) +
-      geom_bar(stat = "identity") +
+      geom_bar(stat = "identity", fill = "#DC5987") +
       labs(
         title = "Increase in PCOS Prevalence by SDI Level (1990 → 2021)",
         x = "SDI Level",
@@ -700,7 +703,6 @@ server <- function(input, output, session) {
       ) +
       theme_minimal()
   })
-  
   # ── SDI T-TEST ──
   output$sdiTTest <- renderPrint({
     prev_1990_sdi <- sdi_df$`Prev 1990`
