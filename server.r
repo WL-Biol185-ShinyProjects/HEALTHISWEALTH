@@ -35,7 +35,6 @@ server <- function(input, output, session) {
   map_data_joined <- world %>% left_join(pcos, by = c("iso_a3" = "iso3"))
   
   state_data <- read.csv("Uterine_corpus_statewise.csv", stringsAsFactors = FALSE, check.names = FALSE)
-  
   colnames(state_data) <- c(
     "state", "incidence", "mortality_rate", "death_estimates", "new_cases"
   )
