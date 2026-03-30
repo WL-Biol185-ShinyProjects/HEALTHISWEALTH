@@ -1040,7 +1040,7 @@ navbarPage("Health is Wealth",
                        style = "display: none;",
                        div(class = "tx-badge-row", span(class = "tx-badge badge-first-line", "First-line treatment")),
                        p(class = "tx-desc",
-                         "Dietary therapy is typically the first recommended approach for managing PCOS, particularly for those with insulin resistance or elevated BMI. A low-glycemic, anti-inflammatory diet can reduce androgen levels, improve menstrual regularity, and support metabolic health — often without medication. Obesity has been reported in 30% of PCOS patients. However, dieting and exercise alone does not always show long-term results; bariatric surgery has been introduced in cases where conservative approaches fall short."
+                         "Dietary therapy is typically the first recommended approach for managing PCOS, particularly for those with insulin resistance or elevated BMI. A low-glycemic, anti-inflammatory diet can reduce androgen levels, improve menstrual regularity, and support metabolic health often without medication. Obesity has been reported in 30% of PCOS patients. However, dieting and exercise alone does not always show long-term results; bariatric surgery has been introduced in cases where conservative approaches fall short."
                        ),
                        p(tags$strong("Key dietary approaches:"), style = "font-size:1.05rem;color:#333;margin-bottom:8px;"),
                        div(class = "tx-pills",
@@ -1093,7 +1093,7 @@ navbarPage("Health is Wealth",
                        ),
                        div(class = "tx-note",
                            tags$strong("Note: "),
-                           "LOD does not treat all PCOS symptoms — it primarily targets ovulation. Effects may be temporary. It is generally considered after first-line drug therapies have failed."
+                           "LOD does not treat all PCOS symptoms, it primarily targets ovulation. Effects may be temporary. It is generally considered after first-line drug therapies have failed."
                        )
                      )
                  ),
@@ -1162,13 +1162,13 @@ navbarPage("Health is Wealth",
                        style = "display: none;",
                        div(class = "tx-badge-row", span(class = "tx-badge badge-first-line", "First-choice treatment")),
                        p(class = "tx-desc",
-                         "Combined oral contraceptive pills (OCPs) are considered the first-choice treatment for PCOS. They work by suppressing LH and FSH, reducing ovarian androgen production, and regulating the menstrual cycle. OCPs also increase sex hormone-binding globulin (SHBG), which further lowers free androgen levels — helping to manage symptoms like acne, hirsutism, and irregular periods."
+                         "Combined oral contraceptive pills (OCPs) are considered the first-choice treatment for PCOS. They work by suppressing LH and FSH, reducing ovarian androgen production, and regulating the menstrual cycle. OCPs also increase sex hormone-binding globulin (SHBG), which further lowers free androgen levels, helping to manage symptoms like acne, hirsutism, and irregular periods."
                        ),
                        p(tags$strong("Key benefits:"), style = "font-size:1.05rem;color:#333;margin-bottom:8px;"),
                        div(class = "tx-pills",
                            span(class = "tx-pill pill-pink", "Regulates periods"),
                            span(class = "tx-pill pill-pink", "Reduces androgens"),
-                           span(class = "tx-pill pill-pink", "Improves acne"),
+                           span(class = "tx-pill pill-pink", "Decrease acne"),
                            span(class = "tx-pill pill-pink", "Reduces hirsutism"),
                            span(class = "tx-pill pill-pink", "Increases SHBG"),
                            span(class = "tx-pill pill-pink", "Protects endometrium")
