@@ -897,7 +897,7 @@ navbarPage("Health is Wealth",
                                 )
                       )
              )
-  ))),
+  )),
   
   # ── 4. TREATMENT ──────────────────────────────────────────────────────────
   tabPanel("Treatment",
