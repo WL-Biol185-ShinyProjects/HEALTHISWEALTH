@@ -361,7 +361,13 @@ navbarPage("Health is Wealth",
                div(class = "types-hero-label", "Data Analysis"),
                h1(class = "types-hero-heading", "PCOS Trends"),
                p(class = "types-hero-subtext",
-                 "Explore how PCOS incidence and prevalence have changed globally from 1990 to 2021."
+                 "Explore how PCOS incidence and prevalence have changed globally from 1990 to 2021.",
+                 style = "font-size: 1.5rem;color: #e36895",
+                 tags$strong("Source: "),
+                 tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6266413/", target = "_blank",
+                        class = "map-source-link",
+                        tags$strong("PCOS Dataset · PCOS in adolescents and young adults aged 10-24 years in 2021"))
+                 
                )
            ),
            
