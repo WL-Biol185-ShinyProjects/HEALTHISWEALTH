@@ -713,13 +713,9 @@ navbarPage("Health is Wealth",
                                     )
                                 )
                       )
-                  ), 
-        
-             tags$strong("Source: "),
-             tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6935309/#CIT0125", target = "_blank",
-                    class = "map-source-link",
-                    tags$strong("Genetic Basis of Polycystic Ovary Syndrome (PCOS): Current Perspectives"))
+
                  ),
+             
            tabPanel("Post-pill PCOS",
                   mainPanel(width = "12",
                             div(class = "tx-page",
@@ -897,7 +893,7 @@ navbarPage("Health is Wealth",
                                     )
                                 )
                       )
-             )
+            ) )
   )),
   
   # ── 4. TREATMENT ──────────────────────────────────────────────────────────
@@ -1043,8 +1039,21 @@ navbarPage("Health is Wealth",
                  div(class = "tx-page-label", "Managing PCOS"),
                  div(class = "tx-page-heading", "Treatment ", tags$span("Options")),
                  p(class = "tx-page-intro",
-                   "PCOS management is highly individual. Treatment goals vary from regulating cycles and managing symptoms to supporting fertility. Below are key approaches used by clinicians worldwide."
+                   "PCOS management is highly individual. Treatment goals vary from regulating cycles and managing symptoms to supporting fertility. Below are key approaches used by clinicians worldwide.",
+              tags$br(),
+                   tags$strong("Source: "),
+                   tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6935309/#CIT0125", target = "_blank",
+                          class = "map-source-link",
+                          tags$strong("Genetic Basis of Polycystic Ovary Syndrome (PCOS): Current Perspectives")),
+              tags$br(),
+              tags$strong("Source: "),
+              tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6935309/#CIT0125", target = "_blank",
+                     class = "map-source-link",
+                     tags$strong("Genetic Basis of Polycystic Ovary Syndrome (PCOS): Current Perspectives"))
+        
+                  
                  ),
+                 
                  
                  div(class = "tx-card",
                      div(class = "tx-card-header",
