@@ -1,14 +1,16 @@
 # HEALTHISWEALTH
-Martha, Zanita and Fatma biol 185 looking at the intersectionality between health access and equity 
-<<<<<<< HEAD
+ABOUT THIS PROJECT:
+Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal disorders affecting women of reproductive age (typically 15–49) yet remaining widely underdiagnosed and misunderstood. Despite the fact that it affects millions of women worldwide, gaps in research, delayed diagnosis and disparities in health care access continue to affect outcomes, particularly for women from marginalized communities. 
 
-=======
-HEAD
-We are the Best
-We will be investigating PMS
-We will be investigating PMS
-another change
->>>>>>> 11b99c310fc80851f68519724552a5a9002eafa2
+This project explores the prevalence, risks factors, and health outcomes associated with PCOS, including metabolic complications, mental health impacts and reproductive challenges. Using publicly available health datasets, our website analyzes trends by countries, race and age group to better understand disparities in diagnosis treatment access and long-term health outcomes world world.  
+
+TEAM MEMEBERS
+1. Fatma Nayer '27
+2. Martha Afoakwa '27
+3. Zanita Akinkugbe '27
+
+THE WEBSITE INCLUDES:
+PCOS incidence and prevalence 
 
 the tables: uterine corpus statewise, uterine corpus race was manually copied from the website: American Cancer Society. (n.d.). Uterine corpus. Cancer Statistics Center. Retrieved March 23, 2026, from https://cancerstatisticscenter.cancer.org/types/uterine-corpus
 
