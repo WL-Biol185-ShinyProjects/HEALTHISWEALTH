@@ -706,7 +706,6 @@ navbarPage("Health is Wealth",
                                     )
                                 )
                       )
-             ),
              tags$strong("Source: "),
              tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6935309/#CIT0125", target = "_blank",
                     class = "map-source-link",
