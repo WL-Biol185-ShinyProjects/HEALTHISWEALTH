@@ -223,8 +223,12 @@ navbarPage("Health is Wealth",
                            tags$span(class = "stat-desc", "Women affected globally")
                        ),
                        div(class = "stat-pill",
-                           tags$span(class = "stat-number", "70%"),
-                           tags$span(class = "stat-desc", "Cases go undiagnosed")
+                           tags$a(href = "https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome", target = "_blank",
+                                  class = "stat-link",
+                           tags$span(class = "stat-number", "70%")
+                                  ),
+                           tags$span(class = "stat-desc", "Cases go undiagnosed"), 
+                           
                        ),
                        div(class = "stat-pill",
                            tags$span(class = "stat-number", "15–49"),
@@ -306,12 +310,12 @@ navbarPage("Health is Wealth",
           style = "font-size: 3.0rem;"),
       p(class = "map-intro", 
         style = "font-size: 1.5rem;",
-        "This map shows country-level PCOS incidence rates per 100,000 women of reproductive age in 1990. Hover over any country to see its specific values."
+        "This map shows country-level PCOS incidence rates per 100,000 women of adolescence age in 1990. Hover over any country to see its specific values."
       ),
       div(class = "map-card",
           leafletOutput("pcosMap1990", height = "650px")   # <-- pcosMap1990
       ),
-      p(class = "map-source", "Source: PCOS Dataset · Values per 100,000 women aged 15–49")
+      p(class = "map-source", "Source: PCOS Dataset · PCOS in adolescents and young adults aged 10-24 years in 1990")
   ),
   # ── 3. MAP 2021 ──
   div(class = "about-section",
@@ -321,13 +325,18 @@ navbarPage("Health is Wealth",
                    style = "font-size: 3.0rem;"),
                p(class = "map-intro",
                  style = "font-size: 1.5rem;",
-                 "This map shows country-level PCOS incidence rates per 100,000 women of reproductive age in 2021. Hover over any country to see its specific values."
+                 "This map shows country-level PCOS incidence rates per 100,000 women of adolescence age in 2021. Hover over any country to see its specific values."
                ),
                div(class = "map-card",
                    leafletOutput("pcosMap", height = "650px")   # <-- pcosMap
                ),
-               p(class = "map-source", "Source: PCOS Dataset · Values per 100,000 women aged 15–49")
-         ),
+               p(class = "map-source",
+                 style = "font-size: 1.5rem;color: #e36895",
+                 tags$strong("Source: "),
+                 tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6266413/", target = "_blank",
+                        class = "map-source-link",
+                        tags$strong("PCOS Dataset · PCOS in adolescents and young adults aged 10-24 years in 2021"))
+         )),
   div(
     style = "text-align: center; margin-top: 20px; margin-bottom: 50px;",
     tags$a(
