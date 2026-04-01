@@ -714,8 +714,9 @@ navbarPage("Health is Wealth",
                                 )
                       )
 
-                 ),
-             
+
+                 ), 
+        
            tabPanel("Post-pill PCOS",
                   mainPanel(width = "12",
                             div(class = "tx-page",
@@ -893,8 +894,8 @@ navbarPage("Health is Wealth",
                                     )
                                 )
                       )
-            ) )
-  )),
+            ) ) )
+  ),
   
   # ── 4. TREATMENT ──────────────────────────────────────────────────────────
   tabPanel("Treatment",
@@ -1226,7 +1227,7 @@ navbarPage("Health is Wealth",
                      )
                  )
              )
-           )
+         )
   ),
   
 
@@ -1430,8 +1431,9 @@ tabPanel("Data Check Out",
                      )
                  )
              )
-         )
-),
+         ) ),
+
+
 navbarMenu("Risks and Comorbidities",
          tabPanel("Endometrial Cancer",
                   tags$head(
@@ -1605,8 +1607,9 @@ navbarMenu("Risks and Comorbidities",
                                tags$strong("Uterine Corpus Cancer statistics"))
                       )
                   )
-         ),
+         )
 ),
+
 tabPanel("About Us",
          
          tags$head(
@@ -1911,5 +1914,7 @@ tabPanel("References",
                    )
          )
 )
-) 
+)
+
+
 
