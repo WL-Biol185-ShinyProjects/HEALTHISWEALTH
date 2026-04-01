@@ -1204,7 +1204,7 @@ navbarPage("Health is Wealth",
                        width = "400px",
                        style = "border: 1px solid #e63985; border-radius: 1px;"
                      )
-                 )
+                 ),
              
            # Source link
            p(class = "treatment source",
