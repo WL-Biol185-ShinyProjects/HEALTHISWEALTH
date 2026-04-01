@@ -1568,7 +1568,7 @@ navbarMenu("Risks and Comorbidities",
                         "Source: Uterine Corpus Dataset· New cases per 100,000 women"
                       )
                   )
-         ),
+         )
 ),
 tabPanel("About Us",
          
