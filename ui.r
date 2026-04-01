@@ -1436,12 +1436,6 @@ tabPanel("Data Check Out",
 
 navbarMenu("Risks and Comorbidities",
          tabPanel("Endometrial Cancer",
-                  div(class = "types-hero",
-                      div(class = "types-hero-label", "Data Analysis"),
-                      h1(class = "types-hero-heading", "PCOS Trends"),
-                      p(class = "types-hero-subtext",
-                        "Explore how PCOS incidence and prevalence have changed globally from 1990 to 2021.")
-                      ),
                   tags$head(
                     tags$style(HTML("
       @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap');
