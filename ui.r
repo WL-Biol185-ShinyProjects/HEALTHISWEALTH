@@ -315,7 +315,13 @@ navbarPage("Health is Wealth",
       div(class = "map-card",
           leafletOutput("pcosMap1990", height = "650px")   # <-- pcosMap1990
       ),
-      p(class = "map-source", "Source: PCOS Dataset · PCOS in adolescents and young adults aged 10-24 years in 1990")
+      p(class = "map-source",
+        style = "font-size: 1.5rem;color: #e36895",
+        tags$strong("Source: "),
+        tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6266413/", target = "_blank",
+               class = "map-source-link",
+               tags$strong("PCOS Dataset · PCOS in adolescents and young adults aged 10-24 years in 1990"))
+      )
   ),
   # ── 3. MAP 2021 ──
   div(class = "about-section",
