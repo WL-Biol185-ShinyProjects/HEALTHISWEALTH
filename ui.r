@@ -318,7 +318,7 @@ navbarPage("Health is Wealth",
       p(class = "map-source",
         style = "font-size: 1.5rem;color: #e36895",
         tags$strong("Source: "),
-        tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6266413/", target = "_blank",
+        tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12104063/", target = "_blank",
                class = "map-source-link",
                tags$strong("PCOS Dataset · PCOS in adolescents and young adults aged 10-24 years in 1990"))
       )
@@ -339,7 +339,7 @@ navbarPage("Health is Wealth",
                p(class = "map-source",
                  style = "font-size: 1.5rem;color: #e36895",
                  tags$strong("Source: "),
-                 tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6266413/", target = "_blank",
+                 tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12104063/", target = "_blank",
                         class = "map-source-link",
                         tags$strong("PCOS Dataset · PCOS in adolescents and young adults aged 10-24 years in 2021"))
          )),
@@ -362,11 +362,12 @@ navbarPage("Health is Wealth",
                h1(class = "types-hero-heading", "PCOS Trends"),
                p(class = "types-hero-subtext",
                  "Explore how PCOS incidence and prevalence have changed globally from 1990 to 2021.",
-                 style = "font-size: 1.5rem;color: #e36895",
+                 tags$br(),
+                 style = "font-size: 2.0rem; color:#1B1B1B",
                  tags$strong("Source: "),
-                 tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6266413/", target = "_blank",
+                 tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12104063/", target = "_blank",
                         class = "map-source-link",
-                        tags$strong("PCOS Dataset · PCOS in adolescents and young adults aged 10-24 years in 2021"))
+                        tags$strong("Evolving global trends in PCOS burden: a three-decade analysis (1990–2021)"))
                  
                )
            ),
