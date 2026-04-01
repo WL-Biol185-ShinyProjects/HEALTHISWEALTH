@@ -1511,7 +1511,12 @@ navbarMenu("Risks and Comorbidities",
                       ),
                       
                       p(class = "map-source",
-                        "Source: Uterine Corpus Dataset · Incidence per 100,000 women"
+                          style = "font-size: 1.5rem;color: #e36895",
+                          tags$strong("Source: "),
+                          tags$a(href = "https://cancerstatisticscenter.cancer.org/types/uterine-corpus", target = "_blank",
+                                 class = "map-source-link",
+                                 tags$strong("Uterine Corpus Cancer statistics"))
+                    
                       )
                   ), 
                   
@@ -1533,7 +1538,11 @@ navbarMenu("Risks and Comorbidities",
                       ),
                       
                       p(class = "map-source",
-                        "Source: Uterine Corpus Dataset· Mortality Rate per 100,000 women"
+                        style = "font-size: 1.5rem;color: #e36895",
+                        tags$strong("Source: "),
+                        tags$a(href = "https://cancerstatisticscenter.cancer.org/types/uterine-corpus", target = "_blank",
+                               class = "map-source-link",
+                               tags$strong("Uterine Corpus Cancer statistics"))
                       )
                   ),
                   div(class = "map-page",
@@ -1554,7 +1563,11 @@ navbarMenu("Risks and Comorbidities",
                       ),
                       
                       p(class = "map-source",
-                        "Source: Uterine Corpus Dataset· Mortality Rate per 100,000 women"
+                        style = "font-size: 1.5rem;color: #e36895",
+                        tags$strong("Source: "),
+                        tags$a(href = "https://cancerstatisticscenter.cancer.org/types/uterine-corpus", target = "_blank",
+                               class = "map-source-link",
+                               tags$strong("Uterine Corpus Cancer statistics"))
                       )
                   ),
                   
@@ -1576,7 +1589,11 @@ navbarMenu("Risks and Comorbidities",
                       ),
                       
                       p(class = "map-source",
-                        "Source: Uterine Corpus Dataset· New cases per 100,000 women"
+                        style = "font-size: 1.5rem;color: #e36895",
+                        tags$strong("Source: "),
+                        tags$a(href = "https://cancerstatisticscenter.cancer.org/types/uterine-corpus", target = "_blank",
+                               class = "map-source-link",
+                               tags$strong("Uterine Corpus Cancer statistics"))
                       )
                   )
          ),
