@@ -22,5 +22,31 @@ ggplot(Heart_Disease_Mortality_Data_Among_US_Adults_35_by_State_Territory_and_Co
                       color = Stratification2, 
                       shape = Stratification1,
                       alpha = 0.5)) + 
-  geom_boxplot()+ 
+  geom_boxplot()+
   theme(axis.text.x = element_text(angle = 60, hjust = 1))
+
+fit_uterine<-lm(`Mortallity rate uterine corps`~ `Data for CVD` , data = CVD_UC_mortaility_data_2019_2023_clean_Sheet1_)
+summary(fit_uterine)
+library(dplyr)
+
+CVD_UC_clean <- CVD_UC_mortaility_data_2019_2023_clean_Sheet1_ %>%
+  filter(!is.na(`Data for CVD`))
+nrow(CVD_UC_clean)
+fit_uterine <- lm(`Mortallity rate uterine corps` ~ `Data for CVD`, 
+                  data = CVD_UC_clean)
+summary(fit_uterine)
+anova_both <- aov(cbind(`Data for CVD`, `Mortallity rate uterine corps`) ~ `State/Territory`, 
+                  data = CVD_UC_mortaility_data_2019_2023_clean_Sheet1_)
+summary(anova_both)
+summary(CVD_UC_clean$`Data for CVD`)
+summary(CVD_UC_clean$`Mortallity rate uterine corps`)
+library(ggplot2)
+
+ggplot(CVD_UC_mortaility_data_2019_2023_clean_Sheet1_, aes(x = `Data for CVD`, 
+                         y = `Mortallity rate uterine corps`, 
+                         label = `State/Territory`)) +
+  geom_point(color = "#e36895") +
+  geom_text(nudge_y = 0.5, size = 3) +
+  geom_smooth(method = "lm", color ="#e36895") 
+cor.test(CVD_UC_mortaility_data_2019_2023_clean_Sheet1_$`Data for CVD`, 
+         CVD_UC_mortaility_data_2019_2023_clean_Sheet1_$`Mortallity rate uterine corps`)
