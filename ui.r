@@ -712,7 +712,13 @@ navbarPage("Health is Wealth",
                                     )
                                 )
                       )
-             ),
+                  ), 
+        
+             tags$strong("Source: "),
+             tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6935309/#CIT0125", target = "_blank",
+                    class = "map-source-link",
+                    tags$strong("Genetic Basis of Polycystic Ovary Syndrome (PCOS): Current Perspectives"))
+                 ),
            tabPanel("Post-pill PCOS",
                   mainPanel(width = "12",
                             div(class = "tx-page",
