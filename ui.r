@@ -866,6 +866,49 @@ navbarPage("Health is Wealth",
                                      tags$a(href = "https://cancerstatisticscenter.cancer.org/types/uterine-corpus", target = "_blank",
                                             tags$strong("Uterine Corpus cancer statistics")))
                                )
+                      ),
+                      tabPanel("CVD & Cancer Data",
+                               div(class = "map-page",
+                                   div(class = "map-label", "Data Exploration"),
+                                   div(class = "map-heading",
+                                       "CVD Mortality ", tags$span("& Uterine Cancer Overlap"),
+                                       style = "font-size: 3.0rem;"),
+                                   p(class = "map-intro", style = "font-size: 1.5rem;",
+                                     "This scatter plot shows the relationship between state-level CVD mortality
+       and uterine corpus cancer mortality rates (2019-2023). Hover over points
+       to see state names."),
+                                   div(class = "map-card", plotlyOutput("cvd_uc_scatter", height = "500px")),
+                                   p(class = "map-source", style = "font-size: 1.5rem; color: #e36895",
+                                     tags$strong("Source: "), "CVD & Uterine Corpus Mortality Data 2019-2023"),
+                                   
+                                   div(style = "height: 30px;"),
+                                   
+                                   div(class = "map-heading",
+                                       "Heart Disease Mortality ", tags$span("by Race & Sex"),
+                                       style = "font-size: 3.0rem; margin-top: 20px;"),
+                                   p(class = "map-intro", style = "font-size: 1.5rem;",
+                                     "Distribution of heart disease mortality rates among US adults (35+)
+       stratified by race/ethnicity and sex (2019-2021)."),
+                                   div(class = "map-card", plotOutput("cvd_race_box", height = "500px")),
+                                   p(class = "map-source", style = "font-size: 1.5rem; color: #e36895",
+                                     tags$strong("Source: "),
+                                     "Heart Disease Mortality Data Among US Adults 35+, 2019-2021"),
+                                   
+                                   div(style = "height: 30px;"),
+                                   
+                                   div(class = "map-card", style = "padding: 32px 36px;",
+                                       div(style = "font-size: 1.5rem; font-weight: 700; letter-spacing: 0.15em;
+                   text-transform: uppercase; color: #e63985; margin-bottom: 8px;",
+                                           "Analysis"),
+                                       div(style = "font-family: 'Playfair Display', serif; font-size: 3.0rem;
+                   font-weight: 700; color: #1a1a2e; margin-bottom: 20px;
+                   padding-bottom: 12px; border-bottom: 2px solid #fce8f1;",
+                                           "CVD & Endometrial Cancer — ", tags$span("Correlation Results",
+                                                                                    style = "color:#e63985; font-size:2.0rem;")),
+                                       div(style = "font-size: 2.0rem; color: #444; line-height: 1.85;",
+                                           verbatimTextOutput("cvd_uc_corr"))
+                                   )
+                               )
                       )
                       
            ), # end navbarMenu "Risks and Comorbidities"

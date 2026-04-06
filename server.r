@@ -12,6 +12,7 @@ library(shinyjs)
 library(ggplot2)
 library(ggwordcloud)
 library(plotly)
+library(readxl)
 
 server <- function(input, output, session) {
   
@@ -42,6 +43,10 @@ server <- function(input, output, session) {
   us_states       <- st_as_sf(maps::map("state", plot = FALSE, fill = TRUE))
   us_states$state <- tolower(us_states$ID)
   map_data_state  <- merge(us_states, state_data, by = "state", all.x = TRUE)
+  
+  cvd_uc <- read.csv("CVD + UC mortaility data 2019-2023 clean(Sheet1).csv",
+                     stringsAsFactors = FALSE, check.names = FALSE)
+  cvd_uc <- cvd_uc[, colnames(cvd_uc) != ""]
   
   region_df        <- read.csv("Region.csv", check.names = FALSE)
   region_long      <- tidyr::pivot_longer(region_df, cols = c(`Prev 1990`,`Prev 2021`),
@@ -398,6 +403,75 @@ server <- function(input, output, session) {
   observe({
     req(input$conditions_tabs)
     cat("[Risks Tab Active]:", input$conditions_tabs, "\n")
+  })
+  
+  
+  # ── CVD + UTERINE CANCER SCATTER ────────────────────────────────────────────
+  
+  output$cvd_uc_scatter <- renderPlotly({
+    
+    fit      <- lm(`Mortallity rate uterine corps` ~ `Data for CVD`, data = cvd_uc)
+    x_seq    <- seq(min(cvd_uc$`Data for CVD`, na.rm = TRUE),
+                    max(cvd_uc$`Data for CVD`, na.rm = TRUE), length.out = 100)
+    pred     <- predict(fit,
+                        newdata = data.frame(`Data for CVD` = x_seq, check.names = FALSE),
+                        interval = "confidence")
+    trend_df <- data.frame(x = x_seq, y = pred[,"fit"],
+                           ymin = pred[,"lwr"], ymax = pred[,"upr"])
+    
+    plot_ly() %>%
+      add_ribbons(data = trend_df, x = ~x, ymin = ~ymin, ymax = ~ymax,
+                  fillcolor = "rgba(227,104,149,0.15)",
+                  line = list(color = "transparent"),
+                  showlegend = FALSE, hoverinfo = "skip") %>%
+      add_lines(data = trend_df, x = ~x, y = ~y,
+                line = list(color = "#e36895", width = 2),
+                showlegend = FALSE, hoverinfo = "skip") %>%
+      add_markers(data = cvd_uc,
+                  x = ~`Data for CVD`,
+                  y = ~`Mortallity rate uterine corps`,
+                  marker = list(color = "#e36895", opacity = 0.7, size = 8),
+                  text  = ~paste0("<b>", `State/Territory`, "</b><br>",
+                                  "CVD Rate: ",     round(`Data for CVD`, 2), "<br>",
+                                  "UC Mortality: ", round(`Mortallity rate uterine corps`, 2)),
+                  hoverinfo = "text", showlegend = FALSE) %>%
+      layout(
+        xaxis      = list(title = "CVD Mortality Rate"),
+        yaxis      = list(title = "Uterine Corpus Mortality Rate"),
+        hoverlabel = list(bgcolor = "white", font = list(size = 13),
+                          bordercolor = "#e36895")
+      )
+  })
+  
+  
+  # ── CVD + UTERINE CANCER CORRELATION ────────────────────────────────────────
+  
+  output$cvd_uc_corr <- renderPrint({
+    cor.test(cvd_uc$`Data for CVD`, cvd_uc$`Mortallity rate uterine corps`)
+  })
+  
+  
+  # ── HEART DISEASE MORTALITY BY RACE BOXPLOT ──────────────────────────────────
+  
+  output$cvd_race_box <- renderPlot({
+    cvd_race <- readxl::read_excel(
+      "Heart_Disease_Mortality_Data_Among_US_Adults__35___by_State_Territory_and_County___2019-2021 clean.xlsx"
+    )
+    ggplot(cvd_race,
+           aes(x = Stratification2, y = Data_Value,
+               color = Stratification2, shape = Stratification1)) +
+      geom_boxplot(alpha = 0.5) +
+      scale_color_manual(values = c("#C71585","#e63985","#FF69B4",
+                                    "#FFB6C1","#DC5987","#870009",
+                                    "#DB7093","#F48CBB")) +
+      labs(title  = "Heart Disease Mortality by Race & Sex",
+           x      = "Race / Ethnicity",
+           y      = "Mortality Rate per 100,000",
+           color  = "Race", shape = "Sex") +
+      theme_minimal() +
+      theme(axis.text.x   = element_text(angle = 60, hjust = 1, size = 11),
+            plot.title     = element_text(family = "serif", size = 16, color = "#1a1a2e"),
+            legend.position = "right")
   })
   
 }
