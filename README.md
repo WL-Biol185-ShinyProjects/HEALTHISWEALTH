@@ -1,5 +1,6 @@
 # HEALTHISWEALTH
 ABOUT THIS PROJECT:
+
 Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal disorders affecting women of reproductive age (typically 15–49) yet remaining widely underdiagnosed and misunderstood. Despite the fact that it affects millions of women worldwide, gaps in research, delayed diagnosis and disparities in health care access continue to affect outcomes, particularly for women from marginalized communities. 
 
 This project explores the prevalence, risks factors, and health outcomes associated with PCOS, including metabolic complications, mental health impacts and reproductive challenges. Using publicly available health datasets, our website analyzes trends by countries, race and age group to better understand disparities in diagnosis treatment access and long-term health outcomes world world.  
@@ -20,7 +21,7 @@ ACKNOWLEDMENTS & CIATIONS:
 
 Data: 
 1.https://pmc.ncbi.nlm.nih.gov/articles/PMC12104063/ 
-2. https://cancerstatisticscenter.cancer.org/types/uterine-corpus
+2.https://cancerstatisticscenter.cancer.org/types/uterine-corpus
 
 Use of AI:
 Claude AI - https://claude.ai/new
