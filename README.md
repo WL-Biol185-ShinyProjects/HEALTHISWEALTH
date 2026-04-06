@@ -5,7 +5,7 @@ Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal disorders af
 
 This project explores the prevalence, risks factors, and health outcomes associated with PCOS, including metabolic complications, mental health impacts and reproductive challenges. Using publicly available health datasets, our website analyzes trends by countries, race and age group to better understand disparities in diagnosis treatment access and long-term health outcomes world world.  
 
-TEAM MEMEBERS
+TEAM MEMEBERS:
 1. Fatma Nayer '27
 2. Martha Afoakwa '27
 3. Zanita Akinkugbe '27
@@ -19,11 +19,14 @@ THE WEBSITE INCLUDES:
 
 ACKNOWLEDMENTS & CIATIONS: 
 
-Data: 
-1.https://pmc.ncbi.nlm.nih.gov/articles/PMC12104063/ 
-2.https://cancerstatisticscenter.cancer.org/types/uterine-corpus
+Data:
 
-Use of AI:
+1. https://pmc.ncbi.nlm.nih.gov/articles/PMC12104063/ 
+2. https://cancerstatisticscenter.cancer.org/types/uterine-corpus
+3. 
+
+Use of AI:  
+
 Claude AI - https://claude.ai/new
 
 Other sources:
