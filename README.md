@@ -10,7 +10,17 @@ TEAM MEMEBERS
 3. Zanita Akinkugbe '27
 
 THE WEBSITE INCLUDES:
-PCOS incidence and prevalence 
+1. PCOS incidence and prevalence, Global PCOS data and Trends (1990-2021)
+2. Information on the 4 types of PCOS
+3. Treatment Options
+4. What can data tell about a specific case
+5. Risks and Comorbidities, i.e. Endometrial Cancer and Cardiovascular disease
+
+ACKNOWLEDMENTS & CIATIONS: 
+
+Data: 
+1.
+
 
 the tables: uterine corpus statewise, uterine corpus race was manually copied from the website: American Cancer Society. (n.d.). Uterine corpus. Cancer Statistics Center. Retrieved March 23, 2026, from https://cancerstatisticscenter.cancer.org/types/uterine-corpus
 

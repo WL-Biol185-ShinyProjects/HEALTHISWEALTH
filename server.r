@@ -52,7 +52,7 @@ server <- function(input, output, session) {
   map_data_state  <- merge(us_states, state_data, by = "state", all.x = TRUE)
   
   
-  # ── WORD CLOUD (premade) ──────────────────────────────────────────────────
+  # ── WORD CLOUD──────────────────────────────────────────────────
   output$wordcloud <- renderPlot({
     
     library(ggplot2)
