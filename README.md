@@ -87,6 +87,10 @@ Geographical Prevalence of Polycystic Ovary Syndrome as Determined by Region and
 
 https://pmc.ncbi.nlm.nih.gov/articles/instance/12104063/bin/DataSheet1.pdf 
 https://pmc.ncbi.nlm.nih.gov/articles/PMC12104063/#SM1 
+Source: https://rpubs.com/kredie/1322038
+Geographical Prevalence of Polycystic Ovary Syndrome as Determined by Region and Race/Ethnicity - PMC 
+Risk for Premenstrual Dysphoric Disorder is Associated with Genetic Variation in ESR1, the Estrogen Receptor Alpha Gene - PMC
+
 
 
 
@@ -97,6 +101,13 @@ Factsheets:
 https://womenshealth.gov/patient-materials/resource/fact-sheets 
 https://www.nutritioncareofrochester.com/articles/30-interesting-facts-about-pcos
 https://www.myovry.ca/blogs/health-science/pcos-what-is-it-and-can-it-affect-fertility?srsltid=AfmBOorbC0YkRQwLQQLLwtNtfxHX2BwUIc5fSGRnrwe6PfNjk18YJ3eB
+https://womenshealth.gov/patient-materials/resource/fact-sheets 
+https://www.nutritioncareofrochester.com/articles/30-interesting-facts-about-pcos
+https://www.myovry.ca/blogs/health-science/pcos-what-is-it-and-can-it-affect-fertility?srsltid=AfmBOorbC0YkRQwLQQLLwtNtfxHX2BwUIc5fSGRnrwe6PfNjk18YJ3eB
+Mitochondrial Dysfunction in PCOS: Insights into Reproductive Organ Pathophysiology 
+https://www.mdpi.com/1422-0067/24/17/13123
+https://pmc.ncbi.nlm.nih.gov/articles/PMC12012804/#dgae426-B9
+https://pmc.ncbi.nlm.nih.gov/articles/PMC4346178/
 
 
 Type of PCOS 
@@ -104,6 +115,11 @@ https://www.emilyjensennutrition.com/blog/4-types-of-pcos-and-how-to-know-which-
 https://rosagynecology.com/the-four-types-of-pcos-and-their-symptoms/
 https://www.osfhealthcare.org/blog/what-is-pcos-and-can-it-be-cured
 https://www.webmd.com/women/what-is-pcos
+https://www.emilyjensennutrition.com/blog/4-types-of-pcos-and-how-to-know-which-one-you-have
+https://rosagynecolohttps://www.emilyjensennutrition.com/blog/4-types-of-pcos-and-how-to-know-which-one-you-havegy.com/the-four-types-of-pcos-and-their-symptoms/
+https://www.osfhealthcare.org/blog/what-is-pcos-and-can-it-be-cured
+https://www.webmd.com/women/what-is-pcos
+
 
 
 Insulin resistant PCOS
