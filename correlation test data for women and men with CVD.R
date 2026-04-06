@@ -50,3 +50,62 @@ ggplot(CVD_UC_mortaility_data_2019_2023_clean_Sheet1_, aes(x = `Data for CVD`,
   geom_smooth(method = "lm", color ="#e36895") 
 cor.test(CVD_UC_mortaility_data_2019_2023_clean_Sheet1_$`Data for CVD`, 
          CVD_UC_mortaility_data_2019_2023_clean_Sheet1_$`Mortallity rate uterine corps`)
+
+
+#CVD statewise 
+
+cvd_data <- read.csv("CVD + UC mortaility data 2019-2023 clean(Sheet1).csv")
+
+cvd_data_clean <- cvd_data %>%
+  dplyr::select(
+    state = `State/Territory`,
+    cvd_rate = `Data for CVD `
+  ) %>%
+  dplyr::mutate(state = tolower(state))
+
+map_data_state <- us_states_sf %>%
+  dplyr::left_join(cvd_data_clean, by = "state")
+
+output$stateMapCVD <- renderLeaflet({
+  
+  pal <- colorNumeric(
+    palette  = c("#e3faff", "#528aae", "#2c67f2", "#000439"),
+    domain   = map_data_state$cvd_rate,
+    na.color = "white"
+  )
+  
+  labels <- sprintf(
+    "<strong>%s</strong><br/>CVD Mortality: %s per 100,000",
+    tools::toTitleCase(map_data_state$state),
+    ifelse(is.na(map_data_state$cvd_rate), "No data",
+           round(map_data_state$cvd_rate, 1))
+  )
+  
+  leaflet(
+    map_data_state,
+    options = leafletOptions(
+      zoomControl = FALSE,
+      dragging = FALSE
+    )
+  ) %>%
+    addPolygons(
+      fillColor        = ~pal(cvd_rate),
+      fillOpacity      = 0.9,
+      color            = "white",
+      weight           = 1,
+      label            = lapply(labels, htmltools::HTML),
+      highlightOptions = highlightOptions(
+        weight       = 2,
+        color        = "#e63985",
+        fillOpacity  = 1,
+        bringToFront = TRUE
+      )
+    ) %>%
+    addLegend(
+      pal = pal,
+      values = ~cvd_rate,
+      title = "CVD mortality rate per 100,000",
+      position = "bottomright"
+    ) %>%
+    setView(lng = -96, lat = 37.8, zoom = 4)
+})
