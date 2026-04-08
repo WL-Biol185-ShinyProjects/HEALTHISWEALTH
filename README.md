@@ -53,46 +53,6 @@ Polycystic Ovary Syndrome (PCOS) is a hormonal disorder that affects how the ova
 
 
 
-
-We can potentially work with genetic correlations: 
-Genetics and Genomics of Endometriosis - PMC 
-Genetic Basis of Polycystic Ovary Syndrome (PCOS): Current Perspectives - PMC 
-Genetics of PCOS 
-PCOS is an extremely heterogenetic and complex disease. The genetic basis of PCOS is different between families and within families but is related to a common pathway. Due to complexity and heterogeneity single gene or related genes in a single family have not been reported.
-The genetic susceptibility of different genes is different in patients from the same family.Recently, intrauterine programming as a susceptibility factor has been hypothesized for PCOS. Genome screening to search for a candidate gene in a complex disease like PCOS is unrealistic. Linkage analysis in such families always comes up with negative results. In such a disease, case-control studies of larger population size and genome-wide association studies (GWAS) are helpful to find possible associations. Parental analysis in such diseases is often impractical; however, known risk of disease can be estimated
-Mutation
-Many studies have been conducted in multiple families to find the causative gene/mutation, but no true penetrance of a single gene mutation has been reported until now. All genes/mutations reported in familial aggregation show low penetrance associated with other covariant, hormonal or environmental factors to cause disease. Conclusively, PCOS is a polygenic and multifactorial syndromic disorder.
-Variation Associated with PCOS
-PCOS is a multifactorial disease and is caused by a number of abnormalities. All genes/mutations that affect ovaries directly or indirectly are associated with PCOS. An overview of the genetic picture of PCOS is depicted in. These groups of related genes and their roles in PCOS are discussed below in detail.
-
-
-Epigenetics of PCOS
-Heritable changes in gene expression that are not due to a sequence change of DNA but that are transgenerationally and mitotically heritable are known as epigenetic changes. Epigenetic involvement of many diseases has been reported, such as T2DM, PCOS, and prostate cancer.  Higher secretion of androgens in fetal life has been reported to cause diseases in rats,  monkeys, and sheep models. The symptoms of diseases are similar to PCOS. Although it is ethically restricted to use humans for experimentation, certain studies have shown that an increased level of androgen during fetal life predisposes the offspring to PCOS-like symptoms in later stages. Qu et al. reported a differential CPG island methylation in PPARG1, NCOR1 of granulosa cells that causes hyperandrogenism-induced epigenetic alteration, and thus the development of ovarian dysfunction. Ning Xu et al. reported an altered DNA methylation pattern in PCOS patients as compared to control groups. 
-
-Mitochondrial Dysfunction in PCOS: Insights into Reproductive Organ Pathophysiology 
-This one has a lot of tables involving the effects of PCOS on different organelles. 
-
-Polycystic Ovary Syndrome, Metabolic Syndrome, and Inflammation in the Hispanic Community Health Study/Study of Latinos - PMC 
-Very Specific and has model wise data. 
-
-Treatments 
-PCOS affects 1 in 10 women in the United States. and twice as many US Hispanic/Latinas. Hispanic/Latino adults also experience a disparate burden of obesity and metabolic abnormalities.
-
-Dietary Therapy
-Obesity has been reported in 30% of PCOS patients. The symptoms of PCOS are also considered to be recovered by dietary therapies including resistance to insulin, annulations, and irregular menstrual cycle.122 However, dieting habit and exercise does not show long-term results; hence, bariatric surgery has been introduced to get more promising results.123
-Oral Contraceptive Pills (OCPs)
-Combined oral contraceptive pills (OCPs) are considered the choice of treatment in treating PCOS. These drugs regulate multiple endocrine abnormalities including hirsutism and acne.124 OCPs are safer compared to other therapies because of the low risk of endometrial cancer.125 The OCPs include an amalgamation of progestogen and estrogen, which increases SHBG which decreases LH and FSH, which in turn decreases free T and ovarian androgen production.126 Hence, a low dose of progestogen is recommended in OCPs. Some adverse effects have also been reported with OCPs, i.e., hyperglycemia, impaired glucose metabolism, insulin resistance, and diabetes mellitus127.
-Combined oral contraceptive pills (OCPs) are considered the choice of treatment in treating PCOS. OCPs are safer compared to other therapies because it reduces chances of endometrial cancer. Hence, a low dose of progestogen is recommended in OCPs. Some adverse effects have also been reported with OCPs, i.e., hyperglycemia, impaired glucose metabolism, insulin resistance, and diabetes mellitus127.
-
-Laparoscopic Ovarian Drilling (LOD)
-When clomiphene citrate therapy fails to produce ovulation, other methods of ovulation are used. LOD was used for ovulation in 1984 when ovarian wedge resection surgery failed. LOD is successful in 84% of patients and improves ovarian androgen production insulin resistance. and increases the SHBG levels. Lower rates of miscarriages have been reported with LOD.Serum anti-mullerian hormone (AMH) level is used as an assessment tool for women treated with LOD. However, more studies are required to assess further the efficacy of LOD.
-Assisted Reproductive Technology (ART)
-Several methods are used for the treatment of fertility in PCOS patients. ART is the most frequently used. In this method, the ovaries are stimulated with exogenous gonadotropin which produces multiple follicles. However, exogenous gonadotropin causes ovarian hyperstimulation syndrome (OHSS) in these patients. Due to the use of this treatment modality, in vitro maturation (IVM) is used. Many studies have been conducted to assess the efficacy of ART compared to traditional IVF techniques. Results are comparable in both traditional IVF and IVM-IVF.133
-Future Perspectives in the Treatment
-Currently, COPs are used to treat PCOS as the firstline treatment. These include multiple medicines that increase ovulation. Combinations of medicines are used to treat the underlying associated pathology, which increases the chances of conception.134 However, the adverse effects of these medicines initiate multiple pathologies, such as cardiac pathology, diabetes mellitus, and depression.135
-To reduce the risk of associated pathologies, interventional procedures were adopted. These procedures include IVF, IVM fertilization, and laparoscopic drilling. These procedures are also accompanied by a number of secondary diseases.136
-Keeping in view the pathophysiology of PCOS as a multifactorial disease and the problems encountered in treating the disease, it is now suggested that a team composed of an endocrinologist, a physician, a gynecologist, and a reproductive medicine specialist will help these patients.
-
 Risk for Premenstrual Dysphoric Disorder is Associated with Genetic Variation in ESR1, the Estrogen Receptor Alpha Gene - PMC
 Only investigates and maps one gene. 
 

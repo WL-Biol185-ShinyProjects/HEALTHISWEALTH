@@ -966,7 +966,7 @@ navbarPage("Health is Wealth",
                                 div(class = "member-detail", tags$span("Majors/Minors:"), "Biology Major / Philosophy and Poverty & Human Capability Minors"),
                                 tags$hr(class = "member-divider"),
                                 div(class = "member-question", "What do you like most about this project?"),
-                                div(class = "member-answer", "I am excited about our project in Polycystic Ovary Syndrome (PCOS) because I believe there is a significant lack of awareness and understanding surrounding this condition. Women's health has historically been underrepresented and overlooked in both research and public conversation.")
+                                div(class = "member-answer", "I am excited about our project in Polycystic Ovary Syndrome (PCOS) because I believe there is a significant lack of awareness and understanding surrounding this condition. Many people do not fully recognize its symptoms, long-term health effects, or how common it is. More broadly, women’s health has historically been underrepresented and overlooked in both research and public conversation. This gap in knowledge leads to delayed diagnoses and limited support for those affected. Our project hopes to help increase awareness, encourage better education, and contribute to more informed and supportive discussions around women’s health")
                             )
                         ),
                         div(class = "member-card",
