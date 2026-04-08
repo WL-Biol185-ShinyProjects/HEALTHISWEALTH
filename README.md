@@ -65,7 +65,12 @@ Data Checkout page:
 5. https://www.ncbi.nlm.nih.gov/books/NBK459251/
 
 Risks and Comorbidities page:
-
+1. https://pmc.ncbi.nlm.nih.gov/articles/PMC3693634/ 
+2. https://pmc.ncbi.nlm.nih.gov/articles/PMC10028221/ 
+3. https://pubmed.ncbi.nlm.nih.gov/40164850/
+4. https://link.springer.com/article/10.1186/s13048-025-01741-z 
+5. https://pmc.ncbi.nlm.nih.gov/articles/PMC12512731/#CR88 
+6. https://www.spandidos-publications.com/10.3892/ol.2023.13754 
 
 Data cleanup:
 "US uterine corpus cancer Incidence by state", 
