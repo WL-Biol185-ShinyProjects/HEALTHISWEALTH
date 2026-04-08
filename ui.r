@@ -977,7 +977,9 @@ navbarPage("Health is Wealth",
                                 div(class = "member-detail", tags$span("Majors/Minors:"), "Biology Major / Creative Writing Minor"),
                                 tags$hr(class = "member-divider"),
                                 div(class = "member-question", "What do you like most about this project?"),
-                                div(class = "member-answer", "Women's health has always been at the center of my research interests. Hormonal disorders are both widespread and significantly underdiagnosed, often leaving many individuals without the care and treatment they need.")
+                                div(class = "member-answer", "Women's health has always been at the center of my research interests. 
+                                    Hormonal disorders are both widespread and significantly underdiagnosed, often leaving many individuals without the care and treatment they need. 
+                                    My efforts to spread awareness about Polycystic Ovary Syndrome (PCOS) have not only deepened my understanding of the condition but also highlighted the gaps in knowledge, diagnosis, and treatment that persist in this field.")
                             )
                         )
                     )

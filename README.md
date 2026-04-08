@@ -5,7 +5,7 @@ Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal disorders af
 
 This project explores the prevalence, risks factors, and health outcomes associated with PCOS, including metabolic complications, mental health impacts and reproductive challenges. Using publicly available health datasets, our website analyzes trends by countries, race and age group to better understand disparities in diagnosis treatment access and long-term health outcomes world world.  
 
-TEAM MEMEBERS:
+TEAM MEMEBERS
 1. Fatma Nayer '27
 2. Martha Afoakwa '27
 3. Zanita Akinkugbe '27
@@ -19,14 +19,11 @@ THE WEBSITE INCLUDES:
 
 ACKNOWLEDMENTS & CIATIONS: 
 
-Data:
+Data: 
+1.https://pmc.ncbi.nlm.nih.gov/articles/PMC12104063/ 
+2.https://cancerstatisticscenter.cancer.org/types/uterine-corpus
 
-1. https://pmc.ncbi.nlm.nih.gov/articles/PMC12104063/ 
-2. https://cancerstatisticscenter.cancer.org/types/uterine-corpus
-3. 
-
-Use of AI:  
-
+Use of AI:
 Claude AI - https://claude.ai/new
 
 Other sources:
@@ -39,6 +36,7 @@ Types of PCOS page:
 1. Image: https://www.facebook.com/groups/pcossupportdiet/posts/762303878078523/
 2. Image: https://mapleleafmedical.com.au/blog/2019/9/21/pcos-polycystic-ovary-syndrome 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ABOUT THIS PROJECT: 
 
@@ -137,9 +135,10 @@ https://www.kaggle.com/datasets/ankushpanday1/pcos-prediction-datasettop-75-coun
 
 Source: https://rpubs.com/kredie/1322038
 =======
+=======
+>>>>>>> 797ecc01988e66b64d2d9a0a27aef44cda9f72ac
 Treatments page:
 1. Image: https://www.researchgate.net/figure/of-treatment-modalities-of-PCOS_fig2_338139252 
->>>>>>> 1e6b6b5401279ef64cd16c8df2335c0cb00a5ed2
 
 Data Checkout page:
 1. https://www.sciencedirect.com/science/article/abs/pii/S0026049518302336
