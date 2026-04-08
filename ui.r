@@ -987,56 +987,279 @@ navbarPage("Health is Wealth",
            
            # ── 8. REFERENCES ─────────────────────────────────────────────────────────
            tabPanel("References",
+                    
                     mainPanel(width = 12,
+                              
                               div(class = "tx-page",
+                                  
                                   div(class = "tx-page-label", "Sources & Citations"),
+                                  
                                   div(class = "tx-page-heading", "References"),
+                                  
                                   p(class = "tx-page-intro",
-                                    "The following sources were used in the development of this application, including clinical literature, public health resources, and data repositories."),
-                                  div(class = "tx-card",
-                                      div(class = "tx-card-header",
-                                          div(class = "tx-toggle-left",
-                                              div(class = "tx-icon tx-icon-purple", "\U0001F4DA"),
-                                              div(p(class = "tx-card-subtitle", "Academic & Clinical Sources"),
-                                                  h3(class = "tx-card-title", "Peer-Reviewed Literature")))),
-                                      div(class = "tx-card-body",
-                                          tags$ol(
-                                            tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                                    "Genetic Basis of Polycystic Ovary Syndrome (PCOS): Current Perspectives. ", tags$em("PubMed Central. "),
-                                                    tags$a(href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7959048/", target = "_blank", "View article", style = "color:#e63985;")),
-                                            tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                                    "Naeem, I., et al. (2025). Polycystic ovarian syndrome a risk factor for non-communicable diseases. ", tags$em("Journal of ovarian research, 18(1), 219. "),
-                                                    tags$a(href = "https://doi.org/10.1186/s13048-025-01741-z", target = "_blank", "View article", style = "color:#e63985;")),
-                                            tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                                    "Johnson, J. E., et al. (2023). Risk of endometrial cancer in patients with PCOS: A meta-analysis. ", tags$em("Oncology letters, 25(4), 168. "),
-                                                    tags$a(href = "https://doi.org/10.3892/ol.2023.13754", target = "_blank", "View article", style = "color:#e63985;"))
-                                          )
-                                      )
+                                    
+                                    "The following sources were used in the development of this application, including clinical literature, public health resources, and data repositories."
+                                    
                                   ),
+                                  
+                                  
+                                  
+                                  # Card 1: Peer-Reviewed
+                                  
                                   div(class = "tx-card",
+                                      
                                       div(class = "tx-card-header",
+                                          
                                           div(class = "tx-toggle-left",
-                                              div(class = "tx-icon tx-icon-pink", "\U0001F3E5"),
-                                              div(p(class = "tx-card-subtitle", "Health Organisations & Clinics"),
-                                                  h3(class = "tx-card-title", "Medical & Public Health Sources")))),
+                                              
+                                              div(class = "tx-icon tx-icon-purple", "📚"),
+                                              
+                                              div(
+                                                
+                                                p(class = "tx-card-subtitle", "Academic & Clinical Sources"),
+                                                
+                                                h3(class = "tx-card-title", "Peer-Reviewed Literature")
+                                                
+                                              )
+                                              
+                                          )
+                                          
+                                      ),
+                                      
                                       div(class = "tx-card-body",
-                                          tags$ol(start = "4",
-                                                  tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                                          "Fact Sheets. Office on Women's Health, U.S. Department of Health & Human Services. ",
-                                                          tags$a(href = "https://womenshealth.gov/patient-materials/resource/fact-sheets", target = "_blank", "View source", style = "color:#e63985;")),
-                                                  tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                                          "What Is PCOS? WebMD. ",
-                                                          tags$a(href = "https://www.webmd.com/women/what-is-pcos", target = "_blank", "View source", style = "color:#e63985;")),
-                                                  tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
-                                                          "PCOS Prediction Dataset (Top 75 Countries). Kaggle. ",
-                                                          tags$a(href = "https://www.kaggle.com/datasets/ankushpanday1/pcos-prediction-datasettop-75-countries", target = "_blank", "View source", style = "color:#e63985;"))
-                                          ),
-                                          div(class = "tx-note",
-                                              tags$strong("Note: "), "All references were accessed during the development of this application. URLs were correct at time of access.")
+                                          
+                                          tags$ol(
+                                            
+                                            tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                    
+                                                    "Genetic Basis of Polycystic Ovary Syndrome (PCOS): Current Perspectives.",
+                                                    
+                                                    tags$em(" PubMed Central, U.S. National Library of Medicine. "),
+                                                    
+                                                    tags$a(href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7959048/", target="_blank",
+                                                           
+                                                           "View article", style="color:#e63985;")
+                                                    
+                                            ),
+                                            
+                                            tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                    
+                                                    "Article. PubMed Central, U.S. National Library of Medicine. ",
+                                                    
+                                                    tags$a(href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12221545/", target="_blank",
+                                                           
+                                                           "View article", style="color:#e63985;")
+                                                    
+                                            ),
+                                            
+                                            tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                    
+                                                    "Genetics and Genomics of Endometriosis.",
+                                                    
+                                                    tags$em(" PubMed Central, U.S. National Library of Medicine.")
+                                                    
+                                            ),
+                                            
+                                            tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                    
+                                                    "Mitochondrial Dysfunction in PCOS: Insights into Reproductive Organ Pathophysiology.",
+                                                    
+                                                    tags$em(" PubMed Central, U.S. National Library of Medicine.")
+                                                    
+                                            ),
+                                            
+                                            tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                    
+                                                    "Polycystic Ovary Syndrome, Metabolic Syndrome, and Inflammation in the Hispanic Community Health Study/Study of Latinos.",
+                                                    
+                                                    tags$em(" PubMed Central, U.S. National Library of Medicine.")
+                                                    
+                                            ),
+                                            
+                                            tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                    
+                                                    "Risk for Premenstrual Dysphoric Disorder is Associated with Genetic Variation in ESR1, the Estrogen Receptor Alpha Gene.",
+                                                    
+                                                    tags$em(" PubMed Central, U.S. National Library of Medicine.")
+                                                    
+                                            )
+                                            
+                                          )
+                                          
                                       )
+                                      
+                                  ),
+                                  
+                                  
+                                  
+                                  # Card 2: Medical & Public Health
+                                  
+                                  div(class = "tx-card",
+                                      
+                                      div(class = "tx-card-header",
+                                          
+                                          div(class = "tx-toggle-left",
+                                              
+                                              div(class = "tx-icon tx-icon-pink", "🏥"),
+                                              
+                                              div(
+                                                
+                                                p(class = "tx-card-subtitle", "Health Organisations & Clinics"),
+                                                
+                                                h3(class = "tx-card-title", "Medical & Public Health Sources")
+                                                
+                                              )
+                                              
+                                          )
+                                          
+                                      ),
+                                      
+                                      div(class = "tx-card-body",
+                                          
+                                          tags$ol(start = "7",
+                                                  
+                                                  tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                          
+                                                          "Fact Sheets. Office on Women's Health, U.S. Department of Health & Human Services. ",
+                                                          
+                                                          tags$a(href="https://womenshealth.gov/patient-materials/resource/fact-sheets", target="_blank",
+                                                                 
+                                                                 "View source", style="color:#e63985;")
+                                                          
+                                                  ),
+                                                  
+                                                  tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                          
+                                                          "What Is PCOS? WebMD. ",
+                                                          
+                                                          tags$a(href="https://www.webmd.com/women/what-is-pcos", target="_blank",
+                                                                 
+                                                                 "View source", style="color:#e63985;")
+                                                          
+                                                  ),
+                                                  
+                                                  tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                          
+                                                          "What Is PCOS and Can It Be Cured? OSF HealthCare. ",
+                                                          
+                                                          tags$a(href="https://www.osfhealthcare.org/blog/what-is-pcos-and-can-it-be-cured", target="_blank",
+                                                                 
+                                                                 "View source", style="color:#e63985;")
+                                                          
+                                                  ),
+                                                  
+                                                  tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                          
+                                                          "Premenstrual Dysphoric Disorder (PMDD). Mayo Clinic. ",
+                                                          
+                                                          tags$a(href="https://www.mayoclinic.org/diseases-conditions/premenstrual-syndrome/expert-answers/pmdd/faq-20058315", target="_blank",
+                                                                 
+                                                                 "View source", style="color:#e63985;")
+                                                          
+                                                  ),
+                                                  
+                                                  tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                          
+                                                          "PCOS: What Is It and Can It Affect Fertility? MyOvary. ",
+                                                          
+                                                          tags$a(href="https://www.myovry.ca/blogs/health-science/pcos-what-is-it-and-can-it-affect-fertility", target="_blank",
+                                                                 
+                                                                 "View source", style="color:#e63985;")
+                                                          
+                                                  )
+                                                  
+                                          )
+                                          
+                                      )
+                                      
+                                  ),
+                                  
+                                  
+                                  
+                                  # Card 3: Additional Resources
+                                  
+                                  div(class = "tx-card",
+                                      
+                                      div(class = "tx-card-header",
+                                          
+                                          div(class = "tx-toggle-left",
+                                              
+                                              div(class = "tx-icon tx-icon-green", "🔗"),
+                                              
+                                              div(
+                                                
+                                                p(class = "tx-card-subtitle", "Nutrition, PCOS Types & Data"),
+                                                
+                                                h3(class = "tx-card-title", "Additional Resources")
+                                                
+                                              )
+                                              
+                                          )
+                                          
+                                      ),
+                                      
+                                      div(class = "tx-card-body",
+                                          
+                                          tags$ol(start = "12",
+                                                  
+                                                  tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                          
+                                                          "30 Interesting Facts About PCOS. Nutrition Care of Rochester. ",
+                                                          
+                                                          tags$a(href="https://www.nutritioncareofrochester.com/articles/30-interesting-facts-about-pcos", target="_blank",
+                                                                 
+                                                                 "View source", style="color:#e63985;")
+                                                          
+                                                  ),
+                                                  
+                                                  tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                          
+                                                          "4 Types of PCOS and How to Know Which One You Have. Emily Jensen Nutrition. ",
+                                                          
+                                                          tags$a(href="https://www.emilyjensennutrition.com/blog/4-types-of-pcos-and-how-to-know-which-one-you-have", target="_blank",
+                                                                 
+                                                                 "View source", style="color:#e63985;")
+                                                          
+                                                  ),
+                                                  
+                                                  tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                          
+                                                          "The Four Types of PCOS and Their Symptoms. Rosa Gynecology. ",
+                                                          
+                                                          tags$a(href="https://rosagynecology.com/the-four-types-of-pcos-and-their-symptoms/", target="_blank",
+                                                                 
+                                                                 "View source", style="color:#e63985;")
+                                                          
+                                                  ),
+                                                  
+                                                  tags$li(style = "margin-bottom:14px; font-size:1.5rem; color:#444; line-height:1.75;",
+                                                          
+                                                          "PCOS Prediction Dataset (Top 75 Countries). Kaggle. ",
+                                                          
+                                                          tags$a(href="https://www.kaggle.com/datasets/ankushpanday1/pcos-prediction-datasettop-75-countries", target="_blank",
+                                                                 
+                                                                 "View source", style="color:#e63985;")
+                                                          
+                                                  )
+                                                  
+                                          ),
+                                          
+                                          div(class = "tx-note",
+                                              
+                                              tags$strong("Note: "),
+                                              
+                                              "All references were accessed during the development of this application. URLs were correct at time of access. Some links may require institutional access."
+                                              
+                                          )
+                                          
+                                      )
+                                      
                                   )
+                                  
                               )
+                              
                     )
+                    
            )
            
 ) 
